@@ -1,0 +1,21 @@
+#define map_objects
+/// map_objects(map)
+//
+//  Fills a given map data structure with the id values of all
+//  object resources, keyed by strings of their names.
+//
+//      map         map data structure, real
+//
+/// GMLscripts.com/license
+{
+    var no,i,ds_map;
+    ds_map = argument0;
+    no = object_add();
+    object_delete(no);
+    for (i=0; i<no; i+=1) {
+        if (object_exists(i)) {
+            ds_map_add(ds_map,object_get_name(i),i);
+        }
+    }
+    return 0;
+}
