@@ -33,3 +33,5 @@ direction the missile is heading.
     direction += sign(angleToTarget) * min(2, abs(angleToTarget));
 
 script: angle_difference.gml
+
+contributors: xot, EyeGuy
