@@ -1,22 +1,16 @@
 #define ds_list_save
-/*
-**  Usage:
-**      ds_list_save(dsid,filename [,separator])
-**
-**  Arguments:
-**      dsid            ds_list to be saved
-**      filename        file path to save the list to
-**      separator       string used as separator between elements (optional)
-**
-**  Returns:
-**      0 if successful, or (-1) on error
-**
-**  Notes:
-**      If separator is not given, each list element will be on a separate line.
-**      If separator also appears within data, the list will not load correctly.
-**
-**  GMLscripts.com
-*/
+/// ds_list_save(dsid,filename [,separator])
+//
+//  Saves a list to a given file. Returns 0 on success, (-1) on error.
+//
+//      dsid        ds_list to be saved, real
+//      filename    file path to save the list to, string
+//      separator   string used between elements, string (optional)
+//
+//  If separator is not given, each list element will be on a separate line.
+//  If separator also appears within data, the list will not load correctly.
+//
+/// GMLscripts.com/license
 {
     var dsid,filename,sep,fid,i;
     dsid = argument0;

@@ -1,21 +1,15 @@
 #define ds_list_load
-/*
-**  Usage:
-**      dsid = ds_list_load(filename [,separator]);
-**
-**  Arguments:
-**      filename        file path to save the list to
-**      separator       string used as separator between elements (optional)
-**
-**  Returns:
-**      ds_list id if successful, or (-1) on error
-**
-**  Notes:
-**      If separator is not given, each list element must be on a separate line.
-**      If separator also appears within data, the list will not load correctly.
-**
-**  GMLscripts.com
-*/
+/// ds_list_load(filename [,separator])
+//
+//  Returns as ds_list retrieved from a given file, or (-1) on error.
+//
+//      filename    file path to save the list to, string
+//      separator   separator used between elements, string (optional)
+//
+//  If separator is not given, each list element must be on a separate line.
+//  If separator also appears within data, the list will not load correctly.
+//
+/// GMLscripts.com/license
 {
     var dsid,filename,sep,fid,dat,len,ind,pos;
     filename = argument0;
