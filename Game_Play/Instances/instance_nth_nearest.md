@@ -9,4 +9,6 @@ demo: instance_nth_nearest 512 64
 
 script: instance_nth_nearest.gml
 
+contributors: xot
+
 [instance nearest]:http://docs.yoyogames.com/source/dadiospice/002_reference/objects%20and%20instances/instances/instance%20functions/instance_nearest.html
