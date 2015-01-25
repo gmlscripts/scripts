@@ -15,3 +15,5 @@ $$\text{Original}=\begin{bmatrix}
 \end{bmatrix}$$
 
 script: ds_grid_swap_columns.gml
+
+contributors: Quimp
