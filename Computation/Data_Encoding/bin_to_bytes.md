@@ -21,3 +21,5 @@ and results may vary on different target platforms. Storing arbitrary binary
 data in GM:Studio strings is NOT recommended.
     
 script: bin_to_bytes.gml
+
+contributors: xot
