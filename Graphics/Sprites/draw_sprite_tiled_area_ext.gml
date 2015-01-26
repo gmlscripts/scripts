@@ -1,25 +1,15 @@
 #define draw_sprite_tiled_area_ext
-/*
-**  Usage:
-**      draw_sprite_tiled_area_ext(sprite,subimg,x,y,x1,y2,x2,y2,color,alpha)
-**
-**  Arguments:
-**      sprite  the sprite to be drawn
-**      subimg  the sub image of the sprite to be drawn
-**      x,y     the offset of the tiled area, as defined by a point 
-**              the sprite will/would be drawn
-**      x1,y1   top left corner of the rectangle defining the area
-**      x2,y2   bottom right corner of the area
-**      color   the color mask that you want to blend the sprite with
-**      alpha   the alpha value to draw it at
-**
-**  Notes:
-**      x1 MUST be less than x2, and y1 less than y2
-**      (x,y) doesn't have to be in the area, but if it is, then some
-**      drawn sprite will have it's origin at this point
-**
-**  GMLscripts.com
-*/
+/// draw_sprite_tiled_area_ext(sprite,subimg,x,y,x1,y2,x2,y2,color,alpha)
+//
+//      sprite      sprite to draw, real
+//      subimg      sprite subimage to draw, real
+//      x,y         origin offset, real
+//      x1,y1       top-left corner of tiled area, real
+//      x2,y2       bottom-right corner of tiled area, real
+//      color       color blending, real
+//      alpha       alpha blending, real
+//
+/// GMLscripts.com/license
 {
     var sprite,subimg,xx,yy,x1,y1,x2,y2;
     sprite = argument0;
