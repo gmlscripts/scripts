@@ -19,6 +19,8 @@ will be near the given mean, and the more accurate the aim of the AI would be.
 
 From the Wikipedia entry on [normal distribution]:
 
+![right](/images/gaussian_distribution.png "standard deviation")
+
 > In [probability theory], the *normal* (or *Gaussian*) *distribution*
 > is a [continuous probability distribution] that is often used as a first 
 > approximation to describe real-valued [random variables] that tend to 
@@ -26,16 +28,12 @@ From the Wikipedia entry on [normal distribution]:
 > [probability density function] is "bell"-shaped, and is known as the 
 > *[Gaussian function]* or *bell curve*:
 >
-> $$f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{ -\\frac{(x-\\mu)^2}{2\\sigma^2} },$$
+> $$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{ -\frac{(x-\mu)^2}{2\sigma^2} }$$
 >
-> where parameter \\(\\mu\\) is the [mean] (location of the peak) and 
-> \\(\\sigma^2\\) is the [variance] (the measure of the width of the 
-> distribution). The distribution with \\(\\mu = 0\\) and \\(\\sigma^2 = 1\\) is 
+> where parameter \(\mu\) is the [mean] (location of the peak) and 
+> \(\sigma^2\) is the [variance] (the measure of the width of the 
+> distribution). The distribution with \(\mu = 0\) and \(\sigma^2 = 1\) is 
 > called the *standard normal*.
-
-![>standard deviation](http://img20.imageshack.us/img20/3907/250pxstandarddeviationd.png "standard deviation")
-
-Figure copyright &copy; 2007, [Petter Strandmark]
 
 script: gauss.gml
 
