@@ -10,7 +10,7 @@
 //
 /// GMLscripts.com/license
 {
-    var sprite,w,h,n,p,s,l,xo,yo,surf,i,newsprite,alphasprite;
+    var sprite,w,h,n,xo,yo,surf,i,newsprite,alphasprite;
     sprite = argument0;
 
     w  = sprite_get_width(sprite);
@@ -65,7 +65,7 @@
         }
         draw_set_blend_mode(bm_normal);
     }
-    
+
     surface_reset_target();
     sprite_assign(sprite,newsprite);
     sprite_set_alpha_from_sprite(sprite,alphasprite);
@@ -73,4 +73,5 @@
     sprite_delete(newsprite);
     sprite_delete(tempsprite);
     surface_free(surf);
+    return 0;
 }
