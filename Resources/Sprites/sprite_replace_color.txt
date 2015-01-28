@@ -1,0 +1,99 @@
+#related
+sprite_resources
+#contributors
+xot
+EyeGuy
+#history
+20070413 xot submits original script
+20110322 xot replaces script with GM8 compatible version
+#keywords
+graphics
+sprites
+mod
+modify
+change
+surface
+surfaces
+dynamic
+#note
+Here is a much slower script that supports color blending:
+s:[sprite_replace_color_blend sprite_replace_color_blend()]
+#note
+A GM6 and GM7 compatible version of this script can be found here:
+s:[sprite_replace_color_gm7 sprite_replace_color()]
+#usage
+sprite_replace_color(sprite,oldcolor,newcolor)
+Replaces one color in a given sprite for another color.
+#define sprite_replace_color
+/*
+**  Usage:
+**      sprite_replace_color(sprite,oldcolor,newcolor)
+**
+**  Arguments:
+**      sprite      sprite to change
+**      oldcolor    color that will be replaced
+**      newcolor    color used as replacement
+**
+**  Returns:
+**      (-1) on error
+**
+**  Notes:
+**      This script replaces one color in a sprite with another.
+**      No new sprites are created, the given sprite is changed.
+**
+**  GMLscripts.com
+*/
+{
+    var sprite, oldc, newc;
+    sprite = argument0;
+    oldc  = argument1;
+    newc  = argument2;
+ 
+    var w, h, n, i, xo, yo, surf, tempsprite, newsprite, alphasprite;
+    w  = sprite_get_width(sprite);
+    h  = sprite_get_height(sprite);
+    n  = sprite_get_number(sprite);
+    xo = sprite_get_xoffset(sprite);
+    yo = sprite_get_yoffset(sprite);
+ 
+    surf = surface_create(w,h+1);
+    surface_set_target(surf);
+ 
+    for(i=0; i<n; i+=1) {
+        draw_clear_alpha(c_black,1);
+        draw_set_blend_mode_ext(bm_inv_dest_color,bm_one);
+        draw_sprite(sprite,i,xo,yo);
+        draw_set_blend_mode(bm_normal);
+        draw_point_color(0,h,oldc);
+        tempsprite = sprite_create_from_surface(surf,0,0,w,h+1,true,false,xo,yo);
+        draw_clear_alpha(newc,1);
+        draw_sprite(tempsprite,0,xo,yo);
+        sprite_delete(tempsprite);
+        if (i == 0) {
+            newsprite = sprite_create_from_surface(surf,0,0,w,h,false,false,xo,yo);
+            if (newsprite < 0) return -1;
+        }else{
+            sprite_add_from_surface(newsprite,surf,0,0,w,h,false,false);
+        }     
+        draw_clear_alpha(c_white,1);
+        draw_set_blend_mode_ext(bm_zero,bm_src_alpha);
+        draw_sprite(sprite,i,xo,yo);
+        if (i == 0) {
+            alphasprite = sprite_create_from_surface(surf,0,0,w,h,false,false,xo,yo);
+            if (alphasprite < 0) {
+                sprite_delete(newsprite);
+                return -1;
+            }
+        }else{
+            sprite_add_from_surface(alphasprite,surf,0,0,w,h,false,false);
+        }
+        draw_set_blend_mode(bm_normal);
+    }
+ 
+    surface_reset_target();
+    sprite_assign(sprite,newsprite);
+    sprite_set_alpha_from_sprite(sprite,alphasprite);
+    sprite_delete(newsprite);
+    sprite_delete(alphasprite);
+    surface_free(surf);
+}
