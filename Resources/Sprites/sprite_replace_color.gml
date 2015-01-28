@@ -1,48 +1,14 @@
-#related
-sprite_resources
-#contributors
-xot
-EyeGuy
-#history
-20070413 xot submits original script
-20110322 xot replaces script with GM8 compatible version
-#keywords
-graphics
-sprites
-mod
-modify
-change
-surface
-surfaces
-dynamic
-#note
-Here is a much slower script that supports color blending:
-s:[sprite_replace_color_blend sprite_replace_color_blend()]
-#note
-A GM6 and GM7 compatible version of this script can be found here:
-s:[sprite_replace_color_gm7 sprite_replace_color()]
-#usage
-sprite_replace_color(sprite,oldcolor,newcolor)
-Replaces one color in a given sprite for another color.
 #define sprite_replace_color
-/*
-**  Usage:
-**      sprite_replace_color(sprite,oldcolor,newcolor)
-**
-**  Arguments:
-**      sprite      sprite to change
-**      oldcolor    color that will be replaced
-**      newcolor    color used as replacement
-**
-**  Returns:
-**      (-1) on error
-**
-**  Notes:
-**      This script replaces one color in a sprite with another.
-**      No new sprites are created, the given sprite is changed.
-**
-**  GMLscripts.com
-*/
+/// sprite_replace_color(sprite,oldcolor,newcolor)
+//
+//  Replaces one color in a given sprite with another. No new sprite are
+//  created, the given sprite is changed. Returns (-1) on error.
+//
+//      sprite      sprite to change, real
+//      oldcolor    color that will be replaced, real
+//      newcolor    color used as replacement, real
+//
+/// GMLscripts.com/license
 {
     var sprite, oldc, newc;
     sprite = argument0;

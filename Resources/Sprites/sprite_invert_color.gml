@@ -1,36 +1,12 @@
-#related
-sprite_resources
-#contributors
-xot
-#keywords
-graphics
-sprites
-mod
-modify
-change
-surface
-surfaces
-dynamic
-#usage
-sprite_invert_color(sprite)
-Inverts the colors of a given sprite.
 #define sprite_invert_color
-/*
-**  Usage:
-**      sprite_invert_color(sprite)
-**
-**  Arguments:
-**      sprite      sprite to change
-**
-**  Returns:
-**      (-1) on error
-**
-**  Notes:
-**      This script inverts the colors of a given sprite.
-**      No new sprites are created, the given sprite is changed.
-**
-**  GMLscripts.com
-*/
+/// sprite_invert_color(sprite)
+//
+//  Inverts the colors of a given sprite. No new sprites are 
+//  created, the given sprite is change. Returns (-1) on error.
+//
+//      sprite      sprite to change
+//
+/// GMLscripts.com
 {
     var sprite,w,h,n,p,s,l,xo,yo,surf,i,newsprite,alphasprite;
     sprite = argument0;
@@ -85,4 +61,5 @@ Inverts the colors of a given sprite.
     sprite_delete(newsprite);
     sprite_delete(alphasprite);
     surface_free(surf);
+    return 0;
 }

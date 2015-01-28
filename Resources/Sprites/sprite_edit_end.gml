@@ -1,42 +1,13 @@
-#related
-sprite_resources
-#contributors
-Leif902
-xot
-#keywords
-graphics
-sprites
-mod
-modify
-change
-surface
-surfaces
-dynamic
-#note
-This function is dependent on <a href="/script/sprite_edit_begin">sprite_edit_begin()</a>.
-#usage
-sprite_edit_end(session)
-Ends a sprite editing session, altering the graphics of the original sprite.
 #define sprite_edit_end
-/*
-**  Usage:
-**      sprite_edit_end(session)
-**
-**  Arguments:
-**      session     the editing session ID provided by sprite_edit_begin()
-**
-**  Returns:
-**      nothing
-**
-**  Notes:
-**      Ends the editing session started with sprite_edit_begin, replacing
-**      the old sprite with the edited sprite and freeing the editing surface.
-**
-**  Dependencies:
-**      sprite_edit_begin()
-**
-**  GMLscripts.com
-*/
+/// sprite_edit_end(session)
+//
+//  Ends a sprite editing session started with sprite_edit_begin().
+//  At the end of a session, the original sprite is replaced with
+//  a new version and the editing surface is freed.
+//
+//      session     editing session ID given by sprite_edit_begin(), real
+//
+/// GMLscripts.com/license
 {
     var session,p,surface,sprite,w,h,n,prec,tran,smth,load,xoff,yoff,temp,i;
     session = argument0        
@@ -60,4 +31,5 @@ Ends a sprite editing session, altering the graphics of the original sprite.
     sprite_delete(temp);
     surface_reset_target();
     surface_free(surface);
+    return 0;
 }

@@ -1,44 +1,14 @@
-#contributors
-xot
-#history
-20080220 xot submits original script
-20080907 xot ensures surface targets are reset before being freed
-20131014 xot creates version compatible with GM8
-#related
-sprite_resources
-#keywords
-graphics
-sprites
-mod
-modify
-change
-surface
-surfaces
-dynamic
-gray
-grey
-greyscale
-#usage
-sprite_desaturate(sprite)
-Converts a sprite to grayscale.
 #define sprite_desaturate
-/*
-**  Usage:
-**      sprite_desaturate(sprite)
-**
-**  Arguments:
-**      sprite      sprite to change
-**
-**  Returns:
-**      (-1) on error
-**
-**  Notes:
-**      This script converts a sprite to grayscale.
-**      No new sprites are created, the given sprite is changed.
-**      Blending mode is reset to normal.
-**
-**  GMLscripts.com
-*/
+/// sprite_desaturate(sprite)
+//
+//  Changes a sprite into a grayscale version of itself. 
+//  No new sprites are created, the given sprite is changed.
+//    
+//      sprite      sprite to change, real
+//
+//  Note: Blending mode is reset to normal after calling this script.
+//
+/// GMLscripts.com/license
 {
     var sprite,w,h,n,p,s,l,xo,yo,surf,i,newsprite,alphasprite;
     sprite = argument0;
