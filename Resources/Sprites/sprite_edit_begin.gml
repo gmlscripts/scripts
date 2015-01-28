@@ -22,7 +22,7 @@
     yoff = sprite_get_yoffset(sprite);
     surface = surface_create(w*n,h);
     surface_set_target(surface);
-    draw_clear(c_black);
+    draw_clear_alpha(c_black,0);
     draw_set_blend_mode_ext(bm_one,bm_zero);
     draw_set_alpha(1);
     for(i=0; i<n; i+=1) {
