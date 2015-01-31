@@ -1,34 +1,24 @@
 #define explode_real
-/*
-**  Usage:  
-**      size = explode_real(array,sep,data);
-**
-**  Arguments:  
-**      array       name of a local array, string
-**      sep         seperator character, string
-**      data        array data, string
-**
-**  Returns:
-**      size        size of the array of data
-**
-**  Notes:
-**      Converts a string of data with elements seperated
-**      by a delimiter into an array of reals.
-**
-**  GMLscripts.com
-*/
+/// explode_real(delimiter,string)
+//
+//  Returns an array of real values parsed from a given 
+//  string of elements separated by a delimiter.
+//
+//      delimiter   delimiter character, string
+//      string      group of elements, string
+//
+/// GMLscripts.com/license
 {
-    var arr,sep,dat,len,ind,pos;
-    arr = argument0;
-    sep = argument1;
-    dat = argument2 + sep;
-    len = string_length(sep);
-    ind = 0;
-    repeat (string_count(sep,dat)) {
-        pos = string_pos(sep,dat)-1;
-        variable_local_array_set(arr,ind,real(string_copy(dat,1,pos)));
-        dat = string_delete(dat,1,pos+len);
-        ind += 1;
+    var arr;
+    var del = argument0;
+    var str = argument1 + del;
+    var len = string_length(del);
+    var ind = 0;
+    repeat (string_count(del, str)) {
+        var pos = string_pos(del, str) - 1;
+        arr[ind] = real(string_copy(str, 1, pos));
+        str = string_delete(str, 1, pos + len);
+        ind++;
     }
-    return ind;
+    return arr;
 }
