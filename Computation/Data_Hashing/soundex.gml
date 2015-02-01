@@ -10,18 +10,21 @@
 //
 /// GMLscripts.com/license
 {
-    var str,len,tab,out,last,pos,char,val;
-    str = string_upper(string_letters(argument0));
-    len = string_length(str);
+    var str = string_upper(string_letters(argument0));
+    var len = string_length(str);
     if (len == 0) return "";
-    tab = "01230120022455012623010202";
-    out = string_char_at(str,1);
-    last = out;
-    for (pos=2; pos<=len; pos+=1) {
-        char = string_char_at(str,pos);
-        if (char == last) continue;
-        last = char;
-        val = string_char_at(tab,ord(char)-64);
+    var tab = "0123012X02245501262301X202";
+    var out = string_char_at(str,1);
+    var lastc = out;
+    var lastv = string_char_at(tab,ord(out)-64);
+    for (var pos=2; pos<=len; pos++) {
+        var char = string_char_at(str,pos);
+        var val = string_char_at(tab,ord(char)-64);
+        if (char == lastc) continue;
+        if (val == "X") continue;
+        lastc = char;
+        if (val == lastv) continue;
+        lastv = val;
         if (val == "0") continue;
         out += val;
     }
