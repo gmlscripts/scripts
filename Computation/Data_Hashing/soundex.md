@@ -1,6 +1,11 @@
 soundex
 =======
 
+Warning: This script is [under review]. It was coded using an
+incomplete description of the Soundex algorithm and does not
+always produce the correct values. It should be updated soon.
+[under review]: https://github.com/gmlscripts/scripts/issues/2
+
 [Wikipedia]:
 
 > Soundex is a phonetic algorithm for indexing names by sound, 
