@@ -5,9 +5,9 @@
 //  given number converted form one base to another.
 //  Base36 is the largest base supported.
 //
-//      number      number to be converted, string
-//      oldbase     base of the given number, real
-//      newbase     base of the returned value, real
+//      number      integer value to be converted, string
+//      oldbase     base of the given number, integer
+//      newbase     base of the returned value, integer
 //
 /// GMLscripts.com/license
 {
