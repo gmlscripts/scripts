@@ -1,7 +1,6 @@
 /// dec_to_roman(num)
 //
-//  Returns a string of Roman numerals
-//  representing the given integer.
+//  Returns a string of Roman numerals representing the given integer.
 //
 //      num         positive integer less than 5000, real
 //
