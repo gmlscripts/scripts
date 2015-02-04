@@ -1,7 +1,7 @@
-#define ds_list_dispersion
-/// ds_list_dispersion(id)
+#define ds_list_range
+/// ds_list_range(id)
 //
-//  Returns the dispersion of the values in a given list.
+//  Returns the range of the values in a given list.
 //
 //      id          list data structure, real
 //
