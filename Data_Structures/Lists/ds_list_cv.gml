@@ -1,7 +1,7 @@
 #define ds_list_cv
 /// ds_list_cv(id[,sample])
 //
-//  Returns the coefficient of deviation for the values in a given list.
+//  Returns the coefficient of variation for the values in a given list.
 //
 //      id          list data structure, real
 //      sample      true if the list is made up of a sample, bool
