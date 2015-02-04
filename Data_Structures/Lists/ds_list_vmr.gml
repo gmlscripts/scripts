@@ -1,5 +1,5 @@
-#define ds_list_vrm
-/// ds_list_vrm(id [,sample])
+#define ds_list_vmr
+/// ds_list_vmr(id [,sample])
 //
 //  Returns the variance-to-mean ratio of the values in a given list.
 //
