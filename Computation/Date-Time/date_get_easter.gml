@@ -23,5 +23,5 @@
     m = (a+11*h+22*l) div 451;
     month = (h+l-7*m+114) div 31;
     day = ((h+l-7*m+114) mod 31)+1;
-    return date_create_date(year, month, day);
+    return date_create_datetime(year, month, day, 0, 0, 0);
 }
