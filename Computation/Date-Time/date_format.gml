@@ -57,10 +57,10 @@
 /// GMLscripts.com/license
 {
     var str,dat,out,day,month,year,week,weekday,second,minute,hour24,hour12,i,c;
-    str = argument0;
-    dat = argument1;
+    str = argument[0];
+    if (argument_count > 1) dat = argument[1];
+    else dat = date_current_datetime();
     out = "";
-    if (dat == 0) dat = date_current_datetime();
     day     = date_get_day(dat);
     month   = date_get_month(dat);
     year    = date_get_year(dat);
