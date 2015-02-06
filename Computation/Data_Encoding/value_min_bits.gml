@@ -1,8 +1,8 @@
 #define value_min_bits
 /// value_min_bits(n,size)
 //
-//  Returns the smallest number of bits that can 
-//  be used to store a given value.
+//  Returns the smallest number of words of a given
+//  size that can be used to store a given value.
 //
 //      n           value, integer
 //      size        word size, integer
