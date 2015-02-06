@@ -1,8 +1,8 @@
 #define word_max_value
 /// word_max_value(length,size)
 //
-//  Returns the largest unsigned integer that can be stored in
-//  the given number of words of the given size.
+//  Returns the largest unsigned integer that can be
+//  stored in a given number of words of a given size.
 //
 //      length      number of words, integer
 //      size        size of word in bits, integer
