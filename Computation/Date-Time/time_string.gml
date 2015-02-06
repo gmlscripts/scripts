@@ -1,10 +1,11 @@
 #define time_string
-/// time_string(format,sep)
+/// time_string(format [,sep])
 //
 //  Returns the system time as a string in 12 or 24 hour "HH:MM:SS" format.
+//  The default separator is ":" but a custom string can be supplied.
 //
 //      format      12 or 24, real
-//      sep         seperator, string, (optional; ":" is default)
+//      sep         separator, string (optional)
 //
 /// GMLscripts.com/license
 {
