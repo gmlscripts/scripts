@@ -1,8 +1,8 @@
 #define string_limit
 /// string_limit(string,length,ext)
 //
-//  Returns a given string. If it exceeds a certain length, it is
-//  truncated to fit and an extension (such as an ellipsis) is appended.
+//  Returns a given string, truncated if it exceeds a certain length.
+//  If truncated, an extension (such as an ellipsis) can be appended.
 //
 //      str         text, string
 //      length      character length, real
