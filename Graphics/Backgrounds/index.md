@@ -1,0 +1,1 @@
+Here you will find scripts for drawing background resources in various ways.
