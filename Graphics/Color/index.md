@@ -1,0 +1,1 @@
+Here you will find scripts for manipulating colors in various ways.
