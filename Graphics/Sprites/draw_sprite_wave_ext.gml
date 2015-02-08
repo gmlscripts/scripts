@@ -1,5 +1,5 @@
 #define draw_sprite_wave_ext
-/// draw_sprite_wave_ext(sprite,subimg,x,y,axis,wavelength,amplitude,phase,xscale,yscale,blend,alpha)
+/// draw_sprite_wave_ext(sprite,subimg,x,y,axis,wavelength,amplitude,phase,xscale,yscale,color,alpha)
 //
 //  Draws a sprite with wave-like distortion. If scaling is used, 
 //  wavelength is also scaled. The fractional part of phase argument
@@ -14,7 +14,7 @@
 //      phase       wave position offset, real
 //      xscale      horizontal scaling, real
 //      yscale      vertical scaling, real
-//      blend       color blending, real
+//      color       color blending, real
 //      alpha       alpha blending, real
 //
 /// GMLscripts.com/license
