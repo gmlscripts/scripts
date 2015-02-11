@@ -1,7 +1,7 @@
 #define gauss
 /// gauss(mean,deviation)
 //
-//  Returns a pseudo-random number with an exact Gauusain distribution.
+//  Returns a pseudo-random number with an exact Gaussian distribution.
 //
 //      mean        mean value of the distribution, real
 //      deviation   standard deviation of distribution, real
