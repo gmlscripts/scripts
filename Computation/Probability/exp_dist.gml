@@ -1,11 +1,11 @@
 #define exp_dist
-/// exp_dist(x)
+/// exp_dist(mean)
 //
-//  Returns a random number from 0 to x with an exponential distribution.
+//  Returns a random number with exponential distribution.
 //
-//      x           upper bound of desired random value, real
+//      mean        mean value of the distribution, real
 //
 /// GMLscripts.com/license
 {
-    return argument0 * (-ln(random(1)))
+    return -argument0 * ln(1-random(1));
 }
