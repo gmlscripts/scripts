@@ -1,6 +1,9 @@
 #define draw_sprite_tiled_area
 /// draw_sprite_tiled_area(sprite,subimg,x,y,x1,y2,x2,y2)
 //
+//  Draws a repeated sprite image, tiled to fill a given region and with
+//  a given offset. 
+//
 //      sprite      sprite to draw, real
 //      subimg      sprite subimage to draw, real
 //      x,y         origin offset, real
@@ -48,4 +51,5 @@
         }
         j = jj;
     }
+    return 0;
 }
