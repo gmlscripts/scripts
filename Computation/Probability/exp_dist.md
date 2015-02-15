@@ -1,10 +1,11 @@
 exp_dist
 ========
 
-Note: This script is *under review*. See [this topic] for more information.
+![right](/images/exp_dist.png "exp_dist()")
+Returns a random value with [exponential distribution].
 
 script: exp_dist.gml
 
-contributors: pedrosorio
+contributors: pedrosoriom, xot
 
-[this topic]: /forums/viewtopic.php?pid=1881#p1881
+[exponential distribution]: http://en.wikipedia.org/wiki/Exponential_distribution
