@@ -1,5 +1,5 @@
 #define draw_background_tiled_area_ext
-/// draw_background_tiled_area_ext(background,x,y,x1,y2,x2,y2)
+/// draw_background_tiled_area_ext(background,x,y,x1,y2,x2,y2,color,alpha)
 //
 //  Draws a repeated background image, tiled to fill a given region and with
 //  a given offset. 
@@ -47,8 +47,9 @@
             if(y2 <= j+bh) height = ((bh)-(j+bh-y2)+1)-top;
             else height = bh-top;
             
-            draw_background_part_ext(bg,left,top,width,height,X,Y,1,1,argument8,argument9);
+            draw_background_part_ext(bg,left,top,width,height,X,Y,1,1,argument7,argument8);
         }
         j = jj;
     }
+    return 0;
 }
