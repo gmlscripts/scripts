@@ -19,9 +19,9 @@
     var m = ds_grid_get_min(grid,0,0,w-1,h-1);
     if (M == m) var f = 0 else var f = 1/(M-m);
    
-    for (i=0; i<w; i++)
+    for (var i=0; i<w; i++)
     {
-        for (j=0; j<h; j++)
+        for (var j=0; j<h; j++)
         {
             var value = f*(ds_grid_get(grid,i,j)-m);
             draw_point_color(sx+i,sy+j,make_color_hsv(0,0,clamp(255*value,0,255)));
