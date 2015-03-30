@@ -17,32 +17,15 @@
     var yps = argument3;
     var xsh = argument4;
     var ysh = argument5;
+    
+    var M;
+    M[15] = 1;  M[14] = 0;  M[13] = 0;    M[12] = 0;
+    M[11] = 0;  M[10] = 1;  M[9]  = 0;    M[8]  = 0;
+    M[7]  = 0;  M[6]  = 0;  M[5]  = 1;    M[4]  = xsh;
+    M[3]  = 0;  M[2]  = 0;  M[1]  = ysh;  M[0]  = 1;
 
     d3d_transform_stack_push();
-    d3d_transform_set_identity();
-    var dis = point_distance(0, 0, xsh, ysh);
-    if (dis > 0.000001)
-    {
-        // Do x-axis shear
-        var ang = point_direction(0, 0, xsh, ysh);
-        d3d_transform_add_rotation_y(ang);
-        d3d_transform_add_scaling(1 / sqrt(3), dis / 2, 1);
-        d3d_transform_add_rotation_z(60);
-        d3d_transform_add_scaling(3, -1, 1);
-        d3d_transform_add_rotation_z(30);
-        d3d_transform_add_scaling(1, -2 / sqrt(3) / dis, 1);
-        d3d_transform_add_rotation_y(-ang);
-
-        // Do y-axis shear
-        ang = point_direction(0, 0, ysh, xsh);
-        d3d_transform_add_rotation_x(ang);
-        d3d_transform_add_scaling(-dis / 2, 1 / sqrt(3), 1);
-        d3d_transform_add_rotation_z(60);
-        d3d_transform_add_scaling(-1, 3, 1);
-        d3d_transform_add_rotation_z(30);
-        d3d_transform_add_scaling(2 / sqrt(3) / dis, 1, 1);
-        d3d_transform_add_rotation_x(-ang);
-    }
+    matrix_set(matrix_world, M);
     d3d_transform_add_translation(xps, yps, 0);
     draw_sprite(spr, sub, 0, 0);
     d3d_transform_stack_pop();
