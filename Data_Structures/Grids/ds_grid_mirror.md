@@ -1,13 +1,29 @@
 ds_grid_mirror
 ==============
 
-$$\text{Original}=\begin{bmatrix}\color{red}A&B\\C&D\\E&\color{blue}F\end{bmatrix} 
+$$\mathbf{G} = \begin{array}{|c|c|}
+\hline \color{red}A&B
+\\\hline C&D
+\\\hline E&\color{blue}F
+\\\hline \end{array}
 \qquad
-\text{Horiz}=\begin{bmatrix}B&\color{red}A\\D&C\\\color{blue}F&E\end{bmatrix} 
+f(\mathbf{G},1,0) = \begin{array}{|c|c|}
+\hline B&\color{red}A
+\\\hline D&C
+\\\hline \color{blue}F&E
+\\\hline \end{array}
 \qquad
-\text{Vert}=\begin{bmatrix}E&\color{blue}F\\C&D\\\color{red}A&B\end{bmatrix}
+f(\mathbf{G},0,1) = \begin{array}{|c|c|}
+\hline E&\color{blue}F
+\\\hline C&D
+\\\hline \color{red}A&B
+\\\hline \end{array}
 \qquad
-\text{Both}=\begin{bmatrix}\color{blue}F&E\\D&C\\B&\color{red}A\end{bmatrix}$$
+f(\mathbf{G},1,1) = \begin{array}{|c|c|}
+\hline\color{blue}F&E
+\\\hline D&C
+\\\hline B&\color{red}A
+\\\hline \end{array}$$
 
 Note: Mirroring a grid both horizontally and vertically is the same
 as rotating it 180 degrees.
