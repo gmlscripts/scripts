@@ -1,19 +1,19 @@
 ds_grid_swap_rows
 =================
 
-$$\text{Original}=\begin{bmatrix}
-\color{red}A&\color{red}B&\color{red}C&\color{red}D\\
-E&F&G&H\\
-\color{blue}I&\color{blue}J&\color{blue}K&\color{blue}L\\
-M&N&O&P
-\end{bmatrix}
+$$\mathbf{G} = \begin{array}{|c|c|c|c|}
+\hline \color{red}A&\color{red}B&\color{red}C&\color{red}D
+\\\hline E&F&G&H
+\\\hline \color{blue}I&\color{blue}J&\color{blue}K&\color{blue}L
+\\\hline M&N&O&P
+\\\hline \end{array}
 \qquad
-\text{Swap(0,2)}=\begin{bmatrix}
-\color{blue}I&\color{blue}J&\color{blue}K&\color{blue}L\\
-E&F&G&H\\
-\color{red}A&\color{red}B&\color{red}C&\color{red}D\\
-M&N&O&P
-\end{bmatrix}$$
+f(\mathbf{G},0,2) = \begin{array}{|c|c|c|c|}
+\hline \color{blue}I&\color{blue}J&\color{blue}K&\color{blue}L
+\\\hline E&F&G&H
+\\\hline \color{red}A&\color{red}B&\color{red}C&\color{red}D
+\\\hline M&N&O&P
+\\\hline \end{array}$$
 
 script: ds_grid_swap_rows.gml
 
