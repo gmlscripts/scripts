@@ -8,9 +8,9 @@
 //
 /// GMLscripts.com/license
 {
-    var array = argument[0];
-    var o = array_length_1d(array) - 1;
+    var r = argument[0];
+    var o = array_length_1d(r) - 1;
     var i = argument_count;
-    while (--i > 0) array[@o + i] = argument[i];
-    return array;
+    while (--i > 0) r[@o + i] = argument[i];
+    return r;
 }
