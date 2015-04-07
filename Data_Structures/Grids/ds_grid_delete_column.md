@@ -18,6 +18,9 @@ f(\mathbf{G},2) = \begin{array}{|c|c|c|c|}
 \\\hline 03&13&33
 \\\hline \end{array}$$
 
+Warning: Attempting to delete a column from a grid
+with only one column will generate an error.
+
 script: ds_grid_delete_column.gml
 
 contributors: xot

@@ -7,6 +7,9 @@
 //      grid        grid data structure, id
 //      row         row index, integer
 //
+//  Warning: Attempting to delete a row from a grid
+//  with only one row will generate an error.
+//
 /// GMLscripts.com/license
 {
     var grid = argument0;

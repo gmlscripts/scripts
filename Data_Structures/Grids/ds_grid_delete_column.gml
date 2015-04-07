@@ -7,6 +7,9 @@
 //      grid        grid data structure, id
 //      col         column index, integer
 //
+//  Warning: Attempting to delete a column from a grid
+//  with only one column will generate an error.
+//
 /// GMLscripts.com/license
 {
     var grid = argument0;
