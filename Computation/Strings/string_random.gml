@@ -9,7 +9,6 @@
 //      length      number of characters to return
 //
 /// GMLscripts.com/license
-*/
 {
     var str,cnt,out,len;
     str = argument0;
