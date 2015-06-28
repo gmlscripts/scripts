@@ -9,6 +9,11 @@ taken from the article in the link given immediately below.
 
 <http://www4.ncsu.edu/unity/users/p/pfackler/www/ECG790C/accuratecumnorm.pdf>
 
+If the above link does not work, an alternate version of the same
+paper can be found below.
+
+<http://www.codeplanet.eu/files/download/accuratecumnorm.pdf>
+
 script: erf.gml
 
 contributors: Yourself, brac37
