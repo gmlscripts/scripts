@@ -1,7 +1,8 @@
 ds_map_deep_clone
 =================
 
-Deeply clones a map to a new copy, cloning any nested maps and lists,
+Clones a map deeply to a new copy, 
+cloning any nested maps and lists,
 and returning the created root map.
 
     map = ds_map_create();                  //      resulting map D:
