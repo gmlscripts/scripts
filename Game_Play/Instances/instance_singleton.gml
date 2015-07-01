@@ -1,7 +1,7 @@
 #define instance_singleton
 /// instance_singleton(object)
 //
-//  Returns a single copy of the given object, 
+//  Returns a single instance of the given object, 
 //  creating one if no instance exists.
 //
 //      object      object to look for, real
