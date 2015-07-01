@@ -1,7 +1,7 @@
 #define ds_map_clone
 /// ds_map_clone(map)
 //
-//  Shallow clones a map to a new copy
+//  Clones a map simply to a new copy 
 //  and returns the created map.
 //
 //      map         map to clone
