@@ -1,7 +1,7 @@
 jump_to_mouse
 =============
 
-I know what you're thinking. This is a dumb script. At first, I though 
+I know what you're thinking. This is a dumb script. At first I thought 
 so, too. Well, let me tell you something. There is something to be said 
 for abstraction using descriptive functions. That's why this script exists.
 
