@@ -16,13 +16,10 @@
     xx  = argument[0];
     yy  = argument[1];
     obj = argument[2];
+    rad = 4;
+    res = 1;
     if(argument_count>3){ rad = argument[3];
-    if(argument_count>4){ res = argument[4];
-    } else { res = 1; }
-    } else { 
-        res = 1;
-        rad = 4;
-    }
+    if(argument_count>4){ res = argument[4]; }}
     if (rad <= 0) rad = 4;
     if (res <= 0) res = 1;
     nx = 0;
