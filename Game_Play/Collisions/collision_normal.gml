@@ -13,11 +13,13 @@
 /// GMLscripts.com/license
 {
     var xx,yy,obj,rad,nx,ny,i,j;
-    xx  = argument0;
-    yy  = argument1;
-    obj = argument2;
-    rad = argument3;
-    res = argument4;
+    xx  = argument[0];
+    yy  = argument[1];
+    obj = argument[2];
+    rad = 4;
+    res = 1;
+    if(argument_count>3){ rad = argument[3];
+    if(argument_count>4){ res = argument[4]; }}
     if (rad <= 0) rad = 4;
     if (res <= 0) res = 1;
     nx = 0;
