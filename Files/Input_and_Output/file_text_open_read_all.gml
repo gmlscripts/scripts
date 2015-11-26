@@ -1,16 +1,15 @@
 #define file_text_open_read_all
-/// file_text_open_read_all(fname,delim)
+/// file_text_open_read_all(fname)
 //
 //  Returns a string read from the entire contents of a file
 //
-//      file        
-//      delim       The string to insert between lines eg. '#' or '\n'
+//      fname       The file to read
 //
 /// GMLscripts.com/license
 {
 	var file = file_text_open_read(argument0);
 	if (file < 0) return undefined;
-	var delim = string(argument1);
+	var delim = "#";
 	var str = "";
 	while (!file_text_eof(file)) {
 		str += file_text_read_string(file);
