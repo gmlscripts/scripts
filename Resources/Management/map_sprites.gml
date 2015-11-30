@@ -8,9 +8,11 @@
 //
 /// GMLscripts.com/license
 {
-    var no,i,ds_map;
+    var surf,no,i,ds_map;
     ds_map = argument0;
-    no = sprite_create_from_screen(0,0,1,1,false,false,false,false,0,0);
+    surf = surface_create(1,1);
+    no = sprite_create_from_surface(surf,0,0,1,1,false,false,0,0);
+    surface_free(surf);
     sprite_delete(no);
     for (i=0; i<no; i+=1) {
         if (sprite_exists(i)) {
