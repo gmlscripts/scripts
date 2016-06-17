@@ -22,7 +22,7 @@
     nknots = ds_list_size(knotlist);
     nspans = nknots - 3;
     if (nspans < 1) return 0; // ERROR: too few knots
-    t = median(t,0,1) * nspans;
+    t = clamp(t, 0, 1) * nspans;
     span = floor(t);
     if (span >= nknots - 3) span = nknots - 3;
     t -= span;
