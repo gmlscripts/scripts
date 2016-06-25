@@ -1,8 +1,9 @@
 #define dec_to_hex
 /// dec_to_hex(dec)
 //
-//  Returns a string of hexadecimal digits (16 bits each)
-//  representing the given decimal integer.
+//  Returns a string of hexadecimal digits (4 bits each)
+//  representing the given decimal integer. Hexadecimal
+//  strings are padded to byte-sized pairs of digits.
 //
 //      dec         non-negative integer, real
 //
@@ -10,7 +11,7 @@
 {
     var dec, hex, h, byte, hi, lo;
     dec = argument0;
-    if (dec) hex = "" else hex="0";
+    if (dec) hex = "" else hex="00";
     h = "0123456789ABCDEF";
     while (dec) {
         byte = dec & 255;
