@@ -8,5 +8,5 @@
 //
 /// GMLscripts.com/license
 {
-    return argument0 & (1 << argument1);
+    return 1 & (argument0 >> argument1);
 }
