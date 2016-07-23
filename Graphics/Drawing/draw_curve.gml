@@ -2,7 +2,6 @@
 /// draw_curve(x1,y1,x2,y2,direction,detail)
 //
 //  Draws a curve between two points with a given starting angle.
-//  Depends on angle_difference().
 //
 //      x1,y1       position of start of curve, real
 //      x2,y2       position of end of curve, real
