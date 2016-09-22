@@ -13,7 +13,7 @@ of strings and separated by a delimiter.
     
     names = implode(",", array);
     
-    //  names == "Juliett,Victor,Mike,Charlie,Romeo,Oscar";
+    //  names == "Juliett,Victor,Mike,Charlie,Romeo,Oscar"
 
 script: implode.gml
 
