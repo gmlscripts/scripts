@@ -10,7 +10,7 @@
 {
     var no,i,ds_map;
     ds_map = argument0;
-    no = background_create_color(1,1,c_white,false);
+    no = background_create_color(1,1,c_white);
     background_delete(no);
     for (i=0; i<no; i+=1) {
         if (background_exists(i)) {
