@@ -6,7 +6,7 @@
 //  included when its parent is encoded as JSON.
 //
 //      id          list data structure, real
-//      list        the list to add
+//      list        list to add to list, real
 //
 /// GMLscripts.com/license
 {
