@@ -3,4 +3,4 @@ map_backgrounds
 
 script: map_backgrounds.gml
 
-contributors: paul23
+contributors: paul23, RaniSputnik

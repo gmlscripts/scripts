@@ -3,4 +3,4 @@ map_sprites
 
 script: map_sprites.gml
 
-contributors: paul23
+contributors: paul23, RaniSputnik
