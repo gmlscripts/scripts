@@ -1,9 +1,11 @@
 #define file_text_open_read_all
 /// file_text_open_read_all(fname)
 //
-//  Returns a string read from the entire contents of a file
+//  Returns the contents of a given file as a multiline 
+//  string. Lines are delimited by the "#" character.
+//  If the file cannot be read, returns undefined.
 //
-//      fname       The file to read
+//      fname       file to read, string
 //
 /// GMLscripts.com/license
 {
