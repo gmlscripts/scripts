@@ -12,7 +12,9 @@ Guidelines for contributing
 2. Do not delete obsolete scripts from the library. Raise an issue instead.
    Obsolete scripts are handled differently and their descriptive .md
    files have a note placed at the top indicating they are obsolete.
-
+3. The [submission guidelines][1] of the GMLscripts.com site also apply here.
+   [1]: http://www.gmlscripts.com/forums/viewtopic.php?id=45
+   
 Licensing
 ---------
 
