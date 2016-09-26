@@ -3,6 +3,19 @@ GMLscripts.com scripts for GM:Studio
 
 This is main repository of scripts hosted by GMLscripts.com.
 
+Guidelines for contributing
+---------------------------
+
+1. Please try to keep your pull requests small, ideally limited to files
+   for one script. If a script requires helper scripts to function they
+   should be included.
+2. Do not delete obsolete scripts from the library. Raise an issue instead.
+   Obsolete scripts are handled differently and their descriptive .md
+   files have a note placed at the top indicating they are obsolete.
+
+Licensing
+---------
+
 All of the scripts in the GMLscripts.com collection are free 
 to use in your GameMaker projects. They are collectively covered 
 by the broadly permissive license outlined below. If you make use 
