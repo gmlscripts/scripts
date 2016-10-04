@@ -8,10 +8,14 @@ Guidelines for contributing
 
 1. Please try to keep your pull requests small, ideally limited to files
    for one script. If a script requires helper scripts to function they
-   should be included.
+   should be included. This isn't a strict rule. It's just nice if a pull
+   request can be merged without cherry picking. Multiple scripts are OK
+   but be sensible with your commits. Don't commit everything at once.
 2. Do not delete obsolete scripts from the library. Raise an issue instead.
    Obsolete scripts are handled differently and their descriptive .md
-   files have a note placed at the top indicating they are obsolete.
+   files have a note placed at the top indicating they are obsolete. The
+   reason they are kept in the repo is to keep old web links functioning.
+   This will change in the future but this is the way the site works now.
 3. The [submission guidelines][1] of the GMLscripts.com site also apply here.
    [1]: http://www.gmlscripts.com/forums/viewtopic.php?id=45
    
