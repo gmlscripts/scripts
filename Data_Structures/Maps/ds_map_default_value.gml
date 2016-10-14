@@ -9,7 +9,7 @@
 //      key         key in the map
 //      val         default value to insert
 //
-/// GMLScripts.com/license
+/// GMLscripts.com/license
 {
     var map, key, val;
     map = argument0;

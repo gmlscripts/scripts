@@ -6,7 +6,7 @@
 //
 //      map         map to clone
 //
-/// GMLScripts.com/license
+/// GMLscripts.com/license
 {
     var map, clone;
     map = argument0;
