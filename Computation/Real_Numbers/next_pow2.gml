@@ -5,7 +5,7 @@
 //
 //      n       positive integer
 //
-/// GMLscripts.com
+/// GMLscripts.com/license
 {
 	var n = argument0 - 1;
 	n |= (n >>  1);
