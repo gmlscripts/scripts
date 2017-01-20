@@ -2,7 +2,7 @@
 /// string_trim(str)
 //
 //  Returns the given string with whitespace stripped from its start 
-//  and end. Whitespace is defined as SPACE, TAB, NL, VT, FF, CR.
+//  and end. Whitespace is defined as SPACE, HT, LF, VT, FF, CR.
 //
 //      str         text, string
 //
