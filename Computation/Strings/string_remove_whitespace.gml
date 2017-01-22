@@ -1,3 +1,4 @@
+#define string_remove_whitespace
 /// string_remove_whitespace(str [, sub])
 //
 //  Consolidates and removes all whitespace from a string,
