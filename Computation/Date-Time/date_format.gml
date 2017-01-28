@@ -107,24 +107,24 @@
             break;
         case "l":
             switch (weekday) {
-            case 1: out += "Sunday";    break;
-            case 2: out += "Monday";    break;
-            case 3: out += "Tuesday";   break;
-            case 4: out += "Wednesday"; break;
-            case 5: out += "Thursday";  break;
-            case 6: out += "Friday";    break;
-            case 7: out += "Saturday";  break;
+            case 0: out += "Sunday";    break;
+            case 1: out += "Monday";    break;
+            case 2: out += "Tuesday";   break;
+            case 3: out += "Wednesday"; break;
+            case 4: out += "Thursday";  break;
+            case 5: out += "Friday";    break;
+            case 6: out += "Saturday";  break;
             }
             break;
         case "D":
             switch (weekday) {
-            case 1: out += "Sun"; break;
-            case 2: out += "Mon"; break;
-            case 3: out += "Tue"; break;
-            case 4: out += "Wed"; break;
-            case 5: out += "Thu"; break;
-            case 6: out += "Fri"; break;
-            case 7: out += "Sat"; break;
+            case 0: out += "Sun"; break;
+            case 1: out += "Mon"; break;
+            case 2: out += "Tue"; break;
+            case 3: out += "Wed"; break;
+            case 4: out += "Thu"; break;
+            case 5: out += "Fri"; break;
+            case 6: out += "Sat"; break;
             }
             break;
         case "S":
@@ -155,8 +155,8 @@
         case "z": out += string(date_get_day_of_year(dat)-1); break;
         case "t": out += string(date_days_in_month(month)); break;
         case "L": out += string(date_leap_year(dat)); break;
-        case "w": out += string(weekday-1); break;
-        case "N": out += string(((weekday+5) mod 7)+1); break;
+        case "w": out += string(weekday); break;
+        case "N": out += string(((weekday+6) mod 7)+1); break;
         case "W": out += string(week); break;
         case "c": out += date_format("o-m-dTH:i:s",dat); break;
         case "r": out += date_format("D, j M Y H:i:s -0000",dat); break;
