@@ -1,9 +1,9 @@
 #define string_right
 /// string_right(str,num)
 //
-//  Returns a number of characters from the end a string.
-//  If the number of characters given is negative, the
-//  string will be shortened by that amount.
+//  Returns a number of characters from the end of a string.
+//  If the number of characters given is negative,
+//  the string will be shortened by that amount.
 //
 //      str         string of text, string
 //      num         number of characters, real
