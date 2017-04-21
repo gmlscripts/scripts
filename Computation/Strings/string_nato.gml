@@ -1,7 +1,7 @@
 #define string_nato
 /// string_nato(text)
 //
-//  Returns a given string as expressed by the Nato phonetic alphabet.
+//  Returns a given string as expressed by the NATO phonetic alphabet.
 //  Phonetic words will be separarted by spaces. Non-alphanumeric 
 //  characters are removed.
 //
@@ -29,7 +29,7 @@
     
     for (var i=1; i<len; i++) {
         var c = string_char_at(in ,i);
-        if (!ds_map_exists(nato ,c)) continue;
+        if (!ds_map_exists(nato, c)) continue;
         if (i > 1) out += " ";
         out += nato[? c];
     }

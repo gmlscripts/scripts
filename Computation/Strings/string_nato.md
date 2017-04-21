@@ -1,7 +1,7 @@
 string_nato
 ===========
 
-Returns a given string as expressed by the Nato phonetic alphabet.
+Returns a given string as expressed by the NATO phonetic alphabet.
 Phonetic words will be separarted by spaces. Non-alphanumeric 
 characters are removed.
 
