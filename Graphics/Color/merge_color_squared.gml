@@ -1,3 +1,4 @@
+#define merge_color_squared
 /// merge_color_squared(col1,col2,amount)
 //
 //  Returns a color merged from two colors by a given amount,

@@ -1,3 +1,4 @@
+#define merge_colors
 /// merge_colors(col1,col2,...,amount)
 //
 //  Returns a color merged from a series of two or more colors by
