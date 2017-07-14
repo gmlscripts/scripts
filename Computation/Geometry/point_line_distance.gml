@@ -21,7 +21,7 @@
     else
     {
         t = (dx*(argument0-argument2) + dy*(argument1-argument3)) / (dx*dx+dy*dy);
-        if (argument6) t = clamp(0, t, 1);
+        if (argument6) t = clamp(t, 0, 1);
         x0 = argument2 + t * dx;
         y0 = argument3 + t * dy;
     }
