@@ -7,10 +7,10 @@
 //
 /// GMLscripts.com/license
 {
-    var i,ds_map;
+    var i, ds_map;
     ds_map = argument0;
-    for (i=0; script_exists(i); i+=1) {
-        ds_map_add(ds_map,script_get_name(i),i);
+    for (i = 0; script_exists(i); i += 1) {
+        ds_map_add(ds_map, script_get_name(i), i);
     }
     return 0;
 }
