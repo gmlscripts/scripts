@@ -7,12 +7,5 @@
 //
 /// GMLscripts.com/license
 {
-	var n = argument0 - 1;
-	n |= (n >>  1);
-	n |= (n >>  2);
-	n |= (n >>  4);
-	n |= (n >>  8);
-	n |= (n >> 16);
-	n |= (n >> 32);
-	return n + 1;
+	return power(2,ceil(log2(argument0)));
 }

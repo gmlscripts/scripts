@@ -9,4 +9,4 @@ Returns the next power-of-two greater than or equal to a given value.
 
 script: next_pow2.gml
 
-contributors: xot
+contributors: davesch, xot
