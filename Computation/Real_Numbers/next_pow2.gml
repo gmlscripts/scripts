@@ -7,5 +7,5 @@
 //
 /// GMLscripts.com/license
 {
-	return power(2,ceil(log2(argument0)));
+    return 1 << ceil(log2(argument0));
 }
