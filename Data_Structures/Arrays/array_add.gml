@@ -4,8 +4,6 @@
 //  Returns the given array with elements appended to it.
 //  If an array is not given, the given value is returned.
 //
-//  Note: GM:Studio has a 16 argument limit.
-//
 /// GMLscripts.com/license
 {
     var r = argument[0];

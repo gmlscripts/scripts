@@ -1,9 +1,7 @@
-#define array_create
-/// array_create(value,...)
+#define array
+/// array(value,...)
 //
 //  Returns an array populated by given arguments.
-//
-//  Note: GM:Studio has a 16 argument limit.
 //
 /// GMLscripts.com/license
 {

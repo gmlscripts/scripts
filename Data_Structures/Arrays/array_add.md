@@ -17,8 +17,6 @@ If an array is not given, the given value is returned.
     //  names[4] == "Romeo"
     //  names[5] == "Victor"
 
-Note: GM:Studio has a 16 argument limit.
-
 script: array_add.gml
 
 contributors: YellowAfterlife

@@ -1,9 +1,9 @@
-array_create
-============
+array
+=====
 
 Returns an array populated by given arguments. 
 
-    names = array_create("Charlie", "Juliett", "Mike", "Oscar", "Romeo", "Victor");
+    names = array("Charlie", "Juliett", "Mike", "Oscar", "Romeo", "Victor");
     
     //  names[0] == "Charlie"
     //  names[1] == "Juliett"
@@ -12,8 +12,6 @@ Returns an array populated by given arguments.
     //  names[4] == "Romeo"
     //  names[5] == "Victor"
 
-Note: GM:Studio has a 16 argument limit.
-
-script: array_create.gml
+script: array.gml
 
 contributors: YellowAfterlife
