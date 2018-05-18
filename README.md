@@ -27,7 +27,7 @@ to use in your GameMaker projects. They are collectively covered
 by the broadly permissive license outlined below. If you make use
 of these scripts, please respect this license. Thank you.
 
-> Copyright (c) 2007-2017, GMLscripts.com
+> Copyright (c) 2007-2018, GMLscripts.com
 >
 > This software is provided 'as-is', without any express or implied
 > warranty. In no event will the authors be held liable for any damages
