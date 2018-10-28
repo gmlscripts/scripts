@@ -52,7 +52,7 @@
 //
 //  Examples:
 //      date_format("l jS of F Y h:i:s A") == "Sunday 4th of May 2008 05:45:34 PM"
-//      date_format('\I\t \i\s \t\h\e zS \d\a\y.') == "It is the 124th day."
+//      date_format("\I\t \i\s \t\h\e zS \d\a\y.") == "It is the 124th day."
 //
 /// GMLscripts.com/license
 {
