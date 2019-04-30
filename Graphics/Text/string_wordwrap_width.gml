@@ -12,7 +12,7 @@
 //
 /// GMLscripts.com/license
 {
-    var pos_space, pos_current, text_current, text_output, line_current;
+    var pos_space, pos_current, text_current, text_output;
     pos_space = -1;
     pos_current = 1;
     text_current = argument0;
