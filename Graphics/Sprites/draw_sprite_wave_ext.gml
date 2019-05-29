@@ -2,7 +2,7 @@
 /// draw_sprite_wave_ext(sprite,subimg,x,y,axis,wavelength,amplitude,phase,xscale,yscale,color,alpha)
 //
 //  Draws a sprite with wave-like distortion. If scaling is used, 
-//  wavelength is also scaled. The fractional part of phase argument
+//  wavelength is also scaled. The fractional part of the phase argument
 //  controls the wave cycle. A full cycle covers the [0..1] interval.
 //
 //      sprite      sprite index, real

@@ -1,3 +1,4 @@
+#define dec_to_roman
 /// dec_to_roman(num)
 //
 //  Returns a string of Roman numerals representing the given integer.

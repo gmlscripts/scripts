@@ -1,9 +1,8 @@
 #define draw_sprite_wave
 /// draw_sprite_wave(sprite,subimg,x,y,axis,wavelength,amplitude,phase)
 //
-//  Draws a sprite with wave-like distortion. If scaling is used, 
-//  wavelength is also scaled. The fractional part of phase argument
-//  controls the wave cycle. A full cycle covers the [0..1] interval.
+//  Draws a sprite with wave-like distortion. The fractional part of the phase
+//  argument controls the wave cycle. A full cycle covers the [0..1] interval.
 //
 //      sprite      sprite index, real
 //      subimg      sprite subimage, real
