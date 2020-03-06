@@ -10,7 +10,7 @@ will be returned 2/6 of the time, and the third index will be
 returned 3/6 of the time.
 
 demo: random_weighted 416 160
-Click display to restart.
+Click display to restart with new weights.
 
 script: random_weighted.gml
 
