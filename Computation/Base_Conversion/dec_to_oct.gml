@@ -1,20 +1,29 @@
 #define dec_to_oct
-/// dec_to_oct(dec)
+/// dec_to_oct(dec [, length])
 //
-//  Returns a string of octal digital (3 bits each)
-//  representing the given decimal integer.
+//  Returns a given value as a string of octal digits.
+//  Octal strings can be padded to a minimum length.
+//  Note: If the given value is negative, it will
+//  be converted using its two's complement form.
 //
-//      dec         non-negative integer, real
+//      dec         integer
+//      length      minimum number of digits
 //
 /// GMLscripts.com/license
 {
-    var dec, oct, o;
-    dec = argument0
-    oct = "";
-    o = "01234567";
-    do {
-        oct = string_char_at(o, (dec & 7) + 1) + oct;
+    var dec = argument[0],
+        len = (argument_count > 1) ? argument[1] : 1,
+        oct = "";
+    
+    if (dec < 0) {
+        len = max(len, ceil(logn(8, 2*abs(dec))));
+    }
+    
+    var dig = "01234567";
+    while (len-- || dec) {
+        oct = string_char_at(dig, (dec & $7) + 1) + oct;
         dec = dec >> 3;
-    } until (dec == 0);
+    }
+    
     return oct;
 }

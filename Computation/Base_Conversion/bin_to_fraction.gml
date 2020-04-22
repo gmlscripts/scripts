@@ -1,19 +1,20 @@
 #define bin_to_fraction
 /// bin_to_fraction(bin)
 //
-//  Returns a decimal fraction (real)
-//  representing the given binary string.
+//  Returns a decimal fraction converted from a binary string.
 //
 //      bin         binary digits, string
 //
 /// GMLscripts.com/license
 {
-    var i,ret;
-    i = 0;
-    ret = 0;
-    repeat (string_length(argument0)) {
-        if (string_char_at(argument0, i+1) = "1") ret += 1 / (2 << i);
-        i += 1; 
+    var bin = argument0,
+        fraction = 0;
+    
+    var i = 0;
+    repeat (string_length(bin)) {
+        if (string_char_at(bin, i+1) == "1") fraction += (1 / (2 << i));
+        i++;
     } 
-    return ret;
+    
+    return fraction;
 }

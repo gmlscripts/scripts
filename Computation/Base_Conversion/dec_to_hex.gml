@@ -1,24 +1,29 @@
 #define dec_to_hex
-/// dec_to_hex(dec)
+/// dec_to_hex(dec [,length])
 //
-//  Returns a string of hexadecimal digits (4 bits each)
-//  representing the given decimal integer. Hexadecimal
-//  strings are padded to byte-sized pairs of digits.
+//  Returns a given value as a string of hexadecimal digits.
+//  Hexadecimal strings can be padded to a minimum length.
+//  Note: If the given value is negative, it will
+//  be converted using its two's complement form.
 //
-//      dec         non-negative integer, real
+//      dec         integer
+//      length      minimum number of digits
 //
 /// GMLscripts.com/license
 {
-    var dec, hex, h, byte, hi, lo;
-    dec = argument0;
-    if (dec) hex = "" else hex="00";
-    h = "0123456789ABCDEF";
-    while (dec) {
-        byte = dec & 255;
-        hi = string_char_at(h, byte div 16 + 1);
-        lo = string_char_at(h, byte mod 16 + 1);
-        hex = hi + lo + hex;
-        dec = dec >> 8;
+    var dec = argument[0],
+        len = (argument_count > 1) ? argument[1] : 1,
+        hex = "";
+    
+    if (dec < 0) {
+        len = max(len, ceil(logn(16, 2*abs(dec))));
     }
+    
+    var dig = "0123456789ABCDEF";
+    while (len-- || dec) {
+        hex = string_char_at(dig, (dec & $F) + 1) + hex;
+        dec = dec >> 4;
+    }
+    
     return hex;
 }

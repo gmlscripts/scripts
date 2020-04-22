@@ -1,20 +1,20 @@
 #define bin_to_dec
 /// bin_to_dec(bin)
 //
-//  Returns a non-negative integer (real)
-//  representing the given binary string.
+//  Returns an integer converted from a binary string.
 //
 //      bin         binary digits, string
 //
 /// GMLscripts.com/license
 {
-    var bin, dec, l, p;
-    bin = argument0;
-    dec = 0;
-    l = string_length(bin);
-    for (p=1; p<=l; p+=1) {
+    var bin = argument0,
+        dec = 0;
+    
+    var len = string_length(bin);
+    for (var pos=1; pos<=len; pos+=1) {
         dec = dec << 1;
-        if (string_char_at(bin, p) == "1") dec = dec | 1;
+        if (string_char_at(bin, pos) == "1") dec |= 1;
     }
+    
     return dec;
 }

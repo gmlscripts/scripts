@@ -1,25 +1,26 @@
 #define fraction_to_bin
-/// fraction_to_bin(value,size)
+/// fraction_to_bin(fraction, length)
 //
-//  Returns a string of binary digits (1 bit each)
-//  representing the given decimal fraction.
+//  Returns a binary string converted from a decimal fraction.
 //
-//      value       fraction, real
-//      size        number of bits, real
+//      fraction    decimal fraction
+//      length      number of bits to return
 //
 /// GMLscripts.com/license
 {
-    var i, ret;
-    i = 0;
-    ret = "";
-    repeat (argument1) {
-        if (argument0 >= 1/(2<<i)) {
-            ret += "1";
-            argument0 -= 1/(2<<i);
+    var fraction = argument0,
+        length = argument1,
+        bin = "";
+    
+    var i = 1;
+    repeat (length) {
+        i /= 2;
+        if (fraction >= i) {
+            fraction -= i;
+            bin += "1";
         } else {
-            ret += "0";
+            bin += "0";
         }
-        i += 1;
     }
-    return ret;
+    return bin;
 }

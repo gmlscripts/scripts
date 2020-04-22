@@ -1,8 +1,7 @@
 #define base_convert
-/// base_convert(number,oldbase,newbase)
+/// base_convert(number, oldbase, newbase)
 //
-//  Returns a string of digits representing the
-//  given number converted form one base to another.
+//  Returns a number converted from one base as another base.
 //  Base36 is the largest base supported.
 //
 //      number      integer value to be converted, string
@@ -11,39 +10,37 @@
 //
 /// GMLscripts.com/license
 {
-    var number, oldbase, newbase, out;
-    number = string_upper(argument0);
-    oldbase = argument1;
-    newbase = argument2;
-    out = "";
-
-    var len, tab;
-    len = string_length(number);
-    tab = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-    var i, num;
-    for (i=0; i<len; i+=1) {
-        num[i] = string_pos(string_char_at(number, i+1), tab) - 1;
+    var number  = string_upper(argument0),
+        oldbase = argument1,
+        newbase = argument2,
+        out     = "";
+    
+    var dig = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var len = string_length(number);
+    
+    var num;
+    for (var i=0; i<len; i++) {
+        num[i] = string_pos(string_char_at(number, i+1), dig) - 1;
     }
-
+    
     do {
         var divide, newlen;
         divide = 0;
         newlen = 0;
-        for (i=0; i<len; i+=1) {
+        for (var i=0; i<len; i++) {
             divide = divide * oldbase + num[i];
             if (divide >= newbase) {
                 num[newlen] = divide div newbase;
-                newlen += 1;
+                newlen++;
                 divide = divide mod newbase;
             } else if (newlen  > 0) {
                 num[newlen] = 0;
-                newlen += 1;
+                newlen++;
             }
         }
         len = newlen;
-        out = string_char_at(tab, divide+1) + out;
+        out = string_char_at(dig, divide+1) + out;
     } until (len == 0);
-
+    
     return out;
 }
