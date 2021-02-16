@@ -1,13 +1,14 @@
 #define is_factor
 /// is_factor(divisor,value)
+//  GM:S v2.3+ compatible
 //
 //  Returns true if a given divisor is a factor of 
 //  a given value, false otherwise.
 //
-//      divisor     divisor, real
-//      value       value, real
+//  @param divisor     divisor, real
+//  @param value       value, real
 //
 /// GMLscripts.com/license
-{
-    return !(argument1 mod argument0);
+function is_factor(divisor,value) {
+    return !(value mod divisor);
 }

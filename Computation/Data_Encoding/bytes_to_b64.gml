@@ -1,14 +1,14 @@
 #define bytes_to_b64
 /// bytes_to_b64(str)
+//  GM:S v2.3+ compatible
 //
 //  Returns a string of base64 digits (RFC 3548), 6 bits each.
 //
-//      str         raw bytes, 8 bits each, string
+//  @param str         raw bytes, 8 bits each, string
 //
 /// GMLscripts.com/license
-{
-    var str, len, pad, tab, b64, i, bin;
-    str = argument0;
+function bytes_to_b64(str) {
+    var len, pad, tab, b64, i, bin;
     len = string_length(str);
     pad = "=";
     tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";

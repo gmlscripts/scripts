@@ -1,20 +1,20 @@
 #define instance_nth_farthest
 /// instance_nth_farthest(x,y,obj,n)
+//  GM:S v2.3+ compatible
 //
 //  Returns the id of the nth farthest instance of an object
 //  from a given point or noone if none is found.
 //
 //      x,y       point coordinates, real
-//      obj       object index (or all), real
-//      n         proximity, real
+//  @param obj       object index (or all), real
+//  @param n         proximity, real
 //
 /// GMLscript.com/license
-{
-    var pointx,pointy,object,n,list,farthest;
-    pointx = argument0;
-    pointy = argument1;
-    object = argument2;
-    n = argument3;
+function instance_nth_farthest(x,y,obj,n) {
+    var pointpointobject,list,farthest;
+    pointx = x;
+    pointy = y;
+    object = obj;
     n = min(max(1,n),instance_number(object));
     list = ds_priority_create();
     farthest = noone;

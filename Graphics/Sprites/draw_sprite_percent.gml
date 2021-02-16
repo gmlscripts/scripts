@@ -1,26 +1,27 @@
 #define draw_sprite_percent
 /// draw_sprite_percent(sprite,percent,x,y,restrict)
+//  GM:S v2.3+ compatible
 //
 //  Draws a sprite using a percentage to select a subimage to draw,
 //  the first subimage at 0% and the last subimage at 100%. Returns
 //  the selected subimage. Useful for a health gauge or progress bar.
 //
-//      sprite      sprite, real
-//      percent     percentage [0..100], real
+//  @param sprite      sprite, real
+//  @param percent     percentage [0..100], real
 //      x,y         position to draw, real
-//      restrict    true if first and last subimages only
+//  @param restrict    true if first and last subimages only
 //                  appear at exactly 0 and 100 percent, bool
 //
 /// GMLscripts.com/license
-{
-    var n,index;
-    n = sprite_get_number(argument0);
-    if (argument1 >= 100) index = (n-1);
-    else if (argument1 <= 0) index = 0;
+function draw_sprite_percent(sprite,percent,x,y,restrict) {
+    var n,inde;
+    n = sprite_get_number(sprite);
+    if (percent >= 100) index = (n-1);
+    else if (percent <= 0) index = 0;
     else{
-        index = round(argument1*(n-1)/100);
-        if (argument4) index = min(max(1,index),(n-2));
+        index = round(percent*(n-1)/100);
+        if (restrict) index = min(max(1,index),(n-2));
     }
-    draw_sprite(argument0,index,argument2,argument3);
+    draw_sprite(sprite,index,x,y);
     return index;
 }

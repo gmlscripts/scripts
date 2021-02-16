@@ -1,10 +1,11 @@
 #define bias
 /// bias(b,x)
+//  GM:S v2.3+ compatible
 //
 //  Returns the given value with a bias function applied to it.
 //
-//      b           bais, real
-//      x           value, real
+//  @param b           bais, real
+//  @param x           value, real
 //
 //  If x varies over the [0,1] interval, then the result also
 //  varies over that interval. The 0 and 1 endpoints of the
@@ -13,6 +14,6 @@
 //  downward toward 0 if b is less than 0.5.
 //
 /// GMLscripts.com/license
-{
-    return argument1 / ((1 / argument0 - 2) * (1 - argument1) + 1);
+function bias(x) {
+    return x / ((1 / b - 2) * (1 - x) + 1);
 }

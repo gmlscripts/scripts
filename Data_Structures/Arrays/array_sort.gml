@@ -1,15 +1,16 @@
 #define array_sort
 /// array_sort(array, ascend)
+//  GM:S v2.3+ compatible
 //
 //  Returns a sorted version of a given array.
 //
-//      array        array to sort, array
-//      ascend       ascending (true) or descending (false) order, boolean
+//  @param array        array to sort, array
+//  @param ascend       ascending (true) or descending (false) order, boolean
 //
 /// GMLscripts.com/license
-{
-    var array = argument0;
-    var ascend = argument1;
+function array_sort(array, ascend) {
+    
+    var ascend = ascend;
     var list = ds_list_create();
     var count = array_length_1d(array);
     for (var i=0; i<count; i++) list[| i] = array[i];

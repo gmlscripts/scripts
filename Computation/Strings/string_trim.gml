@@ -1,15 +1,15 @@
 #define string_trim
 /// string_trim(str)
+//  GM:S v2.3+ compatible
 //
 //  Returns the given string with whitespace stripped from its start 
 //  and end. Whitespace is defined as SPACE, HT, LF, VT, FF, CR.
 //
-//      str         text, string
+//  @param str         text, string
 //
 /// GMLscripts.com/license
-{
-    var str,l,r,o;
-    str = argument0;
+function string_trim(str) {
+    var l,r,o;
     l = 1;
     r = string_length(str);
     repeat (r) {

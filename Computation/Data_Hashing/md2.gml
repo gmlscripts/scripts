@@ -1,5 +1,6 @@
 #define md2
 /// md2(str)
+//  GM:S v2.3+ compatible
 //
 //  Returns an MD2 hash (RFC 1319) computed from a given string.
 //
@@ -7,14 +8,14 @@
 //  script for use it must first be called without any arguments. 
 //  This only needs to be done once.
 //
-//      str     data to hash with MD2, string
+//  @param str     data to hash with MD2, string
 //
 //  Note:
 //      This creates a lookup table in the form of a 256-entry
 //      global array called _MD2tab[].
 //
 /// GMLscripts.com/license
-{
+function md2(str) {
     if (argument_count == 0) {
         // Initialize lookup table.
         var tab;

@@ -1,15 +1,16 @@
 #define string_nato
 /// string_nato(text)
+//  GM:S v2.3+ compatible
 //
 //  Returns a given string as expressed by the NATO phonetic alphabet.
 //  Phonetic words will be separarted by spaces. Non-alphanumeric 
 //  characters are removed.
 //
-//      text        text to translate, string
+//  @param text        text to translate, string
 //
 /// GMLscripts.com/license
-{
-    var in = string_upper(argument0);
+function string_nato(text) {
+    var in = string_upper(text);
     var len = string_length(in);
     var out = "";
     

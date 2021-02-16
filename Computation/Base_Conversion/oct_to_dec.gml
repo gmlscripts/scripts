@@ -1,14 +1,14 @@
 #define oct_to_dec
 /// oct_to_dec(oct)
+//  GM:S v2.3+ compatible
 //
 //  Returns an integer converted from an octal string.
 //
-//      oct         octal digits, string
+//  @param oct         octal digits, string
 //
 /// GMLscripts.com/license
-{
-    var oct = argument0,
-        dec = 0;
+function oct_to_dec(oct) {
+    var dec = 0;
     
     var dig = "01234567";
     var len = string_length(oct);

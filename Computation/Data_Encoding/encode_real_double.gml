@@ -1,15 +1,15 @@
 #define encode_real_double
 /// encode_real_double(n)
+//  GM:S v2.3+ compatible
 //
 //  Returns a string of raw bytes representing the given
 //  number encoded in IEEE 754 double precision format.
 //
-//      n           number, real
+//  @param n           number, real
 //
 /// GMLscripts.com/license
-{
-    var n, str, c, byte, E, M;
-    n = argument0;
+function encode_real_double(n) {
+    var str, c, byte, E, M;
     if (n == 0) {
         return string_repeat(chr(0),8);
     }

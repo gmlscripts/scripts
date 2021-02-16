@@ -1,5 +1,6 @@
 #define draw_sprite_rectangle
 /// draw_sprite_rectangle(sprite,subimg,x1,y1,x2,y2,left,top,right,bottom)
+//  GM:S v2.3+ compatible
 //
 //  Draws a rectangle using a sprite sliced into 9 sections.
 //  The 3x3 sections are used to draw the four corners, the
@@ -7,27 +8,27 @@
 //  and edge sections are stretched to fill the respective
 //  areas of the rectangle.
 //
-//      sprite  sprite index
-//      subimg  sprite subimage
+//  @param sprite  sprite index
+//  @param subimg  sprite subimage
 //      x1,y1   top-left corner of rectangle
 //      x2,y2   bottom-right corner of rectangle
-//      left    left edge width in pixels
-//      top     top edge width in pixels
-//      right   right edge width in pixels
-//      bottom  bottom edge width in pixels
+//  @param left    left edge width in pixels
+//  @param top     top edge width in pixels
+//  @param right   right edge width in pixels
+//  @param bottom  bottom edge width in pixels
 //
 /// GMLscripts.com/license
-{
-    var spr = argument0,
-        img = argument1,
-        x1  = argument2,
-        y1  = argument3,
-        x2  = argument4,
-        y2  = argument5,
-        l   = argument6,
-        t   = argument7,
-        r   = argument8,
-        b   = argument9;
+function draw_sprite_rectangle(sprite,subimg,x1,y1,x2,y2,left,top,right,bottom) {
+    var spr = 
+        img = 
+        x1  = 
+        y1  = 
+        x2  = 
+        y2  = 
+        l   = 
+        t   = 
+        r   = 
+        b   = ;
     
     var x3 = x1 + l;
     var y3 = y1 + t;

@@ -1,26 +1,22 @@
 #define draw_sprite_tiled_area
 /// draw_sprite_tiled_area(sprite,subimg,x,y,x1,y2,x2,y2)
+//  GM:S v2.3+ compatible
 //
 //  Draws a repeated sprite image, tiled to fill a given region and with
 //  a given offset. 
 //
-//      sprite      sprite to draw, real
-//      subimg      sprite subimage to draw, real
+//  @param sprite      sprite to draw, real
+//  @param subimg      sprite subimage to draw, real
 //      x,y         origin offset, real
 //      x1,y1       top-left corner of tiled area, real
 //      x2,y2       bottom-right corner of tiled area, real
 //
 /// GMLscripts.com/license
-{
-    var sprite,subimg,xx,yy,x1,y1,x2,y2;
-    sprite = argument0;
-    subimg = argument1;
-    xx = argument2;
-    yy = argument3;
-    x1 = argument4;
-    y1 = argument5;
-    x2 = argument6;
-    y2 = argument7;
+function draw_sprite_tiled_area(sprite,subimg,x,y,x1,y2,x2,y2) {
+    var xyy1;
+    xx = x;
+    yy = y;
+    y1 = y2;
     
     var sw,sh,i,j,jj,left,top,width,height,X,Y;
     sw = sprite_get_width(sprite);

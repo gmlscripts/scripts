@@ -1,11 +1,12 @@
 #define fibonacci
 /// fibonacci(n)
+//  GM:S v2.3+ compatible
 //
 //  Returns the nth number of the Fibonacci sequence.
 //
-//      n           desired Fibonacci number, non-negative integer, real
+//  @param n           desired Fibonacci number, non-negative integer, real
 //
 /// GMLscripts.com/license
-{
-    return round(power((1+sqrt(5))/2,argument0)/sqrt(5));
+function fibonacci(n) {
+    return round(power((1+sqrt(5))/2,n)/sqrt(5));
 }

@@ -1,14 +1,14 @@
 #define bytes_to_hex
 /// bytes_to_hex(str)
+//  GM:S v2.3+ compatible
 //
 //  Returns a string of hexadecimal digits, 4 bits each.
 //
-//      str         raw bytes, 8 bits each, string
+//  @param str         raw bytes, 8 bits each, string
 //
 /// GMLscripts.com/license
-{
-    var str, hex, h, l, p, byte;
-    str = argument0;
+function bytes_to_hex(str) {
+    var hex, h, l, p, byte;
     hex = "";
     h = "0123456789ABCDEF";
     l = string_length(str);

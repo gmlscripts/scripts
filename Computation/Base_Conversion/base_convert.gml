@@ -1,18 +1,17 @@
 #define base_convert
 /// base_convert(number, oldbase, newbase)
+//  GM:S v2.3+ compatible
 //
 //  Returns a number converted from one base as another base.
 //  Base36 is the largest base supported.
 //
-//      number      integer value to be converted, string
-//      oldbase     base of the given number, integer
-//      newbase     base of the returned value, integer
+//  @param number      integer value to be converted, string
+//  @param oldbase     base of the given number, integer
+//  @param newbase     base of the returned value, integer
 //
 /// GMLscripts.com/license
-{
-    var number  = string_upper(argument0),
-        oldbase = argument1,
-        newbase = argument2,
+function base_convert(number, oldbase, newbase) {
+    var number  = string_upper(number),
         out     = "";
     
     var dig = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";

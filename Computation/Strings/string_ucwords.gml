@@ -1,14 +1,14 @@
 #define string_ucwords
 /// string_ucwords(str)
+//  GM:S v2.3+ compatible
 //
 //  Returns a string with each word capitalized.
 //
-//      str         string of text, string
+//  @param str         string of text, string
 //
 /// GMLscripts.com/license
-{
-    var str,out,w,i,c,o;
-    str = argument0;
+function string_ucwords(str) {
+    var out,w,i,c,o;
     out = "";
     w = true;
     i = 1;

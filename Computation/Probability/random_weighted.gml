@@ -1,12 +1,13 @@
 #define random_weighted
 /// random_weighted(p0 [, p1, ..., pN])
+//  GM:S v2.3+ compatible
 //
 //  Returns a randomly selected index based on their
 //  given relative probabilities. Any number of index
 //  probabilities can be supplied, expressed by any
 //  positive numerical value including percentages.
 //
-//      p0          first index probability, real
+//  @param p0          first index probability, real
 //      p1...pN     additional probabilities, real
 //
 //  Example:
@@ -15,7 +16,7 @@
 //                             or 2: 1/2 of the time
 //
 /// GMLscripts.com/license
-{
+function random_weighted(p0,p1,...,pN) {
     var sum = 0;
     for (var i=0; i<argument_count; i++) {
         sum += argument[i];

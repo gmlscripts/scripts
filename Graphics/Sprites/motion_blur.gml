@@ -1,20 +1,20 @@
 #define motion_blur
 /// motion_blur(length,direction)
+//  GM:S v2.3+ compatible
 //
 //  Draws the assigned sprite of the calling instance, using its
 //  subimage, position, scaling, rotation, and blending settings,
 //  with a motion blur effect applied to it.
 //
-//      length      length of blur, real
-//      direction   direction of blur in degrees, real
+//  @param length      length of blur, real
+//  @param direction   direction of blur in degrees, real
 //
 /// GMLscripts.com/license
-{
-    length = argument0;
+function motion_blur(length,direction) {
     
     if (length > 0) {
         step = 3;
-        dir = degtorad(argument1);
+        dir = degtorad(direction);
         px = cos(dir);
         py = -sin(dir);
         

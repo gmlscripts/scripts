@@ -1,5 +1,6 @@
 #define md5
 /// md5(str)
+//  GM:S v2.3+ compatible
 //
 //  Returns an MD5 hash (RFC 1321) computed from a given string.
 //
@@ -7,14 +8,14 @@
 //  script for use it must first be called without any arguments. 
 //  This only needs to be done once.
 //
-//      str     data to hash with MD5, string
+//  @param str     data to hash with MD5, string
 //
 //  Note:
 //      This creates lookup tables in the form of global
 //      arrays called _MD5k[], _MD5g[], _MD5r[], and _MD5s[].
 //
 /// GMLscripts.com/license
-{
+function md5(str) {
     if (argument_count == 0) {
         // Initialize lookup tables.
         var grp, rol;

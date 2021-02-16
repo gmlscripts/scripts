@@ -1,5 +1,6 @@
 #define draw_arc
 /// draw_arc(x1,y1,x2,y2,x3,y3,x4,y4,precision)
+//  GM:S v2.3+ compatible
 //
 //  Draws an arc of an ellipse mimicking draw_arc() from GM5. It also mimics
 //  draw_ellipse() from GM6 in that it uses a primitive drawn with limited
@@ -14,21 +15,12 @@
 //      x2,y2       2nd corner of bounding rectangle, real
 //      x3,y3       determines starting point, real
 //      x4,y4       determines ending point, real
-//      precision   number of segments a full ellipse would be drawn with,
+//  @param precision   number of segments a full ellipse would be drawn with,
 //                  [4..64] divisible by 4, default 24, real (optional)
 //
 /// GMLscripts.com/license
-{
-    var x1,y1,x2,y2,x3,y3,x4,y4,precision;
-    x1 = argument0;
-    y1 = argument1;
-    x2 = argument2;
-    y2 = argument3;
-    x3 = argument4;
-    y3 = argument5;
-    x4 = argument6;
-    y4 = argument7;
-    precision = argument8;
+function draw_arc(x1,y1,x2,y2,x3,y3,x4,y4,precision) {
+    
     if (precision == 0) precision = 24;
     var res,xm,ym,xr,yr,r,a1,a2,sx,sy,a;
     res = 360 / min(max(4,4*(precision div 4)),64);

@@ -1,12 +1,13 @@
 #define step
 /// step(a,x)
+//  GM:S v2.3+ compatible
 //
 //  Returns 0 when (x < a), 1 otherwise.
 //
-//      a       threshold value, real
-//      x       value, real
+//  @param a       threshold value, real
+//  @param x       value, real
 //
 /// GMLscripts.com/license
-{
-    return (argument1 >= argument0);
+function step(a,x) {
+    return (x >= a);
 }

@@ -1,11 +1,12 @@
 #define spline
 /// spline(t,knotlist)
+//  GM:S v2.3+ compatible
 //
 //  Returns the Catmull-Rom interpolation of the given
 //  knot values at the given parameter position.
 //
-//      t           interpolation parameter [0..1], real
-//      knotlist    ds_list of knot values of spline, real
+//  @param t           interpolation parameter [0..1], real
+//  @param knotlist    ds_list of knot values of spline, real
 //
 //  If (t) is 0, returns knot[2], if (t) is 1, returns knot[N-1],
 //  (where 1 is the first knot and N is the last knot). For other
@@ -15,10 +16,8 @@
 //  be at least four knots.
 //
 /// GMLscripts.com/license
-{
-    var t, knotlist, nknots, nspans, span, k, c3, c2, c1, c0;
-    t = argument0;
-    knotlist = argument1;
+function spline(t,knotlist) {
+    var knotlis nknots, nspans, span, k, c3, c2, c1, c0;
     nknots = ds_list_size(knotlist);
     nspans = nknots - 3;
     if (nspans < 1) return 0; // ERROR: too few knots

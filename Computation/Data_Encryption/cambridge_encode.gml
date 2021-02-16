@@ -1,15 +1,15 @@
 #define cambridge_encode
 /// cambridge_encode(str)
+//  GM:S v2.3+ compatible
 //
 //  Returns the given string with the central letters of each word
 //  scrambled and the first and last letters of each word left as-is.
 //
-//      str         text to encode, string
+//  @param str         text to encode, string
 //
 /// GMLscripts.com/license
-{
-    var str, len, num, pos, wordList, i, out, word, c;
-    str = argument0;
+function cambridge_encode(str) {
+    var len, num, pos, wordList, i, out, word, c;
     len = string_length(str);
     num = 0;
     pos = 0;
@@ -44,7 +44,7 @@
         ds_list_destroy(wordList);
     }
     // Add Punctuation
-    word = argument0;
+    word = str;
     for (i=0; i<len+1; i+=1) {
         c = string_char_at(word,i);
         if (string_count(c,string_letters(word)) == 0 && c != ' ') {

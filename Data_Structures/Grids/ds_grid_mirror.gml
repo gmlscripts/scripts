@@ -1,19 +1,18 @@
 #define ds_grid_mirror
 /// ds_grid_mirror(id,horiz,vert)
+//  GM:S v2.3+ compatible
 //
 //  Rearranges the elements of a given grid by mirroring
 //  horizontally and/or vertically.
 //
-//      id          grid data structure, real
-//      horiz       true mirrors horizontally, bool
-//      vert        true mirrors vertically, bool
+//  @param id          grid data structure, real
+//  @param horiz       true mirrors horizontally, bool
+//  @param vert        true mirrors vertically, bool
 //
 /// GMLscripts.com/license
-{
-    var dsid,horiz,vert,w,h,temp;
-    dsid = argument0;
-    horiz = argument1;
-    vert = argument2;
+function ds_grid_mirror(id,horiz,vert) {
+    var dsw,h,temp;
+    dsid = id;
     w = ds_grid_width(dsid);
     h = ds_grid_height(dsid);
     temp = ds_grid_create(w,h);

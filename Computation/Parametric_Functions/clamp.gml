@@ -1,15 +1,16 @@
 #define clamp
 /// clamp(x,a,b)
+//  GM:S v2.3+ compatible
 //
 //  Returns a when (x < a), b when (x > b), x otherwise.
 //
-//      x           value, real
-//      a           lower bound, real
-//      b           upper bound, real
+//  @param x           value, real
+//  @param a           lower bound, real
+//  @param b           upper bound, real
 //
 /// GMLscripts.com/license
-{
-    if (argument0 < argument1) return argument1;
-    if (argument0 > argument2) return argument2;
-    return argument0;
+function clamp(x,a,b) {
+    if (x < a) return a;
+    if (x > b) return b;
+    return x;
 }

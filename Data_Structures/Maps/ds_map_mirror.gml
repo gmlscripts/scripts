@@ -1,14 +1,15 @@
 #define ds_map_mirror
 /// ds_map_mirror(id)
+//  GM:S v2.3+ compatible
 //
 //  Exchanges map keys with map values.
 //
-//      id          map data structure, real
+//  @param id          map data structure, real
 //
 /// GMLscripts.com/license
-{
-    var dsid,temp,key,val;
-    dsid = argument0;
+function ds_map_mirror(id) {
+    var dstemp,key,val;
+    dsid = id;
     temp = ds_map_create();
     key = ds_map_find_first(dsid);
     val = ds_map_find_value(dsid,key);

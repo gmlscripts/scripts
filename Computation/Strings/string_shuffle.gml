@@ -1,14 +1,14 @@
 #define string_shuffle
 /// string_shuffle(str)
+//  GM:S v2.3+ compatible
 //
 //  Returns a given string with charactars shuffled.
 //
-//      str         string of text, string
+//  @param str         string of text, string
 //
 /// GMLscripts.com/license
-{
-    var str,out,len,i;
-    str = argument0;
+function string_shuffle(str) {
+    var out,len,i;
     out = "";
     do {
         len = string_length(str);

@@ -1,10 +1,11 @@
 #define gammacorrect
 /// gammacorrect(gamma,x);
+//  GM:S v2.3+ compatible
 //
 //  Returns the given value with gamma correction applied to it.
 //
-//      gamma       correction value, real
-//      x           value, real
+//  @param gamma       correction value, real
+//  @param x           value, real
 //
 //  If x varies over the [0,1] interval, then the result also
 //  varies over that interval. The 0 and 1 endpoints of the 
@@ -13,6 +14,6 @@
 //  shifted downward toward 0 if gamma is less than 1.
 //
 /// GMLscripts.com/license
-{
-    return power(argument1, 1 / argument0);
+function gammacorrect(x); {
+    return power(x;, 1 / gamma);
 }

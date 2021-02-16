@@ -1,5 +1,6 @@
 #define crc16
 /// crc16(str [,mode])
+//  GM:S v2.3+ compatible
 //
 //  Returns a CRC16-CCITT hash value for a given string.
 //
@@ -7,8 +8,8 @@
 //  script for use it must first be called without any arguments. 
 //  This only needs to be done once.
 //
-//      str     data to hash with CRC16-CCITT, string
-//      mode    set to TRUE for pedantic "good" mode, boolean (optional)
+//  @param str     data to hash with CRC16-CCITT, string
+//  @param mode    set to TRUE for pedantic "good" mode, boolean (optional)
 //
 //  Notes:
 //      For speed, this creates a lookup table in the form of a global array
@@ -17,7 +18,7 @@
 //      implementation that is closer to the actual CRC16-CCITT specification.
 //
 /// GMLscripts.com/license
-{
+function crc16(str) {
     if (argument_count == 0) {
         // Initialize lookup table.
         var tab;

@@ -1,15 +1,15 @@
 #define roman_to_dec
 /// roman_to_dec(roman)
+//  GM:S v2.3+ compatible
 //
 //  Returns an integer converted from a Roman numeral string.
 //  Note: The largest value supported is 4999.
 //
-//      roman       roman numeral, string
+//  @param roman       roman numeral, string
 //
 /// GMLscripts.com/license
-{
-    var roman = argument0,
-        dec   = 0;
+function roman_to_dec(roman) {
+    var dec   = 0;
     
     var tab, val;
     tab = "MDCLXVI";

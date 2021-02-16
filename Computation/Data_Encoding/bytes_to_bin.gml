@@ -1,14 +1,14 @@
 #define bytes_to_bin
 /// bytes_to_bin(str)
+//  GM:S v2.3+ compatible
 //
 //  Returns a string of binary digits, 1 bit each.
 //
-//      str         raw bytes, 8 bits each, string
+//  @param str         raw bytes, 8 bits each, string
 //
 /// GMLscripts.com/license
-{
-    var str, bin, p, byte;
-    str = argument0;
+function bytes_to_bin(str) {
+    var bin, p, byte;
     bin = "";
     p = string_length(str);
     repeat (p) {

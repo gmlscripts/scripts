@@ -1,14 +1,14 @@
 #define date_get_easter
 /// date_get_easter(year)
+//  GM:S v2.3+ compatible
 //
 //  Returns the GM date-time of Easter for the given year.
 //
-//      year        calendar year, integer
+//  @param year        calendar year, integer
 //
 /// GMLscripts.com/license
-{
-    var year,a,b,c,d,e,f,g,h,i,k,l,m,month,day;
-    year = argument0;
+function date_get_easter(year) {
+    var a,b,c,d,e,f,g,h,i,k,l,m,month,day;
     a = year mod 19;
     b = year div 100;
     c = year mod 100;

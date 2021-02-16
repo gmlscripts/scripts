@@ -1,18 +1,18 @@
 #define collision_triangle_init
 /// collision_triangle_init(size)
+//  GM:S v2.3+ compatible
 //
 //  Required to initialize collision_triangle() before first use. Creates
 //  an object, sprite, and global variable __objCollisionTriangle. A large
 //  test triangle improves accuracy at the expense of memory usage.
 //
-//      size        size of test triangle in pixels, real
+//  @param size        size of test triangle in pixels, real
 //
 /// GMLscripts.com/license
-{
+function collision_triangle_init(size) {
     if (not variable_global_exists("objCollisionTriangle")) {
-        var color,object,size;
-        size = argument0;
-        object = object_add();
+        var color,object;
+            object = object_add();
         object_set_persistent(object,true);
         object_event_add(object,ev_create,0,"size = "+string(size));
         global.objCollisionTriangle = instance_create(0,0,object);

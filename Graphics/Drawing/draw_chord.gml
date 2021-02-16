@@ -1,5 +1,6 @@
 #define draw_chord
 /// draw_chord(x1,y1,x2,y2,x3,y3,x4,y4,outline,precision)
+//  GM:S v2.3+ compatible
 //
 //  Draws a chord of an elliptical disk mimicing draw_chord() from GM5.
 //  It also mimics draw_ellipse() from GM6 in that it will draw either as a
@@ -15,23 +16,13 @@
 //      x2,y2       2nd corner of bounding rectangle, real
 //      x3,y3       determines the starting point, real
 //      x4,y4       determines the ending point, real
-//      outline     true to draw as an outline, bool
-//      precision   number of segments a full ellipse would be drawn with,
+//  @param outline     true to draw as an outline, bool
+//  @param precision   number of segments a full ellipse would be drawn with,
 //                  [4..64] divisible by 4, default 24, real (optional)
 //
 /// GMLscripts.com/license
-{
-    var x1,y1,x2,y2,x3,y3,x4,y4,outline,precision;
-    x1 = argument0;
-    y1 = argument1;
-    x2 = argument2;
-    y2 = argument3;
-    x3 = argument4;
-    y3 = argument5;
-    x4 = argument6;
-    y4 = argument7;
-    outline = argument8;
-    precision = argument9;
+function draw_chord(x1,y1,x2,y2,x3,y3,x4,y4,outline,precision) {
+    
     if (precision == 0) precision = 24;
     var res,xm,ym,xr,yr,r,a1,a2,sx,sy,a;
     res = 360 / min(max(4,4*(precision div 4)),64);

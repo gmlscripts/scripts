@@ -1,24 +1,24 @@
 #define sprite_desaturate
 /// sprite_desaturate(sprite)
+//  GM:S v2.3+ compatible
 //
 //  Changes a sprite into a grayscale version of itself. 
 //  No new sprites are created, the given sprite is changed.
 //    
-//      sprite      sprite to change, real
+//  @param sprite      sprite to change, real
 //
 //  Note: Blending mode is reset to normal after calling this script.
 //
 /// GMLscripts.com/license
-{
-    var sprite,w,h,n,xo,yo,surf,i,newsprite,alphasprite;
-    sprite = argument0;
-
+function sprite_desaturate(sprite) {
+    var w,h,n,xo,yo,surf,i,newalpha;
+    
     w  = sprite_get_width(sprite);
     h  = sprite_get_height(sprite);
     n  = sprite_get_number(sprite);
     xo = sprite_get_xoffset(sprite);
     yo = sprite_get_yoffset(sprite);
-
+    
     surf = surface_create(w,h);
     if (surf < 0) return -1;
     surface_set_target(surf);
@@ -31,7 +31,7 @@
     }
     for (i=1; i<n; i+=1) sprite_add_from_surface(tempsprite,surf,0,0,w,h,0,0);
     sprite_set_alpha_from_sprite(tempsprite,sprite);
-
+    
     for (i=0; i<n; i+=1) {
         draw_clear_alpha(c_black,1);
         draw_sprite(tempsprite,i,xo,yo);
@@ -65,7 +65,7 @@
         }
         draw_set_blend_mode(bm_normal);
     }
-
+    
     surface_reset_target();
     sprite_assign(sprite,newsprite);
     sprite_set_alpha_from_sprite(sprite,alphasprite);

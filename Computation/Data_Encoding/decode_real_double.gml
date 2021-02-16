@@ -1,15 +1,15 @@
 #define decode_real_double
 /// decode_real_double(str)
+//  GM:S v2.3+ compatible
 //
 //  Returns a real value decoded from the given string of
 //  raw bytes in IEEE 754 double precision format.
 //
-//      str     8-byte in IEEE 754 double precision format, string
+//  @param str     8-byte in IEEE 754 double precision format, string
 //
 /// GMLscripts.com/license
-{
-    var str, S, E, M, byte, n;
-    str = argument0;
+function decode_real_double(str) {
+    var S, E, M, byte, n;
     var i;
     for (i = 0; i < 8; i += 1) {
         byte[i] = ord(string_char_at(str,8 - i));

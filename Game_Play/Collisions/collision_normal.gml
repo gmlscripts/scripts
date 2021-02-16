@@ -1,5 +1,6 @@
 #define collision_normal
 /// collision_normal(x1,y1,obj [,rad [,res]])
+//  GM:S v2.3+ compatible
 //
 //  Returns a 2D "surface normal" (in degrees) at a given point 
 //  on or near an instance detected within a circular test area.
@@ -7,12 +8,12 @@
 //	If no collision is found, (-1) is returned.
 //
 //      x1,y1       point on the surface, real
-//      obj         object or instance (or all), real
-//      rad         radius of test area (default 4), real
-//      res         resolution of test (default 1), real
+//  @param obj         object or instance (or all), real
+//  @param rad         radius of test area (default 4), real
+//  @param res         resolution of test (default 1), real
 //
 /// GMLscripts.com/license
-{
+function collision_normal(x1,y1,obj,rad,res) {
     var xx  = argument[0];
     var yy  = argument[1];
     var obj = argument[2];

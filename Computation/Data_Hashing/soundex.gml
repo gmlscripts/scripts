@@ -1,16 +1,17 @@
 #define soundex
 /// soundex(str)
+//  GM:S v2.3+ compatible
 //
 //  Returns the Soundex value of the given string.
 //  Soundex values are short strings of similar values
 //  for words which sound similar in spoken English.
 //  It was developed to help index related family names.
 //
-//      str         English word, string
+//  @param str         English word, string
 //
 /// GMLscripts.com/license
-{
-    var str = string_upper(string_letters(argument0));
+function soundex(str) {
+    var ing_upper(string_letters(str));
     var len = string_length(str);
     if (len == 0) return "";
     var tab = "0123012X02245501262301X202";
