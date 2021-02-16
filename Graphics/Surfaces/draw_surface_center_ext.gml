@@ -1,28 +1,24 @@
 #define draw_surface_center_ext
 /// draw_surface_center_ext(id,x,y,xscale,yscale,rot,color,alpha)
+//  GM:S v2.3+ compatible
 //
 //  Draws a surface centered at a given point with rotation,
 //  scaling, and color and alpha blending.
 //
-//      id          surface id, real
+//  @param id          surface id, real
 //      x,y         position of center of surface, real
-//      xscale      horizontal scaling, real
-//      yscale      vertical scaling, real
-//      rot         rotation in degrees, real
-//      color       color blending, real
-//      alpha       alpha blending, real
+//  @param xscale      horizontal scaling, real
+//  @param yscale      vertical scaling, real
+//  @param rot         rotation in degrees, real
+//  @param color       color blending, real
+//  @param alpha       alpha blending, real
 //
 ///  GMLscripts.com/license
-{
-    var surface,sx,sy,xscale,yscale,rot,color,alpha,mx,my;
-    surface = argument0;
-    sx = argument1;
-    sy = argument2;
-    xscale = argument3;
-    yscale = argument4;
-    rot = argument5;
-    color = argument6;
-    alpha = argument7;
+function draw_surface_center_ext(id,x,y,xscale,yscale,rot,color,alpha) {
+    var surface,ssmm;
+    surface = id;
+    sx = x;
+    sy = y;
     mx = surface_get_width(surface)/2;
     my = surface_get_height(surface)/2;
     d3d_transform_stack_push();

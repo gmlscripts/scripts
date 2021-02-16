@@ -1,25 +1,26 @@
 #define draw_roundrect_ext
 /// draw_roundrect_ext(x1,y1,x2,y2,outline,radius,precision)
+//  GM:S v2.3+ compatible
 //
 //  Draws a rectangle with rounded corners.
 //
 //      x1,y1       1st corner of the rectangle, real
 //      x2,y2       2nd corner of the rectangle, real
-//      outline     true for outline, bool
-//      radius      radius of corners, real
-//      precision   quality of corners (positive integer), real
+//  @param outline     true for outline, bool
+//  @param radius      radius of corners, real
+//  @param precision   quality of corners (positive integer), real
 //
 /// GMLscripts.com/license
-{
-    var x1,y1,x2,y2,out,rad,pre,i,j,x1r,x2r,y1r,y2r;
-    x1  = argument0;
-    y1  = argument1;
-    x2  = argument2;
-    y2  = argument3;
-    out = argument4;
-    rad = min(argument5,abs(x1-x2)/2,abs(y1-y2)/2);
-    pre = max(1,argument6);
-
+function draw_roundrect_ext(x1,y1,x2,y2,outline,radius,precision) {
+    var out,rad,pre,i,j,x1r,x2r,y1r,y2r;
+    x1  = x1;
+    y1  = y1;
+    x2  = x2;
+    y2  = y2;
+    out = outline;
+    rad = min(radius,abs(x1-x2)/2,abs(y1-y2)/2);
+    pre = max(1,precision);
+    
     i   = 0;
     j   = 90 / pre;
     x1r = x1 + rad;

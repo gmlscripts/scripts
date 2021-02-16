@@ -1,18 +1,19 @@
 #define sprite_replace_color_blend
 /// sprite_replace_color_blend(sprite,oldcolor,newcolor,htol,stol,vtol,blend)
+//  GM:S v2.3+ compatible
 //
 //  Replaces one range of colors of a given sprite with another.
 //  No new sprites are created, the original sprite is changed.
 //  Color is matched and replaced using tolerances and blending
 //  in order to preserve the shading of the original sprite.
 //
-//      sprite      sprite index, real
-//      oldcolor    original color, real
-//      newcolor    replacement color, real
-//      htol        hue tolerance, real
-//      stol        saturation tolerance, real
-//      vtol        value tolerance, real
-//      blend       blend shading, true/false
+//  @param sprite      sprite index, real
+//  @param oldcolor    original color, real
+//  @param newcolor    replacement color, real
+//  @param htol        hue tolerance, real
+//  @param stol        saturation tolerance, real
+//  @param vtol        value tolerance, real
+//  @param blend       blend shading, true/false
 //
 //
 //  Notes:
@@ -28,16 +29,9 @@
 //      will retain their original shading.
 //
 /// GMLscripts.com/license
-{
-    var sprite,oldcolor,newcolor,trancolor,htol,stol,vtol,blend;
-    sprite = argument0;
-    oldcolor = argument1;
-    newcolor = argument2;
-    htol = argument3;
-    stol = argument4;
-    vtol = argument5;
-    blend = argument6;
-
+function sprite_replace_color_blend(sprite,oldcolor,newcolor,htol,stol,vtol,blend) {
+    var trancolor;
+    
     var xo,yo,n,w,h,oh,os,ov,nh,ns,nv;
     var surf,i,sx,sy,color,th,ts,tv,dh,ds,dv,hue,sat,val,newsprite;
     xo = sprite_get_xoffset(sprite);
@@ -51,7 +45,7 @@
     nh = color_get_hue(newcolor);
     ns = color_get_saturation(newcolor);
     nv = color_get_value(newcolor);
-
+    
     //  Create surf for sprite editing.
     surf = surface_create(w,h);
     surface_set_target(surf);

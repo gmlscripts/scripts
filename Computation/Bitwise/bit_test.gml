@@ -1,12 +1,13 @@
 #define bit_test
 /// bit_test(bitfield,bit)
+//  GM:S v2.3+ compatible
 //
 //  Returns the state of a bit within a given bitfield.
 //
-//      bitfield    number or group of bits, integer
-//      bit         bit index to test, integer
+//  @param bitfield    number or group of bits, integer
+//  @param bit         bit index to test, integer
 //
 /// GMLscripts.com/license
-{
-    return 1 & (argument0 >> argument1);
+function bit_test(bitfield,bit) {
+    return 1 & (bitfield >> bit);
 }

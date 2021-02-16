@@ -1,21 +1,22 @@
 #define string_wordwrap
 /// string_wordwrap(string,length,break,split)
+//  GM:S v2.3+ compatible
 //
 //  Returns a string with break characters inserted 
 //  between words at a given character interval.
 //
-//      string      text to word wrap, string
-//      length      maximum string length before a line break, real
-//      break       line break characters to insert into text, string
-//      split       split words that are longer than the maximum, bool
+//  @param string      text to word wrap, string
+//  @param length      maximum string length before a line break, real
+//  @param break       line break characters to insert into text, string
+//  @param split       split words that are longer than the maximum, bool
 //
 /// GMLscripts.com/license
-{
+function string_wordwrap(string,length,break,split) {
     var str,num,brk,cut,out,i,j;
-    str = argument0;
-    num = argument1;
-    brk = argument2;
-    cut = argument3;
+    str = string;
+    num = length;
+    brk = break;
+    cut = split;
     out = "";
     while (string_length(str)) {
         while (string_pos(brk,str) <= num + 1) && (string_pos(brk,str) > 0) {

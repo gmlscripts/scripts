@@ -1,13 +1,14 @@
 #define hex_to_bin
 /// hex_to_bin(hex)
+//  GM:S v2.3+ compatible
 //
 //  Returns a binary string converted from a hexadecimal string.
 //
-//      hex         hexadecimal digits, string
+//  @param hex         hexadecimal digits, string
 //
 /// GMLscripts.com/license
-{
-    var hex = string_upper(argument0),
+function hex_to_bin(hex) {
+    var hex = string_upper(hex),
         bin = "";
     
     var nib = "0000101100111101000";

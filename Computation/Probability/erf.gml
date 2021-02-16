@@ -1,16 +1,17 @@
 #define erf
 /// erf(x)
+//  GM:S v2.3+ compatible
 //
 //  Returns the value of erf(x), the "error function" or cumulative
 //  distribution function, which computes the probability that a 
 //  Gaussian random number falls within a given range.
 //
-//      x           value, real
+//  @param x           value, real
 //
 /// GMLscripts.com/license
-{
+function erf(x) {
     var xAbs, c, e, b;
-    xAbs = abs(argument0) * sqrt(2);
+    xAbs = abs(x) * sqrt(2);
     if (xAbs > 37)
         c = 0;
     else {
@@ -41,7 +42,7 @@
             c = e / b / 2.506628274631;
         }
     }
-    if (argument0 > 0)
+    if (x > 0)
         return 1 - 2*c;
     else
         return 2*c - 1;

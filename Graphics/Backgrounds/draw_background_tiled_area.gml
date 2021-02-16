@@ -1,24 +1,22 @@
 #define draw_background_tiled_area
 /// draw_background_tiled_area(background,x,y,x1,y2,x2,y2)
+//  GM:S v2.3+ compatible
 //
 //  Draws a repeated background image, tiled to fill a given region and with
 //  a given offset. 
 //
-//      background  background to be drawn
+//  @param background  background to be drawn
 //      x,y         origin offset, real
 //      x1,y1       top-left corner of tiled area, real
 //      x2,y2       bottom-right corner of tiled area, real
 //
 /// GMLscripts.com/license
-{
-    var bg,xx,yy,x1,y1,x2,y2;
-    bg = argument0;
-    xx = argument1;
-    yy = argument2;
-    x1 = argument3;
-    y1 = argument4;
-    x2 = argument5;
-    y2 = argument6;
+function draw_background_tiled_area(background,x,y,x1,y2,x2,y2) {
+    var bg,xyy1;
+    bg = background;
+    xx = x;
+    yy = y;
+    y1 = y2;
     
     var bw,bh,i,j,jj,left,top,width,height,X,Y;
     bw = background_get_width(bg);

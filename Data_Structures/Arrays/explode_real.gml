@@ -1,17 +1,18 @@
 #define explode_real
 /// explode_real(delimiter,string)
+//  GM:S v2.3+ compatible
 //
 //  Returns an array of real values parsed from a given 
 //  string of elements separated by a delimiter.
 //
-//      delimiter   delimiter character, string
-//      string      group of elements, string
+//  @param delimiter   delimiter character, string
+//  @param string      group of elements, string
 //
 /// GMLscripts.com/license
-{
+function explode_real(delimiter,string) {
     var arr;
-    var del = argument0;
-    var str = argument1 + del;
+    var del = delimiter;
+    var str = string + del;
     var len = string_length(del);
     var ind = 0;
     repeat (string_count(del, str)) {

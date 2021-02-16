@@ -1,17 +1,18 @@
 #define combination
 /// combination(set,subset)
+//  GM:S v2.3+ compatible
 //
 //  Returns the number of unique subsets created from all
 //  combinations of a number of elements, or (-1) on error. 
 //
-//      set         number of elements, real
-//      subset      size of the subset, real
+//  @param set         number of elements, real
+//  @param subset      size of the subset, real
 //
 /// GMLscripts.com/license
-{
+function combination(set,subset) {
     var f,i,j,k,l,m,n;
-    n = floor(argument0);
-    k = floor(argument1);
+    n = floor(set);
+    k = floor(subset);
     m = n - k;
     if (m < 0) return (-1);
     else {

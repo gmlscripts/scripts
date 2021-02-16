@@ -1,23 +1,23 @@
 #define point_in_polygon
 /// point_in_polygon(x,y,polygon)
+//  GM:S v2.3+ compatible
 //
 //  Returns true if the given test point is inside 
 //  the given 2D polygon, false otherwise.
 //
 //      x,y         coordinates of the test point
-//      polygon     ds_list of an ordered series of coordinate 
+//  @param polygon     ds_list of an ordered series of coordinate 
 //                  pairs defining the shape of a polygon
 //
 //  Polygons are closed figures with edges spanning consecutive
 //  vertices and from the last vertex to the first.
 //
 /// GMLscripts.com/license
-{
-    var x0, y0, polygon, inside;
+function point_in_polygon(x,y,polygon) {
+    var x0, y0,  inside;
     var n, i, polyX, polyY, x1, y1, x2, y2;
-    x0 = argument0;
-    y0 = argument1;
-    polygon = argument2;
+    x0 = x;
+    y0 = y;
     inside = false;
     n = ds_list_size(polygon) div 2;
     for (i=0; i<n; i+=1)
@@ -41,4 +41,3 @@
     }
     return inside;
 }
-

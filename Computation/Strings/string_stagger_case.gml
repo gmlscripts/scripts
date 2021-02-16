@@ -1,22 +1,23 @@
 #define string_stagger_case
 /// string_stagger_case(str,spaces,first)
+//  GM:S v2.3+ compatible
 //
 //  Returns a string with the letters in staggered case,
 //  such as: "hElLo! hOw ArE yOu ToDaY?"
 //
-//      str         string of text, string
-//      spaces      count spaces as letters, bool
-//      first       capitalize first letter, bool
+//  @param str         string of text, string
+//  @param spaces      count spaces as letters, bool
+//  @param first       capitalize first letter, bool
 //
 /// GMLscripts.com/license
-{
+function string_stagger_case(str,spaces,first) {
     var new,iii,len,old,j;
-    new = argument0;
-    iii = argument2;
+    new = str;
+    iii = first;
     len = string_length(new);
     old = ''; 
     for (j=1; j<=len; j+=1) {
-        if (string_char_at(new,j) == ' ' && argument1 == false) continue;
+        if (string_char_at(new,j) == ' ' && spaces == false) continue;
         if (iii) old = string_upper(string_char_at(new,j)); 
         else     old = string_lower(string_char_at(new,j)); 
         new = string_delete(new,j,1); 

@@ -1,15 +1,15 @@
 #define string_rtrim
 /// string_rtrim(str)
+//  GM:S v2.3+ compatible
 //
 //  Returns the given string with whitespace stripped from its end.
 //  Whitespace is defined as SPACE, HT, LF, VT, FF, CR.
 //
-//      str         string of text, string
+//  @param str         string of text, string
 //
 /// GMLscripts.com/license
-{
-    var str,r,o;
-    str = argument0;
+function string_rtrim(str) {
+    var r,o;
     r = string_length(str);
     repeat (r) {
         o = ord(string_char_at(str,r));

@@ -1,12 +1,13 @@
 #define angle_difference
 /// angle_difference(angle1, angle2)
+//  GM:S v2.3+ compatible
 //
 //  Returns the relative angle [-180..180] between the given angles.
 //
-//      angle1      1st direction in degrees
-//      angle2      2nd direction in degress
+//  @param angle1      1st direction in degrees
+//  @param angle2      2nd direction in degress
 //
 /// GMLscripts.com/license
-{
-    return ((((argument0 - argument1) mod 360) + 540) mod 360) - 180;
+function angle_difference(angle1, angle2) {
+    return ((((angle1 - angle2) mod 360) + 540) mod 360) - 180;
 }

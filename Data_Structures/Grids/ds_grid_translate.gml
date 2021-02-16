@@ -1,22 +1,23 @@
 #define ds_grid_translate
 /// ds_grid_translate(id,horiz,vert)
+//  GM:S v2.3+ compatible
 //
 //  Shifts the contents of a grid by a given number of rows
 //  and columns. The contents are shifted so that they wrap
 //  around to the opposite side of the grid data structure.
 //
-//      id          grid data structure, real
-//      horiz       horizontal shift, real
-//      vert        vertical shift, real
+//  @param id          grid data structure, real
+//  @param horiz       horizontal shift, real
+//  @param vert        vertical shift, real
 //
 /// GMLscripts.com/license
-{
-    var dsid,w,h,sx,sy,mx,my,dx,dy,temp;
-    dsid = argument0;
+function ds_grid_translate(id,horiz,vert) {
+    var dsw,h,sx,sy,mx,my,dx,dy,temp;
+    dsid = id;
     w = ds_grid_width(dsid);
     h = ds_grid_height(dsid);
-    sx = (((argument1 mod w)+w) mod w);
-    sy = (((argument2 mod h)+h) mod h);
+    sx = (((horiz mod w)+w) mod w);
+    sy = (((vert mod h)+h) mod h);
     mx = w-1;
     my = h-1;
     dx = mx-sx;

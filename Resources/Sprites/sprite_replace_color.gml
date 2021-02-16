@@ -1,20 +1,20 @@
 #define sprite_replace_color
 /// sprite_replace_color(sprite,oldcolor,newcolor)
+//  GM:S v2.3+ compatible
 //
 //  Replaces one color in a given sprite with another. No new sprite are
 //  created, the given sprite is changed. Returns (-1) on error.
 //
-//      sprite      sprite to change, real
-//      oldcolor    color that will be replaced, real
-//      newcolor    color used as replacement, real
+//  @param sprite      sprite to change, real
+//  @param oldcolor    color that will be replaced, real
+//  @param newcolor    color used as replacement, real
 //
 /// GMLscripts.com/license
-{
-    var sprite, oldc, newc;
-    sprite = argument0;
-    oldc  = argument1;
-    newc  = argument2;
-
+function sprite_replace_color(sprite,oldcolor,newcolor) {
+    var oldc, newc;
+    oldc  = oldcolor;
+    newc  = newcolor;
+    
     var w, h, n, i, xo, yo, surf, tempsprite, newsprite, alphasprite;
     w  = sprite_get_width(sprite);
     h  = sprite_get_height(sprite);

@@ -1,18 +1,17 @@
 #define factor_quadratic
 /// factor_quadratic(b,c)
+//  GM:S v2.3+ compatible
 //
 //  Returns a string of factors for any quadratic equation (ax^2+bx+c=0),
 //  where a = 1 and b and c are integers. If it cannot be factored
 //  with integer values only, the original quadratic is returned.
 //
-//      b           value for the coefficient of x, real
-//      c           value for the constant, real
+//  @param b           value for the coefficient of x, real
+//  @param c           value for the constant, real
 //
 /// GMLscripts.com/license
-{
-    var b,c,bb,cc,brk,a,t;
-    b = argument0;
-    c = argument1;
+function factor_quadratic(b,c) {
+    var bcbrk,a,t;
     bb = b;
     cc = c;
     if (b < 0) { bb = -b; }

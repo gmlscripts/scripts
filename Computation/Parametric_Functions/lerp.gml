@@ -1,14 +1,15 @@
 #define lerp
 /// lerp(a,b,x)
+//  GM:S v2.3+ compatible
 //
 //  Returns a if x is 0, b if x is 1, for other values 
 //  of x returns linear interpolation of a to b controlled by x.
 //
-//      a           lower value, real
-//      b           upper value, real
-//      x           fraction (0-1), real
+//  @param a           lower value, real
+//  @param b           upper value, real
+//  @param x           fraction (0-1), real
 //
 /// GMLscripts.com/license
-{
-    return (argument0 + argument2 * (argument1 - argument0));
+function lerp(a,b,x) {
+    return (a + x * (b - a));
 }

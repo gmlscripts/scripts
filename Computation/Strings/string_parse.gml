@@ -1,5 +1,6 @@
 #define string_parse
 /// string_parse(str,token,ignore)
+//  GM:S v2.3+ compatible
 //
 //  Returns a ds_list containing all substring elements within
 //  a given string which are separated by a given token.
@@ -7,16 +8,13 @@
 //  eg. string_parse("cat|dog|house|bee", "|", true)
 //      returns a ds_list { "cat", "dog", "house", "bee" }
 //
-//      str         elements, string
-//      token       element separator,  string
-//      ignore      ignore empty substrings, bool
+//  @param str         elements, string
+//  @param token       element separator,  string
+//  @param ignore      ignore empty substrings, bool
 //
 /// GMLscripts.com/license
-{
-    var str,token,ignore,list,tlen,temp;
-    str = argument0;
-    token = argument1;
-    ignore = argument2;
+function string_parse(str,token,ignore) {
+    var list,tlen,temp;
     list = ds_list_create();
     tlen = string_length( token);
     while (string_length(str) != 0) {

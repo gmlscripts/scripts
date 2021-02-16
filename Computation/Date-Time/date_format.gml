@@ -1,11 +1,12 @@
 #define date_format
 /// date_format(format [,datetime])
+//  GM:S v2.3+ compatible
 //
 //  Returns a string formatted according to the given format string using
 //  the given date-time value or current local time if no date-time is given.
 //
-//      format      string controlling date formatting, string
-//      datetime    date-time value, real (optional)
+//  @param format      string controlling date formatting, string
+//  @param datetime    date-time value, real (optional)
 //
 //  Day format characters:
 //      d - day of the month with leading zeros, 2 digits with leading zeros; 01 through 31
@@ -55,7 +56,7 @@
 //      date_format("\I\t \i\s \t\h\e zS \d\a\y.") == "It is the 124th day."
 //
 /// GMLscripts.com/license
-{
+function date_format(format) {
     var str,dat,out,day,month,year,week,weekday,second,minute,hour24,hour12,i,c;
     str = argument[0];
     if (argument_count > 1) dat = argument[1];

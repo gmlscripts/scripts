@@ -1,9 +1,10 @@
 #define polygon_to_triangles
 /// polygon_to_triangles(polygon)
+//  GM:S v2.3+ compatible
 //
 //  Returns a list of triangles created from a given 2D polygon.
 //
-//      polygon     ds_list of an ordered series of coordinate 
+//  @param polygon     ds_list of an ordered series of coordinate 
 //                  pairs defining the shape of a polygon
 //
 //  The polygon vertices are given and returned in traditional
@@ -21,10 +22,9 @@
 //  Depends on lines_intersect() and point_in_triangle().
 //
 /// GMLscripts.com/license
-{
-    var polygon, polygonSize, triangles, points, polyX, polyY, good;
+function polygon_to_triangles(polygon) {
+    var polygonSize, triangles, points, polyX, polyY, good;
     var i, j, n, p, A, B, C, x0, y0, x1, y1, x2, y2, x3, y3, x4, y4;
-    polygon = argument0;
     polygonSize = ds_list_size(polygon) div 2;
     triangles = ds_list_create();
     points = ds_list_create();
@@ -86,7 +86,7 @@
                         {
                             x4 = ds_list_find_value(polyX, j);
                             y4 = ds_list_find_value(polyY, j);
-
+    
                             if (lines_intersect(x0, y0, x2, y2, x3, y3, x4, y4, true) != 0)
                             { 
                                 good = false; 
@@ -128,4 +128,3 @@
     
     return triangles;
 }
-

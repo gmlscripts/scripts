@@ -1,25 +1,23 @@
 #define string_parse_single
 /// string_parse_single(str,token,n,ignore)
+//  GM:S v2.3+ compatible
 //
 //  Returns the nth substring from a string of elements separated by
 //  a given token, or the separator token if an error occurred.
 //
 //  eg. string_parse_single("cat|dog|house|bee", "|", 2, true) == "dog"
 //
-//      str         elements, string
-//      token       element separator, string
-//      n           element to return, real
-//      ignore      ignore empty substrings, bool
+//  @param str         elements, string
+//  @param token       element separator, string
+//  @param n           element to return, real
+//  @param ignore      ignore empty substrings, bool
 //
 /// GMLscripts.com/license
-{
-    var str, token, substr, ignore, N, tlen, temp, i;
+function string_parse_single(str,token,n,ignore) {
+    var sub  N, tle temp, i;
     
-    str = argument0;
-    token = argument1;
-    N = argument2;
-    ignore = argument3;
-
+    N = n;
+    
     tlen = string_length( token);
     
     substr = "";

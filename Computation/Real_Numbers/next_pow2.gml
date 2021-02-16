@@ -1,11 +1,12 @@
 #define next_pow2
 /// next_pow2(n)
+//  GM:S v2.3+ compatible
 //
 //  Returns the next power-of-two greater than or equal to a given value.
 //
-//      n       positive integer
+//  @param n       positive integer
 //
 /// GMLscripts.com/license
-{
-    return 1 << ceil(log2(argument0));
+function next_pow2(n) {
+    return 1 << ceil(log2(n));
 }

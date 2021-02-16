@@ -1,14 +1,15 @@
 #define factor
 /// factor(number)
+//  GM:S v2.3+ compatible
 //  
 //  Returns a ds_list containing the prime factors of a given integer.
 //
-//      number      positive integer, real
+//  @param number      positive integer, real
 //
 /// GMLscripts.com/license
-{
+function factor(number) {
     var num,dsid,check;
-    num = argument0;
+    num = number;
     dsid = ds_list_create();
     check = 2;
     while (sqr(check) <= num) {

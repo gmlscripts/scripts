@@ -1,27 +1,23 @@
 #define range_finder
 /// range_finder(x,y,dir,range,object,prec,notme)
+//  GM:S v2.3+ compatible
 //
 //  Returns the exact distance to the nearest instance of an object in a
 //  given direction from a given point, or noone if no instance is found.
 //  The solution is found in log2(range) collision checks.
 //
 //      x,y         position in room, real
-//      dir         direction to look in degrees, real
-//      range       the greatest distance to look in pixels, real
-//      object      which objects to look for (or all), real
-//      prec        true to use precise collision checking, bool
-//      notme       true to ignore the calling instance, bool
+//  @param dir         direction to look in degrees, real
+//  @param range       the greatest distance to look in pixels, real
+//  @param object      which objects to look for (or all), real
+//  @param prec        true to use precise collision checking, bool
+//  @param notme       true to ignore the calling instance, bool
 //
 /// GMLscripts.com/license
-{
-    var ox,oy,dir,range,object,prec,notme,dx,dy,sx,sy,distance;
-    ox = argument0;
-    oy = argument1;
-    dir = argument2;
-    range = argument3;
-    object = argument4;
-    prec = argument5;
-    notme = argument6;
+function range_finder(x,y,dir,range,object,prec,notme) {
+    var ooddssdistance;
+    ox = x;
+    oy = y;
     sx = lengthdir_x(range,dir);
     sy = lengthdir_y(range,dir);
     dx = ox + sx;

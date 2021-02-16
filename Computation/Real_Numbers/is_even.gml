@@ -1,11 +1,12 @@
 #define is_even
 /// is_even(value)
+//  GM:S v2.3+ compatible
 //
 //  Returns true if a given value is even, false otherwise.
 //
-//      value       value, real
+//  @param value       value, real
 //
 /// GMLscripts.com/license
-{
-    return !(argument0 & 1);
+function is_even(value) {
+    return !(value & 1);
 }

@@ -1,11 +1,12 @@
 #define exp_dist
 /// exp_dist(mean)
+//  GM:S v2.3+ compatible
 //
 //  Returns a random number with exponential distribution.
 //
-//      mean        mean value of the distribution, real
+//  @param mean        mean value of the distribution, real
 //
 /// GMLscripts.com/license
-{
-    return -argument0 * ln(1-random(1));
+function exp_dist(mean) {
+    return -mean * ln(1-random(1));
 }

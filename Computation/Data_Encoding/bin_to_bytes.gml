@@ -1,15 +1,15 @@
 #define bin_to_bytes
 /// bin_to_bytes(bin)
+//  GM:S v2.3+ compatible
 //
 //  Returns a string of raw bytes (8 bits each)
 //  representing the given binary string.
 //
-//      bin         binary digits, string
+//  @param bin         binary digits, string
 //
 /// GMLscripts.com/license
-{
-    var bin, str, p, byte;
-    bin = argument0;
+function bin_to_bytes(bin) {
+    var str, p, byte;
     str = "";
     p = string_length(bin);
     repeat (ceil(p / 8)) {

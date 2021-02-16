@@ -1,14 +1,14 @@
 #define bin_to_hex
 /// bin_to_hex(bin)
+//  GM:S v2.3+ compatible
 //
 //  Returns a hexadecimal string converted from a binary string.
 //
-//      bin         binary digits, string
+//  @param bin         binary digits, string
 //
 /// GMLscripts.com/license
-{
-    var bin = argument0,
-        hex = "";
+function bin_to_hex(bin) {
+    var hex = "";
     
     var nib = "0000101100111101000";
     var dig = "0125B6C937FEDA48";

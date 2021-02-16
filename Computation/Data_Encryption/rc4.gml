@@ -1,17 +1,16 @@
 #define rc4
 /// rc4(str,key)
+//  GM:S v2.3+ compatible
 //
 //  Returns the given string encrypted/decrypted with the RC4 algorithm
 //  using the given key. RC4 is a trademark of RSA Data Security, Inc.
 //
-//      str         plaintext or ciphertext, string
-//      key         encryption key, string
+//  @param str         plaintext or ciphertext, string
+//  @param key         encryption key, string
 //
 /// GMLscripts.com/license
-{
-    var str, key, out, len, i, S, j, temp, pos, t;
-    str = argument0;
-    key = argument1;
+function rc4(str,key) {
+    var out, len, i, S, j, temp, pos, t;
     out = "";
     len = string_length(key);
     for (i=0; i<256; i+=1) S[i] = i;

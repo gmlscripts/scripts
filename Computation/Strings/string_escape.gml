@@ -1,14 +1,14 @@
 #define string_escape
 /// string_escape(str)
+//  GM:S v2.3+ compatible
 //
 //  Returns the given string with all escape sequences parsed.
 //
-//      str         string with C-style escape sequences, string
+//  @param str         string with C-style escape sequences, string
 //
 /// GMLscripts.com/license
-{
-    var str,out,pos,tmp,ref,val;
-    str = argument0;
+function string_escape(str) {
+    var out,pos,tmp,ref,val;
     out = "";
     ref = "0123456789abcdef";
     while (str != "") {

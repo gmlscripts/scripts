@@ -1,16 +1,17 @@
 #define color_scale
 /// color_scale(color,scale)
+//  GM:S v2.3+ compatible
 //
 //  Returns a given color with each component scaled by a factor.
 //
-//      color       RGB color, real
-//      scale       scaling factor [0..1], real
+//  @param color       RGB color, real
+//  @param scale       scaling factor [0..1], real
 //
 /// GMLscripts.com/license
-{
+function color_scale(color,scale) {
     var c,v,t;
-    c = argument0;
-    v = argument1 * 65336;
+    c = color;
+    v = scale * 65336;
     t = c & 65280;
     c = c ^ t;
     t *= v;

@@ -1,19 +1,17 @@
 #define vigenere_cipher
 /// vigenere_cipher(in,key,mode)
+//  GM:S v2.3+ compatible
 //
 //  Returns the given string enciphered or deciphered 
 //  using a Vigenere style cipher.
 //
-//      in          input, string
-//      key         enciphering key, string
-//      mode        0 = decipher, 1 = encipher
+//  @param in          input, string
+//  @param key         enciphering key, string
+//  @param mode        0 = decipher, 1 = encipher
 //
 /// GMLscripts.com/license
-{
-    var in, key, mode, out;
-    in = argument0;
-    key = argument1;
-    mode = argument2;
+function vigenere_cipher(in,key,mode) {
+    var out;
     out = "";
     var inLen, keyLen, pos, inChar, keyChar, outChar;
     var inVal, keyVal, outVal;

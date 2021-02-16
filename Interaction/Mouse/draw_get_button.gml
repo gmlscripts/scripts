@@ -1,5 +1,6 @@
 #define draw_get_button
 /// draw_get_button(x,y,str,width,height,color,hover,bgcolor)
+//  GM:S v2.3+ compatible
 //
 //  Draws a simple labeled button on the screen and returns true
 //  if it has been clicked using the left mouse button. This should
@@ -7,24 +8,23 @@
 //  Text alignment will be set to horizontal and vertical centering.
 //
 //      x,y         position to draw center of button, real
-//      str         text to display inside button, string
-//      width       width of button, real
-//      height      height of button, real
-//      color       color of text, real
-//      hover       color of text when mouse is over button, real
-//      bgcolor     color of background when mouse is over button, real
+//  @param str         text to display inside button, string
+//  @param width       width of button, real
+//  @param height      height of button, real
+//  @param color       color of text, real
+//  @param hover       color of text when mouse is over button, real
+//  @param bgcolor     color of background when mouse is over button, real
 //
 /// GMLscripts.com/license
-{
-    var xx,yy,str,w,h,col1,col2,col3,prev_color,prev_alpha,bl,br,bt,bb,in;
-    xx = argument0;
-    yy = argument1;
-    str = argument2;
-    w = argument3 / 2;
-    h = argument4 / 2;
-    col1 = argument5;
-    col2 = argument6;
-    col3 = argument7;
+function draw_get_button(x,y,str,width,height,color,hover,bgcolor) {
+    var xyw,h,col1,col2,col3,prev_prev_alpha,bl,br,bt,bb,in;
+    xx = x;
+    yy = y;
+    w = width / 2;
+    h = height / 2;
+    col1 = color;
+    col2 = hover;
+    col3 = bgcolor;
     prev_color = draw_get_color();
     prev_alpha = draw_get_alpha();
     bl = xx - w;

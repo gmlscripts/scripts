@@ -1,14 +1,15 @@
 #define ds_grid_shuffle
 /// ds_grid_shuffle(id)
+//  GM:S v2.3+ compatible
 //
 //  Rearranges the cell contents of a given grid in randomly.
 //
-//      id          grid data structure, real
+//  @param id          grid data structure, real
 //
 /// GMLscripts.com/license
-{
-    var grid,w,h,xx,yy,temp,tx,ty;
-    grid = argument0;
+function ds_grid_shuffle(id) {
+    var grw,h,xx,yy,temp,tx,ty;
+    grid = id;
     w = ds_grid_width(grid);
     h = ds_grid_height(grid);
     for (xx=0; xx<w; xx+=1) {

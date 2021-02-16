@@ -1,18 +1,17 @@
 #define string_split
 /// string_split(str,num,break)
+//  GM:S v2.3+ compatible
 //
 //  Returns a string with break characters inserted at a given interval.
 //
-//      str         text, string
-//      num         number of characters before a break, real
-//      break       characters to insert, string
+//  @param str         text, string
+//  @param num         number of characters before a break, real
+//  @param break       characters to insert, string
 //
 /// GMLscripts.com/license
-{
-    var str,num,brk,len,i;
-    str = argument0;
-    num = argument1;
-    brk = argument2;
+function string_split(str,num,break) {
+    var brk,len,i;
+    brk = break;
     if (num < 1) num = 76;
     if (is_real(brk)) brk = "#";
     len = string_length(str);

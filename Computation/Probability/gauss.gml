@@ -1,13 +1,14 @@
 #define gauss
 /// gauss(mean,deviation)
+//  GM:S v2.3+ compatible
 //
 //  Returns a pseudo-random number with an exact Gaussian distribution.
 //
-//      mean        mean value of the distribution, real
-//      deviation   standard deviation of distribution, real
+//  @param mean        mean value of the distribution, real
+//  @param deviation   standard deviation of distribution, real
 //
 /// GMLscripts.com/license
-{
+function gauss(mean,deviation) {
     var x1, x2, w;
     
     do {
@@ -17,5 +18,5 @@
     } until (0 < w && w < 1);
     
     w = sqrt(-2 * ln(w)/w);
-    return argument0 + argument1 * x1 * w;
+    return mean + deviation * x1 * w;
 }

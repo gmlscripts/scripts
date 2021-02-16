@@ -1,12 +1,13 @@
 #define cone_volume
 /// cone_volume(radius,height)
+//  GM:S v2.3+ compatible
 //
 //  Returns the volume of a cone of a given radius and height.
 //
-//      radius      radius of cone, real
-//      height      height of cone, real
+//  @param radius      radius of cone, real
+//  @param height      height of cone, real
 //
 /// GMLscripts.com/license
-{
-    return (1/3 * pi * argument0 * argument0 * argument1);
+function cone_volume(radius,height) {
+    return (1/3 * pi * radius * radius * height);
 }

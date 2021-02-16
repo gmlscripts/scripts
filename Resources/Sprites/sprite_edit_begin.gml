@@ -1,19 +1,19 @@
 #define sprite_edit_begin
 /// sprite_edit_begin(sprite)
+//  GM:S v2.3+ compatible
 //
 //  Edit a sprite dynamically using drawing commands. This script begins
 //  an editing session and returns a session ID. All further drawing 
 //  commands are directed to a surface holding a horizontal strip of frames
 //  from a given sprite. A call to script sprite_edit_end() ends editing.
 //
-//      sprite      sprite to edit, real
+//  @param sprite      sprite to edit, real
 //
 //  Note: Blending mode is reset to normal after calling this script.
 //
 /// GMLscripts.com/license
-{
-    var sprite,a,w,h,n,xoff,yoff,surface,i;
-    sprite = argument0;
+function sprite_edit_begin(sprite) {
+    var a,w,h,n,xoff,yoff,surface,i;
     a = draw_get_alpha();
     w = sprite_get_width(sprite);
     h = sprite_get_height(sprite);

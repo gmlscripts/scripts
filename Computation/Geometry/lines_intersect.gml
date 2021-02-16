@@ -1,5 +1,6 @@
 #define lines_intersect
 /// lines_intersect(x1,y1,x2,y2,x3,y3,x4,y4,segment)
+//  GM:S v2.3+ compatible
 //
 //  Returns a vector multiplier (t) for an intersection on the
 //  first line. A value of (0 < t <= 1) indicates an intersection 
@@ -8,7 +9,7 @@
 //
 //      x1,y1,x2,y2     1st line segment
 //      x3,y3,x4,y4     2nd line segment
-//      segment         If true, confine the test to the line segments.
+//  @param segment         If true, confine the test to the line segments.
 //
 //  By substituting the return value (t) into the parametric form
 //  of the first line, the point of intersection can be determined.
@@ -16,20 +17,20 @@
 //      y = y1 + t * (y2 - y1)
 //
 /// GMLscripts.com/license
-{
+function lines_intersect(x1,y1,x2,y2,x3,y3,x4,y4,segment) {
     var ua, ub, ud, ux, uy, vx, vy, wx, wy;
     ua = 0;
-    ux = argument2 - argument0;
-    uy = argument3 - argument1;
-    vx = argument6 - argument4;
-    vy = argument7 - argument5;
-    wx = argument0 - argument4;
-    wy = argument1 - argument5;
+    ux = x2 - x1;
+    uy = y2 - y1;
+    vx = x4 - x3;
+    vy = y4 - y3;
+    wx = x1 - x3;
+    wy = y1 - y3;
     ud = vy * ux - vx * uy;
     if (ud != 0) 
     {
         ua = (vx * wy - vy * wx) / ud;
-        if (argument8) 
+        if (segment) 
         {
             ub = (ux * wy - uy * wx) / ud;
             if (ua < 0 || ua > 1 || ub < 0 || ub > 1) ua = 0;
@@ -37,4 +38,3 @@
     }
     return ua;
 }
-

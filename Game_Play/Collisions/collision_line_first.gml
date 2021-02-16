@@ -1,5 +1,6 @@
 #define collision_line_first
 /// collision_line_first(x1,y1,x2,y2,object,prec,notme)
+//  GM:S v2.3+ compatible
 //
 //  Returns the instance id of an object colliding with a given line and
 //  closest to the first point, or noone if no instance found.
@@ -7,20 +8,17 @@
 //
 //      x1,y2       first point on collision line, real
 //      x2,y2       second point on collision line, real
-//      object      which objects to look for (or all), real
-//      prec        if true, use precise collision checking, bool
-//      notme       if true, ignore the calling instance, bool
+//  @param object      which objects to look for (or all), real
+//  @param prec        if true, use precise collision checking, bool
+//  @param notme       if true, ignore the calling instance, bool
 //
 /// GMLscripts.com/license
-{
-    var ox,oy,dx,dy,object,prec,notme,sx,sy,inst,i;
-    ox = argument0;
-    oy = argument1;
-    dx = argument2;
-    dy = argument3;
-    object = argument4;
-    prec = argument5;
-    notme = argument6;
+function collision_line_first(x1,y1,x2,y2,object,prec,notme) {
+    var ox,oy,dx,dy,sx,sy,inst,i;
+    ox = x1;
+    oy = y1;
+    dx = x2;
+    dy = y2;
     sx = dx - ox;
     sy = dy - oy;
     inst = collision_line(ox,oy,dx,dy,object,prec,notme);

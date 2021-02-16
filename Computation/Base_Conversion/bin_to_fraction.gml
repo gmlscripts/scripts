@@ -1,14 +1,14 @@
 #define bin_to_fraction
 /// bin_to_fraction(bin)
+//  GM:S v2.3+ compatible
 //
 //  Returns a decimal fraction converted from a binary string.
 //
-//      bin         binary digits, string
+//  @param bin         binary digits, string
 //
 /// GMLscripts.com/license
-{
-    var bin = argument0,
-        fraction = 0;
+function bin_to_fraction(bin) {
+    var fraction = 0;
     
     var i = 0;
     repeat (string_length(bin)) {

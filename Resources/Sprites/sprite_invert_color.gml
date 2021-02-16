@@ -1,16 +1,16 @@
 #define sprite_invert_color
 /// sprite_invert_color(sprite)
+//  GM:S v2.3+ compatible
 //
 //  Inverts the colors of a given sprite. No new sprites are 
 //  created, the given sprite is change. Returns (-1) on error.
 //
-//      sprite      sprite to change
+//  @param sprite      sprite to change
 //
 /// GMLscripts.com
-{
-    var sprite,w,h,n,xo,yo,surf,a,i,newsprite,alphasprite;
-    sprite = argument0;
-
+function sprite_invert_color(sprite) {
+    var w,h,n,xo,yo,surf,a,i,newalpha;
+    
     w  = sprite_get_width(sprite);
     h  = sprite_get_height(sprite);
     n  = sprite_get_number(sprite);

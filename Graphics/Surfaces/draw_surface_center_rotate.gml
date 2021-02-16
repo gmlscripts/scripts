@@ -1,19 +1,19 @@
 #define draw_surface_center_rotate
 /// draw_surface_center_rotate(id,x,y,rot)
+//  GM:S v2.3+ compatible
 //
 //  Draws a surface centered at a given point and rotated.
 //
-//      id          surface id, real
+//  @param id          surface id, real
 //      x,y         position of center of surface, real
-//      rot         rotation in degrees, real
+//  @param rot         rotation in degrees, real
 //
 ///  GMLscripts.com/license
-{
-    var surface,sx,sy,angle,mx,my;
-    surface = argument0;
-    sx = argument1;
-    sy = argument2;
-    rot = argument3;
+function draw_surface_center_rotate(id,x,y,rot) {
+    var surface,ssangle,mm;
+    surface = id;
+    sx = x;
+    sy = y;
     mx = surface_get_width(surface)/2;
     my = surface_get_height(surface)/2;
     d3d_transform_stack_push();

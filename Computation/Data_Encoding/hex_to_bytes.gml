@@ -1,15 +1,16 @@
 #define hex_to_bytes
 /// hex_to_bytes(hex)
+//  GM:S v2.3+ compatible
 //
 //  Returns a string of raw bytes (8 bits each)
 //  representing the given hexadecimal string.
 //
-//      hex         hexadecimal digits, string
+//  @param hex         hexadecimal digits, string
 //
 /// GMLscripts.com/license
-{
-    var hex, str, h, l, p, hi, lo;
-    hex = string_upper(argument0);
+function hex_to_bytes(hex) {
+    var str, h, l, p, hi, lo;
+    hex = string_upper(hex);
     str = "";
     h = "0123456789ABCDEF";
     l = string_length(hex);

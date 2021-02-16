@@ -1,21 +1,22 @@
 #define select_relative
 /// select_relative(current,delta,choice0,choice1,choice2...)
+//  GM:S v2.3+ compatible
 //
 //  Returns an argument in a position relative to a given value.
 //  If a relative position is beyond the range of given choices,
 //  the position is clamped to be within range. If current value
 //  isn't among the choices, the return value is undefined.
 //
-//      current     value matching a given choice
-//      delta       relative position of desired choice, integer
-//      choiceN     value to return, if selected
+//  @param current     value matching a given choice
+//  @param delta       relative position of desired choice, integer
+//  @param choiceN     value to return, if selected
 //
 //  eg. select_relative("Name", -2, "Hello", "Doctor", "Name") == "Hello"
 //      select_relative("Doctor", 2, "Hello", "Doctor", "Name") == "Name"
 //
 /// GMLscripts.com/license
-{
-    var current = argument[0];
+function select_relative(current,delta,choice0,choice1,choice2...) {
+    
     var delta = argument[1];
     var size = argument_count - 2;
     var choices = ds_list_create();

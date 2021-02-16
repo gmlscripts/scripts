@@ -1,16 +1,16 @@
 #define b64_to_bytes
 /// b64_to_bytes(b64)
+//  GM:S v2.3+ compatible
 //
 //  Returns a string of raw bytes, 8 bits each. b64 strings with 
 //  characters outside of the RFC 3548 standard or with excess
 //  padding characters at the end will not decode correctly.
 //
-//      b64         base64 digits (RFC 3548), 6 bits each, string
+//  @param b64         base64 digits (RFC 3548), 6 bits each, string
 //
 /// GMLscripts.com/license
-{
-    var b64, len, pad, tab, str, i, bin;
-    b64 = argument0;
+function b64_to_bytes(b64) {
+    var len, pad, tab, str, i, bin;
     len = string_length(b64);
     pad = "=";
     tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
