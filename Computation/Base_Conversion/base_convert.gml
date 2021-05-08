@@ -1,19 +1,19 @@
-#define base_convert
-/// base_convert(number, oldbase, newbase)
-//
-//  Returns a number converted from one base as another base.
-//  Base36 is the largest base supported.
-//
-//      number      integer value to be converted, string
-//      oldbase     base of the given number, integer
-//      newbase     base of the returned value, integer
-//
+/// @func   base_convert(number, oldbase, newbase)
+///
+/// @desc   Returns a number converted from one base as another base.
+///         Base36 is the largest base supported.
+///
+/// @param  {string}    number      integer value to be converted
+/// @param  {real}      oldbase     base of the given number
+/// @param  {real}      newbase     base of the returned number
+///
+/// @return {string}    number
+///
 /// GMLscripts.com/license
+
+function base_convert(number, oldbase, newbase) 
 {
-    var number  = string_upper(argument0),
-        oldbase = argument1,
-        newbase = argument2,
-        out     = "";
+    number = string_upper(number);
     
     var dig = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var len = string_length(number);
@@ -23,6 +23,7 @@
         num[i] = string_pos(string_char_at(number, i+1), dig) - 1;
     }
     
+    var out = "";
     do {
         var divide, newlen;
         divide = 0;

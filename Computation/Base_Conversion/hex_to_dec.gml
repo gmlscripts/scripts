@@ -1,14 +1,16 @@
-#define hex_to_dec
-/// hex_to_dec(hex)
-//
-//  Returns an integer converted from an hexadeciaml string.
-//
-//      hex         hexadecimal digits, string
-//
+/// @func   hex_to_dec(hex)
+///
+/// @desc   Returns an integer converted from an hexadecimal string.
+///
+/// @param  {string}    hex         hexadecimal digits
+///
+/// @return {real}      positive integer
+///
 /// GMLscripts.com/license
+
+function hex_to_dec(hex)
 {
-    var hex = argument0,
-        dec = 0;
+    var dec = 0;
     
     var dig = "0123456789ABCDEF";
     var len = string_length(hex);

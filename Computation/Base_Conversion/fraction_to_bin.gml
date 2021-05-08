@@ -1,16 +1,17 @@
-#define fraction_to_bin
-/// fraction_to_bin(fraction, length)
-//
-//  Returns a binary string converted from a decimal fraction.
-//
-//      fraction    decimal fraction
-//      length      number of bits to return
-//
+/// @func   fraction_to_bin(fraction, length)
+///
+/// @desc   Returns a binary string converted from a decimal fraction.
+///
+/// @param  {real}      fraction    decimal fraction
+/// @param  {real}      length      number of bits to return
+///
+/// @return {string}    binary digits
+///
 /// GMLscripts.com/license
+
+function fraction_to_bin(fraction, length)
 {
-    var fraction = argument0,
-        length = argument1,
-        bin = "";
+    var bin = "";
     
     var i = 1;
     repeat (length) {

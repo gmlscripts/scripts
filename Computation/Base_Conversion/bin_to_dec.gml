@@ -1,14 +1,16 @@
-#define bin_to_dec
-/// bin_to_dec(bin)
-//
-//  Returns an integer converted from a binary string.
-//
-//      bin         binary digits, string
-//
+/// @func   bin_to_dec(bin)
+///
+/// @desc   Returns an integer converted from a binary string.
+///
+/// @param  {string}    bin         binary digits
+///
+/// @return {real}      positive integer
+///
 /// GMLscripts.com/license
+
+function bin_to_dec(bin)
 {
-    var bin = argument0,
-        dec = 0;
+    var dec = 0;
     
     var len = string_length(bin);
     for (var pos=1; pos<=len; pos+=1) {

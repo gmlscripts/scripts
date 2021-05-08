@@ -1,19 +1,21 @@
-#define dec_to_oct
-/// dec_to_oct(dec [, length])
-//
-//  Returns a given value as a string of octal digits.
-//  Octal strings can be padded to a minimum length.
-//  Note: If the given value is negative, it will
-//  be converted using its two's complement form.
-//
-//      dec         integer
-//      length      minimum number of digits
-//
+/// @func   dec_to_oct(dec [, len=1])
+///
+/// @desc   Returns a given value as a string of octal digits.
+///         Octal strings can be padded to a minimum length.
+///         Note: If the given value is negative, it will
+///         be converted using its two's complement form.
+///
+/// @param  {real}      dec         integer
+/// @param  {real}      [len=1]     minimum number of digits
+///
+/// @return {string}    octal digits
+///
 /// GMLscripts.com/license
+
+function dec_to_oct(dec, len)
 {
-    var dec = argument[0],
-        len = (argument_count > 1) ? argument[1] : 1,
-        oct = "";
+    len = is_undefined(len) ? 1 : len;
+    var oct = "";
     
     if (dec < 0) {
         len = max(len, ceil(logn(8, 2*abs(dec))));

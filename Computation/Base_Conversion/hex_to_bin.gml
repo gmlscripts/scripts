@@ -1,14 +1,17 @@
-#define hex_to_bin
-/// hex_to_bin(hex)
-//
-//  Returns a binary string converted from a hexadecimal string.
-//
-//      hex         hexadecimal digits, string
-//
+/// @func   hex_to_bin(hex)
+///
+/// @desc   Returns a binary string converted from a hexadecimal string.
+///
+/// @param  {string}    hex         hexadecimal digits
+///
+/// @return {string}    binary digits
+///
 /// GMLscripts.com/license
+
+function hex_to_bin(hex)
 {
-    var hex = string_upper(argument0),
-        bin = "";
+    hex = string_upper(hex);
+    var bin = "";
     
     var nib = "0000101100111101000";
     var dig = "0125B6C937FEDA48";

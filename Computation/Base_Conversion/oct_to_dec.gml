@@ -1,14 +1,16 @@
-#define oct_to_dec
-/// oct_to_dec(oct)
-//
-//  Returns an integer converted from an octal string.
-//
-//      oct         octal digits, string
-//
+/// @func   oct_to_dec(oct)
+///
+/// @desc   Returns an integer converted from an octal string.
+///
+/// @param  {string}    oct         octal digits
+///
+/// @return {real}      positive integer
+///
 /// GMLscripts.com/license
+
+function oct_to_dec(oct)
 {
-    var oct = argument0,
-        dec = 0;
+    var dec = 0;
     
     var dig = "01234567";
     var len = string_length(oct);
