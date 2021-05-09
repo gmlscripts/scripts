@@ -1,12 +1,15 @@
-#define bit_test
-/// bit_test(bitfield,bit)
-//
-//  Returns the state of a bit within a given bitfield.
-//
-//      bitfield    number or group of bits, integer
-//      bit         bit index to test, integer
-//
+/// @func   bit_test(bitfield, bit)
+///
+/// @desc   Returns the value of a selected bit within a bitfield.
+///
+/// @param  {real}      bitfield    integer or group of bits
+/// @param  {real}      bit         bit index to test
+///
+/// @return {real}      value of selected bit, 0 or 1
+///
 /// GMLscripts.com/license
+
+function bit_test(bitfield, bit)
 {
-    return 1 & (argument0 >> argument1);
+    return 1 & (bitfield >> bit);
 }

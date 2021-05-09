@@ -1,12 +1,15 @@
-#define bit_clear
-/// bit_clear(bitfield,bit)
-//
-//  Returns a given bitfield with a given bit set to 0.
-//
-//      bitfield    number or group of bits, integer
-//      bit         bit index to change, integer
-//
+/// @func   bit_clear(bitfield, bit)
+///
+/// @desc   Returns a bitfield with a given bit cleared to 0.
+///
+/// @param  {real}      bitfield    integer or group of bits
+/// @param  {real}      bit         bit index to clear
+///
+/// @return {real}      bitfield with bit cleared
+///
 /// GMLscripts.com/license
+
+function bit_clear(bitfield, bit) 
 {
-    return argument0 & ~(1 << argument1);
+    return bitfield & ~(1 << bit);
 }

@@ -1,18 +1,19 @@
-#define bitwise_rol
-/// bitwise_rol(n,count,size)
-//
-//  Returns the given number rotated to
-//  the left by given number of bits.
-//
-//      n           number to be rotated left
-//      count       number of bits to rotate
-//      size        size of number in bits
-//
+/// @func   bitwise_rol(n, count, size)
+///
+/// @desc   Returns the given integer rotated left a number of bit positions.
+///         Note: Bits beyond the given size are masked off.
+///
+/// @param  {real}      n           integer to be rotated
+/// @param  {real}      count       bit positions to rotate
+/// @param  {real}      size        size of integer in bits
+///
+/// @return {real}      rotated integer
+///
 /// GMLscripts.com/license
+
+function bitwise_rol(n, count, size)
 {
-    var n, count, size;
-    n = argument0;
-    count = argument1;
-    size = argument2;
-    return ((n << count) & (1 << size)-1) | (n >> (size - count));
+    var mask = (1 << size) - 1;
+    n &= mask;
+    return (n << count) | (n >> (size - count)) & mask;
 }

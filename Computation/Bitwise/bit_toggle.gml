@@ -1,12 +1,15 @@
-#define bit_toggle
-/// bit_toggle(bitfield,bit)
-//
-//  Returns a given bitfield with a given bit toggled.
-//
-//      bitfield    number or group of bits, integer
-//      bit         bit index to change, integer
-//
+/// @func   bit_toggle(bitfield, bit)
+///
+/// @desc   Returns a bitfield with a given bit toggled.
+///
+/// @param  {real}      bitfield    integer or group of bits
+/// @param  {real}      bit         bit index to toggle
+///
+/// @return {real}      bitfield with bit toggled
+///
 /// GMLscripts.com/license
+
+function bit_toggle(bitfield, bit)
 {
-    return argument0 ^ (1 << argument1);
+    return bitfield ^ (1 << bit);
 }

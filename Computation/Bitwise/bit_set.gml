@@ -1,12 +1,15 @@
-#define bit_set
-/// bit_set(bitfield,bit)
-//
-//  Returns a given bitfield with a given bit set to 1.
-//
-//      bitfield    number or group of bits, integer
-//      bit         bit index to change, integer
-//
+/// @func   bit_set(bitfield, bit)
+///
+/// @desc   Returns a bitfield with a given bit set to 1.
+///
+/// @param  {real}      bitfield    integer or group of bits
+/// @param  {real}      bit         bit index to set
+///
+/// @return {real}      bitfield with bit set
+///
 /// GMLscripts.com/license
+
+function bit_set(bitfield, bit)
 {
-    return argument0 | (1 << argument1);
+    return bitfield | (1 << bit);
 }
