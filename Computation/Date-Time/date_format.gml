@@ -153,7 +153,7 @@
         case "A": if (hour24 < 12) out += "AM" else out += "PM"; break;
         case "U": out += string(round(date_second_span(dat,25569))); break;
         case "z": out += string(date_get_day_of_year(dat)-1); break;
-        case "t": out += string(date_days_in_month(month)); break;
+        case "t": out += string(date_days_in_month(dat)); break;
         case "L": out += string(date_leap_year(dat)); break;
         case "w": out += string(weekday); break;
         case "N": out += string(((weekday+6) mod 7)+1); break;
