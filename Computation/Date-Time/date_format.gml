@@ -1,77 +1,88 @@
-#define date_format
-/// date_format(format [,datetime])
-//
-//  Returns a string formatted according to the given format string using
-//  the given date-time value or current local time if no date-time is given.
-//
-//      format      string controlling date formatting, string
-//      datetime    date-time value, real (optional)
-//
-//  Day format characters:
-//      d - day of the month with leading zeros, 2 digits with leading zeros; 01 through 31
-//      D - day of the week, textual, 3 letters; Fri
-//      j - day of the month without leading zeros; 1 through 31
-//      l - day of the week, textual, long; Friday
-//      N - ISO 8601 day number of the week; 1 (Monday) through 7 (Sunday)
-//      S - English ordinal suffix, textual, 2 characters; st, nd, rd, th
-//      w - day of the week, numeric, 0 (Sunday) through 6 (Saturday)
-//      z - day of the year (starting from zero); 0 through 365
-//
-//  Week format characters:
-//      W - ISO 8601 week number of year, weeks starting on Monday; 42
-//
-//  Month format characters:
-//      F - month, textual, long; January
-//      m - month with leading zeros; 01 through 12
-//      M - month, textual, 3 letters; Jan
-//      n - month without leading zeros; 1 through 12
-//      t - number of days in the given month; 28 through 31
-//
-//  Year format characters:
-//      L - whether it is a leap year; 0 or 1
-//      o - ISO 8601 year, like Y unless ISO week belongs to prev or next year; 2008
-//      Y - year, 4 digits; 1999
-//      y - year, 2 digits; 99
-//
-//  Time format characters:
-//      a - lowercase Ante meridiem and Post meridiem; am or pm
-//      A - uppercase Ante meridiem and Post meridiem; AM or PM
-//      g - hour, 12-hour format without leading zeros; 1 through 12
-//      G - hour, 24-hour format without leading zeros; 0 through 23
-//      h - hour, 12-hour format; 01 through 12
-//      H - hour, 24-hour format; 00 through 23
-//      i - minutes, with leading zero; 00 through 59
-//      s - seconds, with leading zero; 00 through 59
-//
-//  Full Date/Time format characters:
-//      c - ISO 8601 extended format date; 2004-02-12T15:19:21
-//      r - RFC 2822 formatted data; Thu, 21 Dec 2000 16:01:07 -0000
-//      U - seconds since the Unix epoch
-//
-//      \ - following character should be returned literally, not interpreted
-//
-//  Examples:
-//      date_format("l jS of F Y h:i:s A") == "Sunday 4th of May 2008 05:45:34 PM"
-//      date_format("\I\t \i\s \t\h\e zS \d\a\y.") == "It is the 124th day."
-//
+/// @func   date_format(format [,datetime])
+///
+/// @desc   Returns a formatted string generated from a date-time.
+///         If no date-time value is given, the current time is used. 
+///         eg. "Sunday 4th of May 2008 05:45:34 PM"
+///
+/// @param  {string}    format      string controlling date formatting
+/// @param  {real}      [datetime]  date-time value (optional)
+///
+/// @return {string}    the formatted date-time
+///
+/// Day format characters:
+///     d - day of the month with leading zeros, 2 digits with leading zeros; 01 through 31
+///     D - day of the week, textual, 3 letters; Fri
+///     j - day of the month without leading zeros; 1 through 31
+///     l - day of the week, textual, long; Friday
+///     N - ISO 8601 day number of the week; 1 (Monday) through 7 (Sunday)
+///     S - English ordinal suffix, textual, 2 characters; st, nd, rd, th
+///     w - day of the week, numeric, 0 (Sunday) through 6 (Saturday)
+///     z - day of the year (starting from zero); 0 through 365
+///
+/// Week format characters:
+///     W - ISO 8601 week number of year, weeks starting on Monday; 42
+///
+/// Month format characters:
+///     F - month, textual, long; January
+///     m - month with leading zeros; 01 through 12
+///     M - month, textual, 3 letters; Jan
+///     n - month without leading zeros; 1 through 12
+///     t - number of days in the given month; 28 through 31
+///
+/// Year format characters:
+///     L - whether it is a leap year; 0 or 1
+///     o - ISO 8601 year, like Y unless ISO week belongs to prev or next year; 2008
+///     Y - year, 4 digits; 1999
+///     y - year, 2 digits; 99
+///
+/// Time format characters:
+///     a - lowercase Ante meridiem and Post meridiem; am or pm
+///     A - uppercase Ante meridiem and Post meridiem; AM or PM
+///     g - hour, 12-hour format without leading zeros; 1 through 12
+///     G - hour, 24-hour format without leading zeros; 0 through 23
+///     h - hour, 12-hour format; 01 through 12
+///     H - hour, 24-hour format; 00 through 23
+///     i - minutes, with leading zero; 00 through 59
+///     s - seconds, with leading zero; 00 through 59
+///
+/// Full Date/Time format characters:
+///     c - ISO 8601 extended format date; 2004-02-12T15:19:21
+///     r - RFC 2822 formatted data; Thu, 21 Dec 2000 16:01:07 -0000
+///     U - seconds since the Unix epoch
+///
+///     \ - next character output literally, not interpreted (see note below)
+///
+/// Note: \ (backslash) is an "escape" character in standard strings and must itself
+///     be escaped. For instance, \t is interpreted as the TAB character in a standard
+///     string; when written as \\t, a literal "t" is produced by this function instead.
+///     However, GameMaker Studio 2 also has "verbatim" strings which do not use escape
+///     sequences. These are literal strings prefixed by an @ symbol. Backslashes in
+///     these do not require escaping and \t would produce a literal "t" not a TAB.
+///
+/// Examples:
+///     date_format("l jS \\of F Y h:i:s A") == "Sunday 4th of May 2008 05:45:34 PM"
+///     date_format("\\I\\t \\i\\s \\t\\h\\e zS \\d\\a\\y.") == "It is the 124th day."
+///     date_format(@"\I\t \i\s \t\h\e zS \d\a\y.") == "It is the 124th day."
+///
 /// GMLscripts.com/license
+
+function date_format(format, datetime)
 {
-    var str,dat,out,day,month,year,week,weekday,second,minute,hour24,hour12,i,c;
-    str = argument[0];
-    if (argument_count > 1) dat = argument[1];
-    else dat = date_current_datetime();
-    out = "";
-    day     = date_get_day(dat);
-    month   = date_get_month(dat);
-    year    = date_get_year(dat);
-    week    = date_get_week(dat);
-    weekday = date_get_weekday(dat);
-    second  = date_get_second(dat);
-    minute  = date_get_minute(dat);
-    hour24  = date_get_hour(dat);
+    datetime = is_undefined(datetime) ? date_current_datetime() : datetime;
+    var out = "";
+    
+    var day,month,year,week,weekday,second,minute,hour24,hour12;
+    day     = date_get_day(datetime);
+    month   = date_get_month(datetime);
+    year    = date_get_year(datetime);
+    week    = date_get_week(datetime);
+    weekday = date_get_weekday(datetime);
+    second  = date_get_second(datetime);
+    minute  = date_get_minute(datetime);
+    hour24  = date_get_hour(datetime);
     hour12  = ((hour24+23) mod 12)+1;
-    for (i=1; i<=string_length(str); i+=1) {
-        c = string_char_at(str,i);
+    for (var i=1; i<=string_length(format); i+=1) {
+        var c = string_char_at(format,i);
         switch (c) {
         case "F":
             switch (month) {
@@ -151,16 +162,16 @@
         case "s": if (second < 10) out += "0"; out += string(second); break;
         case "a": if (hour24 < 12) out += "am" else out += "pm"; break;
         case "A": if (hour24 < 12) out += "AM" else out += "PM"; break;
-        case "U": out += string(round(date_second_span(dat,25569))); break;
-        case "z": out += string(date_get_day_of_year(dat)-1); break;
-        case "t": out += string(date_days_in_month(dat)); break;
-        case "L": out += string(date_leap_year(dat)); break;
+        case "U": out += string(floor(date_second_span(datetime,25569))); break;
+        case "z": out += string(date_get_day_of_year(datetime)-1); break;
+        case "t": out += string(date_days_in_month(datetime)); break;
+        case "L": out += string(date_leap_year(datetime)); break;
         case "w": out += string(weekday); break;
         case "N": out += string(((weekday+6) mod 7)+1); break;
         case "W": out += string(week); break;
-        case "c": out += date_format("o-m-dTH:i:s",dat); break;
-        case "r": out += date_format("D, j M Y H:i:s -0000",dat); break;
-        case "\": i += 1; c = string_char_at(str,i);
+        case "c": out += date_format("o-m-dTH:i:s",datetime); break;
+        case "r": out += date_format("D, d M Y H:i:s +0000",datetime); break;
+        case "\\": i += 1; c = string_char_at(format,i);
         default:  out += c; break;
         }
     }

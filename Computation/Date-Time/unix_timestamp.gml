@@ -1,26 +1,15 @@
-#define unix_timestamp
-/// unix_timestamp([datetime])
-//
-//  Returns a Unix timestamp for the current time
-//  or optionally given GameMaker datetime value.
-//
-//      datetime    GameMaker datetime, real
-//
+/// @func   unix_timestamp([datetime])
+///
+/// @desc   Returns a Unix timestamp for the current time or given date-time.
+///
+/// @param  {real}      [datetime]  optional GameMaker date-time
+///
+/// @return {real}      Unix timestamp
+///
 /// GMLscripts.com/license
+
+function unix_timestamp(datetime)
 {
-    var timezone = date_get_timezone();
-    
-    date_set_timezone(timezone_utc);
-    
-    if (argument_count > 0) {
-        var datetime = argument[0];
-    } else {
-        var datetime = date_current_datetime();
-    }
-    
-    var timestamp = round(date_second_span(25569, datetime));
-    
-    date_set_timezone(timezone);
-    
-    return timestamp;
+    datetime = is_undefined(datetime) ? date_current_datetime() : datetime 
+    return floor(date_second_span(25569, datetime));
 }
