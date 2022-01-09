@@ -3,6 +3,7 @@
 //
 //  Returns a string padded to a certain length 
 //  by inserting another string to its left.
+//
 //  eg. string_lpad("1234", 7, "0") == "0001234"
 //
 //      str         string of text, string
