@@ -1,4 +1,4 @@
-/// @func   dec_to_bin(dec [, len=1])
+/// @func   dec_to_bin(dec, len)
 ///
 /// @desc   Returns a given value as a string of binary digits.
 ///         Binary strings can be padded to a minimum length.
@@ -12,19 +12,18 @@
 ///
 /// GMLscripts.com/license
 
-function dec_to_bin(dec, len)
+function dec_to_bin(dec, len = 1) 
 {
-    len = is_undefined(len) ? 1 : len;
     var bin = "";
-    
+
     if (dec < 0) {
-        len = max(len, ceil(logn(2, 2*abs(dec))));
+        len = max(len, ceil(logn(2, 2 * abs(dec))));
     }
-    
+
     while (len-- || dec) {
         bin = ((dec & 1) ? "1" : "0") + bin;
         dec = dec >> 1;
     }
-    
+
     return bin;
 }

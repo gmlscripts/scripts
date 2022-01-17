@@ -9,12 +9,12 @@
 ///
 /// GMLscripts.com/license
 
-function fraction_to_bin(fraction, length)
+function fraction_to_bin(fraction, length) 
 {
     var bin = "";
-    
+
     var i = 1;
-    repeat (length) {
+    repeat(length) {
         i /= 2;
         if (fraction >= i) {
             fraction -= i;
