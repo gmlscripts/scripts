@@ -11,8 +11,7 @@
 ///
 /// GMLscripts.com/license
 
-function base_convert(number, oldbase, newbase) 
-{
+function base_convert(number, oldbase, newbase) {
     number = string_upper(number);
 
     var dig = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -24,7 +23,7 @@ function base_convert(number, oldbase, newbase)
     }
 
     var out = "";
-    do {
+    while (len > 0) {
         var divide, newlen;
         divide = 0;
         newlen = 0;
@@ -42,7 +41,6 @@ function base_convert(number, oldbase, newbase)
         len = newlen;
         out = string_char_at(dig, divide + 1) + out;
     }
-    until (len == 0);
-
+    
     return out;
 }
