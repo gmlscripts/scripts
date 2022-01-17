@@ -1,11 +1,11 @@
-/// @func   date_format(format [,datetime])
+/// @func   date_format(format, datetime)
 ///
 /// @desc   Returns a formatted string generated from a date-time.
 ///         If no date-time value is given, the current time is used. 
-///         eg. "Sunday 4th of May 2008 05:45:34 PM"
+///         Find additional notes and format examples below.
 ///
 /// @param  {string}    format      string controlling date formatting
-/// @param  {real}      [datetime]  date-time value (optional)
+/// @param  {real}      [datetime]  optional date-time value
 ///
 /// @return {string}    the formatted date-time
 ///
@@ -66,11 +66,9 @@
 ///
 /// GMLscripts.com/license
 
-function date_format(format, datetime)
+function date_format(format, datetime=date_current_datetime())
 {
-    datetime = is_undefined(datetime) ? date_current_datetime() : datetime;
     var out = "";
-    
     var day,month,year,week,weekday,second,minute,hour24,hour12;
     day     = date_get_day(datetime);
     month   = date_get_month(datetime);
@@ -80,8 +78,8 @@ function date_format(format, datetime)
     second  = date_get_second(datetime);
     minute  = date_get_minute(datetime);
     hour24  = date_get_hour(datetime);
-    hour12  = ((hour24+23) mod 12)+1;
-    for (var i=1; i<=string_length(format); i+=1) {
+    hour12  = ((hour24 + 23) mod 12) + 1;
+    for (var i = 1; i <= string_length(format); i += 1) {
         var c = string_char_at(format,i);
         switch (c) {
         case "F":
@@ -146,8 +144,8 @@ function date_format(format, datetime)
             else                        out += "th";
             break;
         case "o":
-            if (month ==  1 && day <=  3 && week != 1) { out += string(year-1); break; }
-            if (month == 12 && day >= 29 && week == 1) { out += string(year+1); break; }
+            if (month ==  1 && day <=  3 && week != 1) { out += string(year - 1); break; }
+            if (month == 12 && day >= 29 && week == 1) { out += string(year + 1); break; }
         case "Y": out += string(year); break;
         case "y": out += string_copy(string(year),3,2); break;
         case "m": if (month < 10) out += "0";
@@ -162,16 +160,16 @@ function date_format(format, datetime)
         case "s": if (second < 10) out += "0"; out += string(second); break;
         case "a": if (hour24 < 12) out += "am" else out += "pm"; break;
         case "A": if (hour24 < 12) out += "AM" else out += "PM"; break;
-        case "U": out += string(floor(date_second_span(datetime,25569))); break;
-        case "z": out += string(date_get_day_of_year(datetime)-1); break;
+        case "U": out += string(floor(date_second_span(datetime, 25569))); break;
+        case "z": out += string(date_get_day_of_year(datetime) - 1); break;
         case "t": out += string(date_days_in_month(datetime)); break;
         case "L": out += string(date_leap_year(datetime)); break;
         case "w": out += string(weekday); break;
-        case "N": out += string(((weekday+6) mod 7)+1); break;
+        case "N": out += string(((weekday + 6) mod 7) + 1); break;
         case "W": out += string(week); break;
-        case "c": out += date_format("o-m-dTH:i:s",datetime); break;
-        case "r": out += date_format("D, d M Y H:i:s +0000",datetime); break;
-        case "\\": i += 1; c = string_char_at(format,i);
+        case "c": out += date_format("o-m-dTH:i:s", datetime); break;
+        case "r": out += date_format("D, d M Y H:i:s +0000", datetime); break;
+        case "\\": i += 1; c = string_char_at(format, i);
         default:  out += c; break;
         }
     }
