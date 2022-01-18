@@ -11,4 +11,4 @@ Converts a string of binary digits to a string of hexadecimal digits.
 
 script: bin_to_hex.gml
 
-contributes: xot
+contributors: xot
