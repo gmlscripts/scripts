@@ -27,11 +27,12 @@
     nato[? "4"] = "Four";     nato[? "5"] = "Five";      nato[? "6"] = "Six";
     nato[? "7"] = "Seven";    nato[? "8"] = "Eight";     nato[? "9"] = "Niner";
     
+    var s = "";
     for (var i=1; i<=len; i++) {
         var c = string_char_at(in ,i);
         if (!ds_map_exists(nato, c)) continue;
-        if (i > 1) out += " ";
         out += nato[? c];
+        s = " ";
     }
     
     ds_map_destroy(nato);
