@@ -1,4 +1,4 @@
-/// @func   collision_normal(x,y,obj [,radius [,spacing]])
+/// @func   collision_normal(x, y, obj, radius, spacing)
 ///
 /// @desc   Returns a 2D "surface normal" (in degrees) at a given point
 ///         on or near an instance detected within a circular test area.
