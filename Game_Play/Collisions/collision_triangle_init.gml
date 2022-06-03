@@ -42,6 +42,7 @@ function collision_triangle_init(size=256)
     surface_free(surface);
     draw_set_color(color);
     if (!sprite_exists(sprite)) return false;
+    sprite_collision_mask(sprite, false, 2, 0, 0, size, size, bboxkind_precise, 0);
     with (instance_create_depth(0, 0, 0, __objCollisionTriangle)) {
         self.persistent = true;
         self.visible = false;
