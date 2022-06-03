@@ -1,44 +1,46 @@
-#define collision_triangle
-/// collision_triangle(x1,y1,x2,y2,x3,y3,object)
-//
-//  Returns true if there is a collision between a given
-//  triangle and a given object, false otherwise.
-//
-//  NOTE: Initialize with collision_triangle_init() before first use.
-//
-//      x1,y1       first point of triangle (filled), real
-//      x2,y2       second point of triangle (filled), real
-//      x3,y3       third point of triangle (filled), real
-//      object      object or instance (or all), real
-//
+/// @func   collision_triangle(x1, y1, x2, y2, x3, y3, object)
+///
+/// @desc   Returns an object instance id that collides with a given triangle.
+///         If there is no collision, keyword noone is returned.
+///
+///         IMPORTANT: Initialize with collision_triangle_init() before first use.
+///
+/// @param  {real}      x1          x-coordinate of 1st point of triangle
+/// @param  {real}      y1          y-coordinate of 1st point of triangle
+/// @param  {real}      x2          x-coordinate of 2nd point of triangle
+/// @param  {real}      y2          y-coordinate of 2nd point of triangle
+/// @param  {real}      x3          x-coordinate of 3rd point of triangle
+/// @param  {real}      y3          y-coordinate of 3rd point of triangle
+/// @param  {object}    object      object or instance to check, or all
+///
+/// @return {instance}  object instance id
+///
 /// GMLscripts.com/license
+
+function collision_triangle(x1, y1, x2, y2, x3, y3, object)
 {
-   var x1,y1,x2,y2,x3,y3,object,xmin,xmax,ymin,ymax,d12,d13,d23,d14,d24,t,dx,dy,x4,y4;
-   x1 = argument0;
-   y1 = argument1;
-   x2 = argument2;
-   y2 = argument3;
-   x3 = argument4;
-   y3 = argument5;
-   object = argument6;
-   
-   // Bounding box check
-   xmin = min(x1,x2,x3);
-   xmax = max(x1,x2,x3);
-   ymin = min(y1,y2,y3);
-   ymax = max(y1,y2,y3);
-   if (not collision_rectangle(xmin,ymin,xmax,ymax,object,false,false)) return false;
-   
-   // Triangle perimeter check
-   if (collision_line(x1,y1,x2,y2,object,true,false)) return true;
-   if (collision_line(x1,y1,x3,y3,object,true,false)) return true;
-   if (collision_line(x2,y2,x3,y3,object,true,false)) return true;
+   // Bounding box check (early out)
+   var xmin = min(x1, x2, x3);
+   var xmax = max(x1, x2, x3);
+   var ymin = min(y1, y2, y3);
+   var ymax = max(y1, y2, y3);
+   var inst = collision_rectangle(xmin, ymin, xmax, ymax, object, false, false);
+   if (inst == noone) return noone;
+
+   // Triangle perimeter check (early out)
+   inst = collision_line(x1, y1, x2, y2, object, true, false);
+   if (inst != noone) return inst;
+   inst = collision_line(x1, y1, x3, y3, object, true, false);
+   if (inst != noone) return inst;
+   inst = collision_line(x2, y2, x3, y3, object, true, false);
+   if (inst != noone) return inst;
 
    // Find long side, make it (x1,y2) to (x2,y2)
-   d12 = point_distance(x1,y1,x2,y2);
-   d13 = point_distance(x1,y1,x3,y3);
-   d23 = point_distance(x2,y2,x3,y3);
-   switch (max(d12,d13,d23)) {
+   var d12 = point_distance(x1, y1, x2, y2);
+   var d13 = point_distance(x1, y1, x3, y3);
+   var d23 = point_distance(x2, y2, x3, y3);
+   var t;
+   switch (max(d12, d13, d23)) {
        case d13:
            t = x2; x2 = x3; x3 = t;
            t = y2; y2 = y3; y3 = t;
@@ -50,10 +52,11 @@
            d12 = d23;
            break;
    }
-   
+
    // From (x3,y3), find nearest point on long side (x4,y4).
-   dx = x2 - x1;
-   dy = y2 - y1;
+   var dx = x2 - x1;
+   var dy = y2 - y1;
+   var x4, y4;
    if ((dx == 0) && (dy == 0)) {
        x4 = x1;
        y4 = y1;
@@ -62,20 +65,22 @@
        x4 = x1 + t * dx;
        y4 = y1 + t * dy;
    }
-   
+
    // A line constructed from (x3,y3) to (x4,y4) divides
    // the original triangle into two right triangles.
    // Fit the collision mask into these triangles.
-   d14 = point_distance(x1,y1,x4,y4);
-   d24 = d12 - d14;
-   with (global.objCollisionTriangle) {
-       image_angle  = point_direction(x1,y1,x4,y4);
+   var d14 = point_distance(x1, y1, x4, y4);
+   var d24 = d12 - d14;
+   with (__objCollisionTriangle) {
+       image_angle  = point_direction(x1, y1, x4, y4);
        image_xscale = d14 / size;
-       image_yscale = point_distance(x3,y3,x4,y4) / size;
-       if ((x1 > x4) xor (y3 < y4)) image_yscale *= -1;
-       if (place_meeting(x4,y4,object)) return true;
+       image_yscale = point_distance(x3, y3, x4, y4) / size;
+       if ((x1 > x4) ^^ (y3 < y4)) image_yscale *= -1;
+       inst = instance_place(x4, y4, object);
+       if (inst != noone) return inst;
        image_xscale = -d24 / size;
-       if (place_meeting(x4,y4,object)) return true;
+       inst = instance_place(x4, y4, object);
+       if (inst != noone) return inst;
    }
-   return false;
+   return noone;
 }
