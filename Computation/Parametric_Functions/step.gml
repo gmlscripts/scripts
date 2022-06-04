@@ -1,12 +1,16 @@
-#define step
-/// step(a,x)
-//
-//  Returns 0 when (x < a), 1 otherwise.
-//
-//      a       threshold value, real
-//      x       value, real
-//
+/// @func   step(a, x)
+///
+/// @desc   Returns 0 when (x < a), 1 otherwise.
+///
+/// @param  {real}      a           threshold value
+/// @param  {real}      x           value
+///
+/// @return {real}      0 or 1
+///
 /// GMLscripts.com/license
+
+function step(a, x)
 {
-    return (argument1 >= argument0);
+    if (x < a) return 0;
+    return 1;
 }

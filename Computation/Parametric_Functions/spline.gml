@@ -1,24 +1,25 @@
-#define spline
-/// spline(t,knotlist)
-//
-//  Returns the Catmull-Rom interpolation of the given
-//  knot values at the given parameter position.
-//
-//      t           interpolation parameter [0..1], real
-//      knotlist    ds_list of knot values of spline, real
-//
-//  If (t) is 0, returns knot[2], if (t) is 1, returns knot[N-1],
-//  (where 1 is the first knot and N is the last knot). For other
-//  values of (t), interpolates smoothly from knot[2] to knot[N-1].
-//  The first and last knots determine the derivatives of the spline
-//  end points. Because the spline is a cubic polynomial, there must
-//  be at least four knots.
-//
+/// @func   spline(t, knotlist)
+///
+/// @desc   Returns the Catmull-Rom interpolation of the given
+///         knot values at the given parameter position.
+///
+///         If (t) is 0, returns knot[2], if (t) is 1, returns knot[N-1],
+///         (where 1 is the first knot and N is the last knot). For other
+///         values of (t), interpolates smoothly from knot[2] to knot[N-1].
+///         The first and last knots determine the derivatives of the spline
+///         end points. Because the spline is a cubic polynomial, there must
+///         be at least four knots.
+///
+/// @param  {real}      t           interpolation parameter [0..1]
+/// @param  {list}      knotlist    ds_list of spline knot values
+///
+/// @return {real}      value on the spline
+///
 /// GMLscripts.com/license
+
+function spline(t, knotlist)
 {
-    var t, knotlist, nknots, nspans, span, k, c3, c2, c1, c0;
-    t = argument0;
-    knotlist = argument1;
+    var nknots, nspans, span, k, c3, c2, c1, c0;
     nknots = ds_list_size(knotlist);
     nspans = nknots - 3;
     if (nspans < 1) return 0; // ERROR: too few knots

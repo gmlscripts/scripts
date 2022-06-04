@@ -1,8 +1,8 @@
 step
 ====
 
-The step function is the simplest of filters. When the given value 
-exceeds the threshold, we switch over to the higher value (true).
+The step function is the simplest of filters. When the given value reaches
+or exceeds the threshold, 1.0 is produced. Otherwise, 0.0.
 
 ![step](/images/step1.gif)
 
