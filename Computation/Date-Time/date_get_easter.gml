@@ -5,7 +5,7 @@
 ///
 /// @param  {real}      year        calendar year
 ///
-/// @return {string}    date of Easter
+/// @return {datetime}  date of Easter
 ///
 /// GMLscripts.com/license
 
