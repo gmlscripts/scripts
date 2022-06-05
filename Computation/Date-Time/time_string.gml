@@ -6,7 +6,7 @@
 /// @param  {real}      format      12 or 24
 /// @param  {string}    [sep=":"]   separator
 ///
-/// @return {string}    some value
+/// @return {string}    formatted time
 ///
 /// GMLscripts.com/license
 
