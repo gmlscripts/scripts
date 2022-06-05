@@ -1,14 +1,15 @@
-/// @func   unix_timestamp([datetime])
+/// @func   unix_timestamp(datetime)
 ///
-/// @desc   Returns a Unix timestamp for the current time or given GameMaker datetime.
+/// @desc   Returns a Unix timestamp for the current or given GameMaker datetime.
 ///
-/// @param  {real}      [datetime]  optional date-time value
+/// @param  {datetime}  datetime    date-time value (default current time)
 ///
 /// @return {real}      Unix timestamp
 ///
 /// GMLscripts.com/license
 
-function unix_timestamp(datetime = date_current_datetime()) 
+function unix_timestamp(datetime = date_current_datetime())
 {
-    return floor(date_second_span(25569, datetime));
+    var epoch = floor(date_create_datetime(1970, 1, 1, 0, 0, 0));
+    return floor(date_second_span(epoch, datetime));
 }
