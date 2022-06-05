@@ -11,8 +11,6 @@ smooth transitions between values or to "ease" animation in and out.
 
 ![smoothstep](/images/smoothstep1.gif "smoothstep")
 
-demo: smoothstep 256 192
-
 script: smoothstep.gml
 
 contributors: xot
