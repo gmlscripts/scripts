@@ -13,10 +13,9 @@
 
 function smoothstep(a, b, x)
 {
-    var p;
+    if (a == b) return -1;
     if (x < a) return 0;
     if (x >= b) return 1;
-    if (a == b) return -1;
-    p = (x - a) / (b - a);
+    var p = (x - a) / (b - a);
     return (p * p * (3 - 2 * p));
 }
