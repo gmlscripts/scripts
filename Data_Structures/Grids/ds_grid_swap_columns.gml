@@ -1,21 +1,18 @@
-#define ds_grid_swap_columns
-/// ds_grid_swap_columns(id,col1,col2)
-//
-//  Exchanges the contents of two entire grid columns.
-//
-//      id          grid data structure, real
-//      col1        1st column of the exchange, real
-//      col2        2nd column of the exchange, real
-//
+/// @func   ds_grid_swap_columns(grid, col1, col2)
+///
+/// @desc   Exchanges the contents of two entire grid columns.
+///
+/// @param  {grid}      grid        grid data structure
+/// @param  {real}      col1        1st column of the exchange
+/// @param  {real}      col2        2nd column of the exchange
+///
 /// GMLscripts.com/license
+
+function ds_grid_swap_columns(grid, col1, col2)
 {
-    var i, temp;
-    i = 0;
-    repeat (ds_grid_height(argument0)) {
-        temp = ds_grid_get(argument0, argument1, i);
-        ds_grid_set(argument0, argument1, i, ds_grid_get(argument0, argument2, i));
-        ds_grid_set(argument0, argument2, i, temp);
-        i += 1;
+    for (var i=0; i<ds_grid_height(grid); i++) {
+        var temp = ds_grid_get(grid, col1, i);
+        ds_grid_set(grid, col1, i, ds_grid_get(grid, col2, i));
+        ds_grid_set(grid, col2, i, temp);
     }
-    return 0;
 }
