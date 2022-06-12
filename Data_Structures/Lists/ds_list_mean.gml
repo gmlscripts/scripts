@@ -1,15 +1,23 @@
-#define ds_list_mean
-/// ds_list_mean(id)
-//
-//  Returns the mean (average) of the values in a given list.
-//
-//      id          list data structure, real
-//
+/// @func   ds_list_mean(list)
+///
+/// @desc   Returns the arithmetic mean of values in a list.
+///         If the list is empty, undefined is returned.
+///
+/// @param  {list}      list        list data structure
+///
+/// @return {real}      mean value
+///
 /// GMLscripts.com/license
+
+function ds_list_mean(list)
 {
-    var i,j,k;
-    j = 0;
-    k = ds_list_size(argument0);
-    for (i=0; i<k; i+=1) j += ds_list_find_value(argument0, i);
-    return (j / k);
+    var n = ds_list_size(list);
+    if (n == 0) return undefined;
+
+    var avg = 0;
+
+    for (var i=0; i<n; i++) avg += ds_list_find_value(list, i);
+    avg /= n;
+
+    return avg;
 }

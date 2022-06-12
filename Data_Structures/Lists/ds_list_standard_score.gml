@@ -1,22 +1,28 @@
-#define ds_list_standard_score
-/// ds_list_standard_score(id,pos)
-//
-//  Returns the standard score (z-score) of the 
-//  value at a given position in a given list.
-//
-//      id          list data structure, real
-//      pos         position in the list, real
-//
+/// @func   ds_list_standard_score(list, pos)
+///
+/// @desc   Returns the standard score (z-score) of the value at a
+///         position in a list. A standard score is the distance of
+///         a value from the mean measured in standard deviations.
+///         If the list is empty, undefined is returned.
+///
+/// @param  {list}      list        list data structure
+/// @param  {real}      pos         position in the list
+///
+/// @return {real}      standard score
+///
 /// GMLscripts.com/license
+
+function ds_list_standard_score(list, pos)
 {
-    var n, avg, sum, i;
-    n = ds_list_size(argument0);
-    avg = 0;
-    sum = 0;
+    var n = ds_list_size(list);
+    if (n == 0) return undefined;
 
-    for (i=0; i<n; i+=1) avg += ds_list_find_value(argument0, i);
+    var avg = 0;
+    var sum = 0;
+
+    for (var i=0; i<n; i++) avg += ds_list_find_value(list, i);
     avg /= n;
-    for (i=0; i<n; i+=1) sum += sqr(ds_list_find_value(argument0, i) - avg);
+    for (var i=0; i<n; i++) sum += sqr(ds_list_find_value(list, i) - avg);
 
-    return (ds_list_find_value(argument0, argument1) - avg)/sqrt(sum/n);
+    return (ds_list_find_value(list, pos) - avg) / sqrt(sum / n);
 }

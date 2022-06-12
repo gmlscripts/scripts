@@ -1,15 +1,21 @@
-#define ds_list_sum
-/// ds_list_sum(id)
-//
-//  Returns the sum of all values in a given list.
-//
-//      id          list data structure, real
-//
+/// @func   ds_list_sum(list)
+///
+/// @desc   Returns the sum of all values in a list.
+///         If the list is empty, undefined is returned.
+///         All list elements must be comparable.
+///
+/// @param  {list}      list        list data structure
+///
+/// @return {any}       sum of values
+///
 /// GMLscripts.com/license
+
+function ds_list_sum(list)
 {
-    var i,j,k;
-    j = 0;
-    k = ds_list_size(argument0);
-    for (i=0; i<k; i+=1) j += ds_list_find_value(argument0, i);
-    return j;
+    var n = ds_list_size(list);
+    var sum = ds_list_find_value(list, 0);
+
+    for (var i=1; i<n; i++) sum += ds_list_find_value(list, i);
+
+    return sum;
 }

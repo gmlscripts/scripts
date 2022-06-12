@@ -1,23 +1,26 @@
-#define ds_list_range
-/// ds_list_range(id)
-//
-//  Returns the range of the values in a given list.
-//
-//      id          list data structure, real
-//
+/// @func   ds_list_range(list)
+///
+/// @desc   Returns the range of the values in a list.
+///         If the list is empty, undefined is returned.
+///
+/// @param  {list}      list        list data structure
+///
+/// @return {real}      range of values
+///
 /// GMLscripts.com/license
-{
-    var n, maxv, minv, i, val;
-    n = ds_list_size(argument0);
-    maxv = ds_list_find_value(argument0, 0);
-    minv = maxv;
 
-    for (i=1; i<n; i+=1) {
-        val = ds_list_find_value(argument0, i);
-        if (val > maxv)
-        maxv = val;
-        else if (val < minv)
-        minv = val;
+function ds_list_range(list)
+{
+    var n = ds_list_size(list);
+    if (n == 0) return undefined;
+
+    var maxv = ds_list_find_value(list, 0);
+    var minv = maxv;
+
+    for (var i=1; i<n; i++) {
+        var val = ds_list_find_value(list, i);
+        maxv = max(maxv, val);
+        minv = min(minv, val);
     }
 
     return (maxv - minv);

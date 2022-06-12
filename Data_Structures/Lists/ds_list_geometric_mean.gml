@@ -1,17 +1,21 @@
-#define ds_list_geometric_mean
-/// ds_list_geometric_mean(id)
-//
-//  Returns the geometric mean of the values in a given list.
-//
-//      id          list data structure, real
-//
+/// @func   ds_list_geometric_mean(list)
+///
+/// @desc   Returns the geometric mean of values in a list.
+///
+/// @param  {list}      list        list data structure
+///
+/// @return {real}      geometric mean
+///
 /// GMLscripts.com/license
+
+function ds_list_geometric_mean(list)
 {
-    var n, geo, i;
-    n = ds_list_size(argument0);
-    geo = 1;
+    var n = ds_list_size(list);
+    if (n == 0) return undefined;
 
-    for (i=0; i<n; i+=1) geo *= ds_list_find_value(argument0, i);
+    var geo = 1;
 
-    return power(geo, 1/n);
+    for (var i=0; i<n; i++) geo *= ds_list_find_value(list, i);
+
+    return power(geo, 1 / n);
 }

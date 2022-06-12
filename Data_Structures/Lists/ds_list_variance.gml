@@ -1,21 +1,27 @@
-#define ds_list_variance
-/// ds_list_variance(id[,sample])
-//
-//  Returns the variance of the values in a given list.
-//
-//      id          list data structure, real
-//      sample      true if the list is made up of a sample, bool
-//
+/// @func   ds_list_variance(list, sample)
+///
+/// @desc   Returns the variance of the values in a given list.
+///         Computes for a sample or entire population (default).
+///
+/// @param  {list}      list        list data structure
+/// @param  {bool}      sample      true for sample, false for population
+///
+/// @return {real}      variance of values
+///
 /// GMLscripts.com/license
+
+function ds_list_variance(list, sample=false)
 {
-    var n, avg, sum, i;
-    n = ds_list_size(argument0);
-    avg = 0;
-    sum = 0;
+    var n = ds_list_size(list);
+    if (n == 0) return undefined;
 
-    for (i=0; i<n; i+=1) avg += ds_list_find_value(argument0, i);
+    var avg = 0;
+    var sum = 0;
+
+    for (var i=0; i<n; i++) avg += ds_list_find_value(list, i);
     avg /= n;
-    for (i=0; i<n; i+=1) sum += sqr(ds_list_find_value(argument0, i) - avg);
 
-    return sum/(n - argument1);
+    for (var i=0; i<n; i++) sum += sqr(ds_list_find_value(list, i) - avg);
+
+    return sum / (n - real(sample));
 }

@@ -1,18 +1,25 @@
-#define ds_list_pop_standard_deviation
-/// ds_list_pop_standard_deviation(id)
-//
-//  Returns the population standard deviation of the values in a given list.
-//
-//      id          list data structure, real
-//
+/// @func   ds_list_pop_standard_deviation(list)
+///
+/// @desc   Returns the population standard deviation for values in a list.
+///
+/// @param  {list}      list        list data structure
+///
+/// @return {real}      population standard deviation
+///
 /// GMLscripts.com/license
+
+function ds_list_pop_standard_deviation(list)
 {
-    var i,j,k,m;
-    j = 0;
-    k = ds_list_size(argument0);
-    for (i=0; i<k; i+=1) j += ds_list_find_value(argument0, i);
-    m = j / k;
-    j = 0;
-    for (i=0; i<k; i+=1) j += sqr(ds_list_find_value(argument0, i) - m);
-    return sqrt(j / k);
+    var n = ds_list_size(list);
+    if (n == 0) return undefined;
+
+    var avg = 0;
+    var sum = 0;
+
+    for (var i=0; i<n; i++) avg += ds_list_find_value(list, i);
+    avg /= n;
+
+    for (var i=0; i<n; i++) sum += sqr(ds_list_find_value(list, i) - avg);
+
+    return sqrt(sum / n);
 }
