@@ -1,16 +1,17 @@
-#define factorial
-/// factorial(number)
-//
-//  Returns the factorial of a given number.
-//
-//      number      value, integer
-//
-//  Note: 21! is the largest factorial GameMaker:Studio can precisely
-//  compute. Beyond that, floating-point arithmetic can represent 
-//  factorials as large as 170! with decreasing precision.
-//
+/// @func   factorial(number)
+///
+/// @desc   Returns the factorial of a given number. Numbers
+///         larger than 18 produce inaccruate results due to
+///         floating-point precision limitations.
+///
+/// @param  {real}      number      non-negative integer
+///
+/// @return {real}      factorial of given number
+///
 /// GMLscripts.com/license
+
+function factorial(number)
 {
-    if (argument0 <= 1) return 1;
-    else return argument0 * factorial(argument0 - 1);
+    if (number <= 1) return 1;
+    return number * factorial(number - 1);
 }

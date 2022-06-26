@@ -1,11 +1,14 @@
-#define exp_dist
-/// exp_dist(mean)
-//
-//  Returns a random number with exponential distribution.
-//
-//      mean        mean value of the distribution, real
-//
+/// @func   exp_dist(m)
+///
+/// @desc   Returns a random number with exponential distribution.
+///
+/// @param  {real}      m           mean value of the distribution
+///
+/// @return {real}      random number
+///
 /// GMLscripts.com/license
+
+function exp_dist(m)
 {
-    return -argument0 * ln(1-random(1));
+    return -m * ln(1-random(1));
 }
