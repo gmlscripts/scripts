@@ -1,7 +1,8 @@
 /// @func   combination(set, subset)
 ///
 /// @desc   Returns the number of unique subsets created from all
-///         combinations of a number of elements, or (-1) on error.
+///         combinations of a number of elements. The order of the
+///         chosen elements is not significant. Returns (-1) on error.
 ///
 /// @param  {real}      set         number of elements
 /// @param  {real}      subset      size of the subset
