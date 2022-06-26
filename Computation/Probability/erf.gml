@@ -1,8 +1,8 @@
 /// @func   erf(x)
 ///
-/// @desc   Returns the value of erf(x), the "error function" or cumulative
-///         distribution function, which computes the probability that a
-///         Gaussian random number falls within a given range.
+/// @desc   Returns the probability that a Gaussian random number falls
+///         within a given range. This is known as the "error function"
+///         or cumulative distribution function.
 ///
 /// @param  {real}      x           value
 ///
