@@ -1,8 +1,8 @@
 /// @func   permutation(set, subset)
 ///
 /// @desc   Returns the number of unique subsets created from all
-///         permutations of a number of elements in which the order
-///         of the chosen elements is significant, or (-1) on error.
+///         permutations of a number of elements. The order of the
+///         chosen elements is significant. Returns (-1) on error.
 ///
 /// @param  {real}      set         number of elements
 /// @param  {real}      subset      size of the subset
