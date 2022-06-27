@@ -1,20 +1,21 @@
-#define string_ucwords
-/// string_ucwords(str)
-//
-//  Returns a string with each word capitalized.
-//
-//      str         string of text, string
-//
+/// @func   string_ucwords(str)
+///
+/// @desc   Returns a string with each word capitalized.
+///
+/// @param  {string}    str         string of text
+///
+/// @return {string}    capitalized string
+///
 /// GMLscripts.com/license
+
+function string_ucwords(str)
 {
-    var str,out,w,i,c,o;
-    str = argument0;
-    out = "";
-    w = true;
-    i = 1;
+    var out = "";
+    var w = true;
+    var i = 1;
     repeat (string_length(str)) {
-        c = string_char_at(str,i);
-        o = ord(c);
+        var c = string_char_at(str, i);
+        var o = ord(c);
         if ((o > 8) && (o < 14) || (o == 32)) {
             w = true;
         }else{
@@ -22,7 +23,7 @@
             w = false;
         }
         out += c;
-        i += 1;
+        i++;
     }
     return out;
 }

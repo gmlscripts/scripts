@@ -1,15 +1,18 @@
-#define string_add_spaces
-/// string_add_spaces(str)
-//
-//  Returns the given string with spaces inserted between each character.
-//
-//      str         string to add spaces to, string
-//
+/// @func   string_add_spaces(str)
+///
+/// @desc   Returns given string with spaces inserted between each character.
+///   
+/// @param  {string}    str         string to insert spaces into
+///
+/// @return {string}    string with spaces inserted
+///
 /// GMLscripts.com/license
+
+function string_add_spaces(str)
 {
-    var str, len;
-    str = argument0;
-    len = string_length(str);
-    for (j=len; j>0; j-=1) str = string_insert(' ', str, j);
+    var len = string_length(str);
+    for (var j = len; j > 1; j--) {
+        str = string_insert(" ", str, j);
+    }
     return str;
 }

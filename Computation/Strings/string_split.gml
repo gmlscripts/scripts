@@ -1,23 +1,19 @@
-#define string_split
-/// string_split(str,num,break)
-//
-//  Returns a string with break characters inserted at a given interval.
-//
-//      str         text, string
-//      num         number of characters before a break, real
-//      break       characters to insert, string
+/// @func   string_split(str, len, brk)
+///
+/// @desc   Returns a string with break characters inserted at a given interval.
+///         This is very simple and does not split on word boundaries.
+///
+/// @param  {string}    str         string to be split
+/// @param  {real}      len         maximum line length, default 76
+/// @param  {string}    brk         line break characters, default "\n"
 //
 /// GMLscripts.com/license
+
+function string_split(str, len=76, brk="\n")
 {
-    var str,num,brk,len,i;
-    str = argument0;
-    num = argument1;
-    brk = argument2;
-    if (num < 1) num = 76;
-    if (is_real(brk)) brk = "#";
-    len = string_length(str);
-    for (i=len-((len-1) mod num); i>num; i-=num) {
-        str = string_insert(brk,str,i);
+    var strlen = string_length(str);
+    for (var i=strlen-((strlen-1) mod len); i>len; i-=len) {
+        str = string_insert(brk, str, i);
     }
     return str;
 }

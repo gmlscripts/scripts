@@ -1,18 +1,21 @@
-#define string_nato
-/// string_nato(text)
-//
-//  Returns a given string as expressed by the NATO phonetic alphabet.
-//  Phonetic words will be separarted by spaces. Non-alphanumeric 
-//  characters are removed.
-//
-//      text        text to translate, string
-//
+/// @func   string_nato(text)
+///
+/// @desc   Returns a given string as expressed by the NATO phonetic alphabet.
+///         Phonetic words will be separarted by spaces. Non-alphanumeric 
+///         characters are removed.
+///
+/// @param  {string}    text        text to transcribe
+///
+/// @return {string}    transcribed text
+///
 /// GMLscripts.com/license
+
+function string_nato(text)
 {
-    var in = string_upper(argument0);
-    var len = string_length(in);
+    var str = string_upper(text);
+    var len = string_length(str);
     var out = "";
-    
+
     var nato = ds_map_create();
     nato[? "A"] = "Alfa";     nato[? "B"] = "Bravo";     nato[? "C"] = "Charlie";
     nato[? "D"] = "Delta";    nato[? "E"] = "Echo";      nato[? "F"] = "Foxtrot";
@@ -26,15 +29,17 @@
     nato[? "1"] = "One";      nato[? "2"] = "Two";       nato[? "3"] = "Three";
     nato[? "4"] = "Four";     nato[? "5"] = "Five";      nato[? "6"] = "Six";
     nato[? "7"] = "Seven";    nato[? "8"] = "Eight";     nato[? "9"] = "Niner";
-    
+
     var s = "";
-    for (var i=1; i<=len; i++) {
-        var c = string_char_at(in ,i);
-        if (!ds_map_exists(nato, c)) continue;
-        out += nato[? c];
+    for (var i = 1; i <= len; i++) {
+        var c = string_char_at(str , i);
+        if (!ds_map_exists(nato, c)) {
+            continue;
+        }
+        out += s + nato[? c];
         s = " ";
     }
-    
+
     ds_map_destroy(nato);
     return out;
 }

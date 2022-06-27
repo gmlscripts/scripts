@@ -1,16 +1,18 @@
-#define string_reverse
-/// string_reverse(str)
-//
-//  Returns a given string with the characters in reverse order.
-//
-//      str         string to be reversed, string
-//
+/// @func   string_reverse(str)
+///
+/// @desc   Returns a given string with the characters in reverse order.
+///
+/// @param  {string}    str         string to be reversed
+///
+/// @return {string}    reversed string
+///
 /// GMLscripts.com/license
+
+function string_reverse(str)
 {
-    var out,i;
-    out = "";
-    for(i=string_length(argument0); i>0; i-=1) {
-        out += string_char_at(argument0,i);
+    var out = "";
+    for(var i=string_length(str); i>0; i--) {
+        out += string_char_at(str, i);
     }
     return out;
 }

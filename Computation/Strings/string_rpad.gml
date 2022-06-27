@@ -1,26 +1,29 @@
-#define string_rpad
-/// string_rpad(str,length,padstr)
-//
-//  Returns a string padded to a certain length 
-//  by adding another string to its right.
-//
-//  eg. string_rpad("1234", 7, "0") == "1234000"
-//
-//      str         string of text, string
-//      length      desired total length, real
-//      padstr      padding, string
-//
+/// @func   string_rpad(str, len, pad)
+///
+/// @desc   Returns a string padded on its right to a given length.
+///         If the padded length is less than the original length,
+///         the original string is returned.
+///
+///         eg. string_rpad("1234", 7, "0") == "1234000"
+///
+/// @param  {string}    str             string of text
+/// @param  {real}      len             desired length
+/// @param  {string}    pad             padding string, default " "
+///
+/// @return {string}    padded string
+///
 /// GMLscripts.com/license
+
+function string_rpad(str, len, pad=" ")
 {
-    var str,len,pad,padsize,padding,out;
-    str = argument0;
-    len = argument1;
-    pad = argument2;
-    padsize = string_length(pad);
-    padding = max(0,len - string_length(str));
-    out  = str;
-    out += string_repeat(pad,padding div padsize);
-    out += string_copy(pad,1,padding mod padsize);
-    out  = string_copy(out,1,len);
+    var padsize = string_length(pad);
+    var padding = max(0, len - string_length(str));
+    if (padding <= 0) {
+        return str;
+    }
+    var out = str;
+    out += string_repeat(pad, padding div padsize);
+    out += string_copy(pad, 1, padding mod padsize);
+    out = string_copy(out, 1, len);
     return out;
 }

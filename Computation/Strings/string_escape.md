@@ -1,6 +1,9 @@
 string_escape
 =============
 
+Note: This script is made obsolete by GameMaker's native understanding
+of these escape sequences. It can longer function and appears here for historical purposes only.
+
 Parses all C-style escape sequences in the given string and returns 
 the parsed string.
 

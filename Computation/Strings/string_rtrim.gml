@@ -1,20 +1,22 @@
-#define string_rtrim
-/// string_rtrim(str)
-//
-//  Returns the given string with whitespace stripped from its end.
-//  Whitespace is defined as SPACE, HT, LF, VT, FF, CR.
-//
-//      str         string of text, string
-//
+/// @func   string_rtrim(str, trim)
+///
+/// @desc   Returns given string with whitespace stripped from its end.
+///         Whitespace is defined as SPACE, LF, CR, HT, VT, FF. A string
+///         of characters to be trimmed may be optionally supplied.
+///
+/// @param  {string}    str         string of text
+/// @param  {string}    trim        characters to trim, optional
+///
+/// @return {string}    trimmed string
+///
 /// GMLscripts.com/license
+
+function string_rtrim(str, trim=" \n\r\t\v\f")
 {
-    var str,r,o;
-    str = argument0;
-    r = string_length(str);
-    repeat (r) {
-        o = ord(string_char_at(str,r));
-        if ((o > 8) && (o < 14) || (o == 32)) r -= 1;
-        else break;
+    var l = 1;
+    var r = string_length(str);
+    while (string_pos(string_char_at(str, r), trim)) {
+        r--;
     }
-    return string_copy(str,1,r);
+    return string_copy(str, l, r);
 }
