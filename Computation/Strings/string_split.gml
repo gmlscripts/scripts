@@ -6,7 +6,7 @@
 /// @param  {string}    str         string to be split
 /// @param  {real}      len         maximum line length, default 76
 /// @param  {string}    brk         line break characters, default "\n"
-//
+///
 /// GMLscripts.com/license
 
 function string_split(str, len=76, brk="\n")

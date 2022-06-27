@@ -1,7 +1,7 @@
 /// @func   string_add_spaces(str)
 ///
 /// @desc   Returns given string with spaces inserted between each character.
-///   
+///
 /// @param  {string}    str         string to insert spaces into
 ///
 /// @return {string}    string with spaces inserted
