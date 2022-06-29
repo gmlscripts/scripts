@@ -37,7 +37,6 @@ function collision_triangle_init(size=256)
     draw_set_color(c_white);
     draw_triangle(size, size, size, -1, -1, -1, false);
     surface_reset_target();
-    surface_save(surface,"triangle.png");
     var sprite = sprite_create_from_surface(surface, 0, 0, size, size, true, false, size, 0);
     surface_free(surface);
     draw_set_color(color);
