@@ -1,9 +1,10 @@
 /// @func   collision_normal(x, y, obj, radius, spacing)
 ///
-/// @desc   Returns a 2D "surface normal" (in degrees) at a given point
-///         on or near an instance detected within a circular test area.
-///         Makes approximately pi*(radius*radius)/(spacing*spacing)
-///         collision calls. If no collision is found, (-1) is returned.
+/// @desc   Returns a 2D "surface normal" at a point on or near an
+///         instance within a test area. The test area is circular
+///         and the detected normal direction is returned in degrees.
+///         If no collision is found, (-1) is returned. Uses about
+///         pi*(radius*radius)/(spacing*spacing) collision checks.
 ///
 /// @param  {real}      x           x-coordinate of point near an instance
 /// @param  {real}      y           y-coordinate of point near an instance
