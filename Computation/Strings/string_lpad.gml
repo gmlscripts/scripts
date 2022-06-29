@@ -8,7 +8,7 @@
 ///
 /// @param  {string}    str             string of text
 /// @param  {real}      len             desired length
-/// @param  {string}    pad             padding string, default " "
+/// @param  {string}    pad             padding string (default " ")
 ///
 /// @return {string}    padded string
 ///

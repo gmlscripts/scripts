@@ -1,12 +1,12 @@
 /// @func   string_wordwrap(str, len, brk, cut)
 ///
-/// @desc   Returns a string with break characters inserted 
+/// @desc   Returns a string with break characters inserted
 ///         between words at a given character interval.
 ///
 /// @param  {string}    str         text to word wrap
 /// @param  {real}      len         maximum line length
-/// @param  {string}    brk         line break characters, default "\n"
-/// @param  {bool}      cut         split words longer than max length, default true
+/// @param  {string}    brk         line break characters (default "\n")
+/// @param  {bool}      cut         split words exceeding max length (default true)
 ///
 /// @return {string}    word-wrapped string
 ///
@@ -16,7 +16,7 @@ function string_wordwrap(str, len, brk="\n", cut=true)
 {
     var out = "";
     while (string_length(str)) {
-        while (string_pos(brk, str) <= len + 1) && (string_pos(brk, str) > 0) {
+        while ((string_pos(brk, str) <= len + 1) && (string_pos(brk, str) > 0)) {
             out += string_copy(str, 1, string_pos(brk, str) + string_length(brk));
             str = string_delete(str, 1, string_pos(brk, str) + string_length(brk));
         }

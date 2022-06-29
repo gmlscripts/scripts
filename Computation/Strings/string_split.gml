@@ -4,8 +4,8 @@
 ///         This is very simple and does not split on word boundaries.
 ///
 /// @param  {string}    str         string to be split
-/// @param  {real}      len         maximum line length, default 76
-/// @param  {string}    brk         line break characters, default "\n"
+/// @param  {real}      len         maximum line length (default 76)
+/// @param  {string}    brk         line break characters (default "\n")
 ///
 /// GMLscripts.com/license
 

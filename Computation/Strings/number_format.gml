@@ -8,8 +8,8 @@
 ///
 /// @param  {real}      number      number to format
 /// @param  {real}      places      decimal places to round to
-/// @param  {string}    decimal     decimal marker, default "."
-/// @param  {string}    thousands   thousands marker, default ","
+/// @param  {string}    decimal     decimal marker (default ".")
+/// @param  {string}    thousands   thousands marker (default ",")
 ///
 /// @return {string}    formatted number
 ///

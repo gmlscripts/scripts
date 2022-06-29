@@ -4,8 +4,8 @@
 ///         such as: "hElLo! hOw ArE yOu ToDaY?"
 ///
 /// @param  {string}    str         string of text
-/// @param  {bool}      spaces      count spaces as letters, default true
-/// @param  {bool}      first       capitalize first letter, default true
+/// @param  {bool}      spaces      count spaces as letters (default true)
+/// @param  {bool}      first       capitalize first letter (default true)
 ///
 /// @return {string}    string in stagger case
 ///
