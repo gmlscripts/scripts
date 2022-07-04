@@ -4,7 +4,7 @@
 ///         The first and last letters of a word are left as-is. Words are separated
 ///         by non-word characters, eg. characters that are not "A" through "Z".
 ///         To accomodate non-English languages, or for special uses, an alphabet
-///         may be supplied as a string a valid characters. Upper and lower case
+///         may be supplied as a string of valid characters. Upper and lower case
 ///         letters are considered different and both may be required. The default
 ///         English alphabet consists of "A" through "Z", upper and lower case.
 ///         Characters in the string that are not in the alphabet are left in place.
