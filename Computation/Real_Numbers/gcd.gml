@@ -1,19 +1,20 @@
-#define gcd
-/// gcd(a,b)
-//
-//  Returns the greatest common divisor of the given integers.
-//
-//      a,b         non-negative integers, real
-//
+/// @func   gcd(a,b)
+///
+/// @desc   Returns the greatest common divisor of the given integers.
+///
+/// @param  {real}      a           positive integer
+/// @param  {real}      b           positive integer
+///
+/// @return {real}      greatest common divisor
+///
 /// GMLscripts.com/license
+
+function gcd(a, b)
 {
-    var a,b,r;
-    a = max(argument0,argument1);
-    b = min(argument0,argument1);
     while (b != 0) {
-        r = a mod b;
+        var r = a mod b;
         a = b;
         b = r;
     }
-    return a;
+    return abs(a);
 }

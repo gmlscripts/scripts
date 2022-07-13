@@ -1,11 +1,14 @@
-#define is_odd
-/// is_odd(value)
-//
-//  Returns true if a given value is odd, false otherwise.
-//
-//      value       value, real
-//
+/// @func   is_odd(value)
+///
+/// @desc   Returns true if a given value is odd, false otherwise.
+///
+/// @param  {real}      value       value to test
+///
+/// @return {bool}      true if value is odd
+///
 /// GMLscripts.com/license
+
+function is_odd(value)
 {
-    return (argument0 & 1);
+    return (value & 1) == 1;
 }

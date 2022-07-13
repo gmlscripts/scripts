@@ -1,15 +1,16 @@
-#define sum_interval
-/// sum_interval(m,n)
-//
-//  Returns the sum of positive integers between m and n, inclusive.
-//
-//      m       positive integer, real
-//      n       positive integer, real
-//
+/// @func   sum_interval(m, n)
+///
+/// @desc   Returns the sum of consecutive integers
+///         between m and n (inclusive).
+///
+/// @param  {real}      m           integer
+/// @param  {real}      n           integer
+///
+/// @return {real}      sum of integers
+///
 /// GMLscripts.com/license
+
+function sum_interval(m, n)
 {
-    var m,n;
-    m = floor(min(argument0,argument1));
-    n = floor(max(argument0,argument1));
-    return (n*n+n)/2 - (m*m+m)/2 + m;
+    return (abs(n - m) + 1) * (n + m) / 2;
 }

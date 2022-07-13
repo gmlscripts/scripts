@@ -1,16 +1,19 @@
-#define select_index
-/// select_index(value,choice0,choice1,choice2...)
-//
-//  Returns the index of an argument matching a given value.
-//  If value matches the first choice, 0 is returned.
-//  if value isn't among the choices, undefined is returned.
-//
-//      value       value to find
-//      choiceN     values to search
-//
-//  eg. select_index("two", "zero", "one", "two", "three") == 2
-//
+/// @func   select_index(value, choice0, choice1, choice2, ...)
+///
+/// @desc   Returns the index of an argument matching a given value.
+///         If value matches the first choice, 0 is returned.
+///         if value isn't among the choices, undefined is returned.
+///
+///         eg. select_index("two", "zero", "one", "two", "three") == 2
+///
+/// @param  {any*}      value       value to find
+/// @param  {any*}      choiceN     values to search
+///
+/// @return {real}      index of selected choice
+///
 /// GMLscripts.com/license
+
+function select_index()
 {
     var value = argument[0];
     var choices = ds_list_create();

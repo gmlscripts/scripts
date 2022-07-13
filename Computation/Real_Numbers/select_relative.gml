@@ -1,19 +1,22 @@
-#define select_relative
-/// select_relative(current,delta,choice0,choice1,choice2...)
-//
-//  Returns an argument in a position relative to a given value.
-//  If a relative position is beyond the range of given choices,
-//  the position is clamped to be within range. If current value
-//  isn't among the choices, the return value is undefined.
-//
-//      current     value matching a given choice
-//      delta       relative position of desired choice, integer
-//      choiceN     value to return, if selected
-//
-//  eg. select_relative("Name", -2, "Hello", "Doctor", "Name") == "Hello"
-//      select_relative("Doctor", 2, "Hello", "Doctor", "Name") == "Name"
-//
+/// @func   select_relative(current, delta, choice0, choice1, choice2, ...)
+///
+/// @desc   Returns an argument in a position relative to a given value.
+///         If a relative position is beyond the range of given choices,
+///         the position is clamped to be within range. If current value
+///         isn't among the choices, the return value is undefined.
+///
+///         eg. select_relative("Name", -2, "Hello", "Doctor", "Name") == "Hello"
+///             select_relative("Doctor", 2, "Hello", "Doctor", "Name") == "Name"
+///
+/// @param  {any*}      current     value matching a given choice
+/// @param  {real}      delta       relative position of desired choice
+/// @param  {any*}      choiceN     value to return, if selected
+///
+/// @return {any*}      selected choice
+///
 /// GMLscripts.com/license
+
+function select_relative()
 {
     var current = argument[0];
     var delta = argument[1];

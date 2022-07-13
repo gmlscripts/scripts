@@ -1,11 +1,14 @@
-#define toggle
-/// toggle(b)
-//
-//  Returns the given Boolean value negated.
-//
-//      b           Boolean value, real
-//
+/// @func   toggle(b)
+///
+/// @desc   Returns the given Boolean value negated.
+///
+/// @param  {bool}      b           Boolean value
+///
+/// @return {bool}      negated value
+///
 /// GMLscripts.com/license
+
+function toggle(b)
 {
-    return !argument0;
+    return !b;
 }

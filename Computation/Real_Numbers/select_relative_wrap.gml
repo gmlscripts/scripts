@@ -1,19 +1,22 @@
-#define select_relative_wrap
-/// select_relative_wrap(current,delta,choice0,choice1,choice2...)
-//
-//  Returns an argument in a position relative to a given value.
-//  If a relative position is beyond the range of given choices,
-//  the position is wrapped until it is within range. If current
-//  value isn't among the choices, the return value is undefined.
-//
-//      current     value matching a given choice
-//      delta       relative position of desired choice, integer
-//      choiceN     value to return, if selected
-//
-//  eg. select_relative_wrap("Name", -2, "Hello", "Doctor", "Name") == "Hello"
-//      select_relative_wrap("Name", 2, "Hello", "Doctor", "Name") == "Doctor"
-//
+/// @func   select_relative_wrap(current, delta, choice0, choice1, choice2, ...)
+///
+/// @desc   Returns an argument in a position relative to a given value.
+///         If a relative position is beyond the range of given choices,
+///         the position is wrapped until it is within range. If current
+///         value isn't among the choices, the return value is undefined.
+///
+///         eg. select_relative_wrap("Name", -2, "Hello", "Doctor", "Name") == "Hello"
+///             select_relative_wrap("Name", 2, "Hello", "Doctor", "Name") == "Doctor"
+///
+/// @param  {any*}      current     value matching a given choice
+/// @param  {real}      delta       relative position of desired choice
+/// @param  {any*}      choiceN     value to return, if selected
+///
+/// @return {any*}      selected choice
+///
 /// GMLscripts.com/license
+
+function select_relative_wrap()
 {
     var current = argument[0];
     var delta = argument[1];

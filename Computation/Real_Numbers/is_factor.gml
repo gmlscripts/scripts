@@ -1,13 +1,17 @@
-#define is_factor
-/// is_factor(divisor,value)
-//
-//  Returns true if a given divisor is a factor of 
-//  a given value, false otherwise.
-//
-//      divisor     divisor, real
-//      value       value, real
-//
+/// @func   is_factor(divisor, value)
+///
+/// @desc   Returns true if a given divisor is a factor of
+///         a given value, false otherwise.
+///
+/// @param  {real}      divisor     divisor
+/// @param  {real}      value       value
+///
+/// @return {bool}      true if a factor
+///
 /// GMLscripts.com/license
+
+function is_factor(divisor, value)
 {
-    return !(argument1 mod argument0);
+    var remainder = value mod divisor;
+    return (remainder == 0 || remainder == divisor);
 }
