@@ -1,6 +1,8 @@
 ds_grid_swap_columns
 ====================
 
+Exchanges the contents of two entire grid columns.
+
 $$\mathbf{G} = \begin{array}{|c|c|c|c|}
 \hline \color{red}A&B&\color{blue}C&D
 \\\hline \color{red}E&F&\color{blue}G&H
