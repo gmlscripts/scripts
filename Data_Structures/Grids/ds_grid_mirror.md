@@ -1,6 +1,9 @@
 ds_grid_mirror
 ==============
 
+Rearranges the elements of a given grid by mirroring
+horizontally and/or vertically.
+
 $$\mathbf{G} = \begin{array}{|c|c|}
 \hline \color{red}A&B
 \\\hline C&D
