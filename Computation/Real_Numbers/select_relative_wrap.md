@@ -1,7 +1,8 @@
 select_relative_wrap
 ====================
 
-This is useful for sequentially selecting values from a list based on a current value.
+Returns an argument in a position relative to a given value. This is useful
+for sequentially selecting values from a list based on a current value.
 
     //  Move forwards {+1} through a list of colors
     color = select_relative_wrap(color, +1, c_red, c_orange, c_yellow, c_green, c_blue);
