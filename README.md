@@ -1,5 +1,5 @@
-GMLscripts.com scripts for GameMaker Studio
-===========================================
+GMLscripts.com scripts for GameMaker
+====================================
 
 This is the main repository of scripts hosted by GMLscripts.com.
 
@@ -46,7 +46,7 @@ of these scripts, please respect this license. Thank you.
 >      misrepresented as being the original software.
 >
 >   3. This notice may not be removed or altered from any source distribution.
->   
+>
 > GMLscripts.com/license
 
 A copy of this license can be found at the root level of the repository.
