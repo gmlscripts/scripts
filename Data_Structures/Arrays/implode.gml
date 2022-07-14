@@ -1,20 +1,24 @@
-#define implode
-/// implode(delimiter,array)
-//
-//  Returns a string of elements from a given array
-//  of strings and separated by a delimiter.
-//
-//      delimiter   delimiter character, string
-//      array       group of elements, array
-//
+/// @func   implode(del, arr)
+///
+/// @desc   Returns a string of elements from a given array
+///         of strings and separated by a delimiter.
+///
+///         eg. implode(":", ["hello", "world"]) == "hello:world"
+///
+/// @param  {string}    del         delimiter character(s)
+/// @param  {array}     arr         array of strings
+///
+/// @return {string}    string of delimited elements
+///
 /// GMLscripts.com/license
+
+function implode(del, arr)
 {
-    var del = argument0;
-    var arr = argument1;
+    var len = array_length(arr);
+    if (len == 0) return "";
     var out = "";
     var ind = 0;
-    var num = array_length_1d(arr);
-    repeat (num-1) {
+    repeat (len-1) {
         out += arr[ind] + del;
         ind++;
     }

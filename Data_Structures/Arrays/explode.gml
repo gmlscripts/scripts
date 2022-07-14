@@ -1,24 +1,28 @@
-#define explode
-/// explode(delimiter,string)
-//
-//  Returns an array of strings parsed from a given 
-//  string of elements separated by a delimiter.
-//
-//      delimiter   delimiter character, string
-//      string      group of elements, string
-//
+/// explode(del, str)
+///
+/// @desc   Returns an array of strings parsed from a given
+///         string of elements separated by a delimiter.
+///
+///         eg. explode(":", "hello:world") == ["hello", "world"]
+///
+/// @param  {string}    del         delimiter character(s)
+/// @param  {string}    str         group of elements
+///
+/// @return {array}     array of strings
+///
 /// GMLscripts.com/license
+
+function explode(del, str)
 {
-    var arr;
-    var del = argument0;
-    var str = argument1 + del;
+    if (str == "") return [str];
+    if (del == "") return [str];
+    str += del;
+    var arr = array_create(0);
     var len = string_length(del);
-    var ind = 0;
     repeat (string_count(del, str)) {
         var pos = string_pos(del, str) - 1;
-        arr[ind] = string_copy(str, 1, pos);
+        array_push(arr, string_copy(str, 1, pos));
         str = string_delete(str, 1, pos + len);
-        ind++;
     }
     return arr;
 }

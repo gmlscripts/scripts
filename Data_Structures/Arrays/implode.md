@@ -10,9 +10,9 @@ of strings and separated by a delimiter.
     array[3] = "Charlie"
     array[4] = "Romeo"
     array[5] = "Oscar"
-    
+
     names = implode(",", array);
-    
+
     //  names == "Juliett,Victor,Mike,Charlie,Romeo,Oscar"
 
 script: implode.gml

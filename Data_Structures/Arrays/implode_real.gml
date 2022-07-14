@@ -1,20 +1,24 @@
-#define implode_real
-/// implode_real(delimiter,array)
-//
-//  Returns a string of elements from a given array
-//  of real values and separated by a delimiter.
-//
-//      delimiter   delimiter character, string
-//      array       group of elements, array
-//
+/// @func   implode_real(del, arr)
+///
+/// @desc   Returns a string of elements from a given array
+///         of real values and separated by a delimiter.
+///
+///         eg. implode_real(":", [1, 2, 3, 4]) == "1:2:3:4"
+///
+/// @param  {string}    del         delimiter character(s)
+/// @param  {array}     arr         array of real numbers
+///
+/// @return {string}    string of delimited elements
+///
 /// GMLscripts.com/license
+
+function implode_real(del, arr)
 {
-    var del = argument0;
-    var arr = argument1;
+    var len = array_length(arr);
+    if (len == 0) return "";
     var out = "";
     var ind = 0;
-    var num = array_length_1d(arr);
-    repeat (num-1) {
+    repeat (len-1) {
         out += string(arr[ind]) + del;
         ind++;
     }

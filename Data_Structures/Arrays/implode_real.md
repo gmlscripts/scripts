@@ -10,11 +10,11 @@ of real values and separated by a delimiter.
     array[3] = 3;
     array[4] = 18;
     array[5] = 15;
-    
+
     numbers = implode(",", array);
-    
+
     //  numbers == "10,21,13,3,18,15"
-    
+
 script: implode_real.gml
 
 contributors: xot
