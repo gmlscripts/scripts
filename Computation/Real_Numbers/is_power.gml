@@ -1,7 +1,7 @@
 /// @func   is_power(value, base)
 ///
 /// @desc   Returns true if a given value is a power of the a given base,
-///         false if it is not, and undefined if it cannot be determined.
+///         or false if it is not (or if it cannot be determined).
 ///
 /// @param  {real}      value       number
 /// @param  {real}      base        exponential base
@@ -12,7 +12,7 @@
 
 function is_power(value, base)
 {
-    if (value == 0 && base == 0) return undefined;
+    if (value == 0 && base == 0) return false;
     if (value != 0 && base == 0) return false;
     if (value != 1 && base == 1) return false;
     if (value == 1 || base == 1) return true;
