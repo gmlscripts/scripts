@@ -13,8 +13,7 @@
 
 function boxstep(a, b, x)
 {
-    var p;
     if (a == b) return (-1);
-    p = (x - a) / (b - a);
+    var p = (x - a) / (b - a);
     return clamp(p, 0, 1);
 }
