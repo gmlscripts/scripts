@@ -5,7 +5,7 @@ Returns the number of unique subsets created from all
 combinations of a number of elements. The order of the
 chosen elements is not significant.
 
-$$\mathrm{C}_{k}^{n} = \frac{n\times(n-1)\times(n-2)\cdots(n-k+1)}{k!}$$
+$$C(n,k) = \mathrm{C}_{k}^{n} = \binom{n}{k} = \frac{n!}{k!(n-k)!}$$
 
 Example: In a lottery, five numbers are selected from a pool of 49
 unique numbers. The numbers are removed from the pool as they are

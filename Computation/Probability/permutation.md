@@ -5,7 +5,7 @@ Returns the number of unique subsets created from all
 permutations of a number of elements. The order of the
 chosen elements is significant. 
 
-$$\mathrm{P}_{k}^{n} = \frac{n!}{(n-k)!}$$
+$$P(n,k) = \mathrm{P}_{k}^{n} = \frac{n!}{(n-k)!}$$
 
 Example: If Alice, Bob, and Carol are playing a board game,
 the order they take turns can be one of \(P(3,3) = 6\)
