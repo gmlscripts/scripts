@@ -3,10 +3,10 @@ save_screenshot
 
 Saves a successively numbered screenshot within the working directory.
 
-    save_screenshot("test","folder\");
-    save_screenshot("test","folder\");
-    save_screenshot("test","folder\");
-    save_screenshot("test","folder\");
+    save_screenshot("test","folder\\");
+    save_screenshot("test","folder\\");
+    save_screenshot("test","folder\\");
+    save_screenshot("test","folder\\");
     //  files created:
     //      %USERPROFILE%\AppData\Local\<game-name>\folder\test_0.png
     //      %USERPROFILE%\AppData\Local\<game-name>\folder\test_1.png
