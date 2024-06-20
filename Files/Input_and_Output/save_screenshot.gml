@@ -14,7 +14,7 @@
     // If there is a file with the current name and number,
     // advance counter and keep looking:
     do {
-        fname = working_directory+"\"+argument1+argument0+"_"+string(i)+".png";
+        fname = working_directory+"\\"+argument1+argument0+"_"+string(i)+".png";
         i += 1;
     } until (!file_exists(fname))
     // Once we've got a unused number we'll save the screenshot under it:
