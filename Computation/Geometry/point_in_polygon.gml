@@ -1,33 +1,39 @@
-#define point_in_polygon
-/// point_in_polygon(x,y,polygon)
-//
-//  Returns true if the given test point is inside 
-//  the given 2D polygon, false otherwise.
-//
-//      x,y         coordinates of the test point
-//      polygon     ds_list of an ordered series of coordinate 
-//                  pairs defining the shape of a polygon
-//
-//  Polygons are closed figures with edges spanning consecutive
-//  vertices and from the last vertex to the first.
-//
+/// @func   point_in_polygon(x, y, polygon)
+///
+/// @desc   Returns true if test point is inside the given 2D polygon.
+///         Polygons are closed figures with edges spanning consecutive
+///         vertices. An implicit final edge spans the first and last
+///         vertices. 
+///
+///         Each polygon vertex populates a ds_list in coordinate pairs,
+///             ie. { x0,y0,  x1,y1,  x2,y2  ... }
+///
+/// @param  {real}      x           x coordinate of test point
+/// @param  {real}      y           y coordinate of test point
+/// @param  {real}      polygon     ds_list of polygon coordinate pairs
+///
+/// @return {boolean}   true if test point is inside the polygon
+///
 /// GMLscripts.com/license
+
+function point_in_polygon(x, y, polygon)
 {
-    var x0, y0, polygon, inside;
-    var n, i, polyX, polyY, x1, y1, x2, y2;
-    x0 = argument0;
-    y0 = argument1;
-    polygon = argument2;
-    inside = false;
-    n = ds_list_size(polygon) div 2;
-    for (i=0; i<n; i+=1)
+    var x0 = x;
+    var y0 = y;
+    var inside = false;
+    
+    var polyX, polyY;
+    var n = ds_list_size(polygon) div 2;
+    for (var i=0; i<n; i+=1)
     {
         polyX[i] = ds_list_find_value(polygon, 2*i);
         polyY[i] = ds_list_find_value(polygon, 2*i+1);
     }
     polyX[n] = polyX[0];
     polyY[n] = polyY[0];
-    for (i=0; i<n; i+=1)
+    
+    var x1, y1, x2, y2;
+    for (var i=0; i<n; i+=1)
     {
         x1 = polyX[i];
         y1 = polyY[i];
@@ -41,4 +47,3 @@
     }
     return inside;
 }
-
