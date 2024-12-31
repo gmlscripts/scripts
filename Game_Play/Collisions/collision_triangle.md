@@ -10,6 +10,9 @@ collision mask to fit any type of triangle using only scaling and rotation.
 
 ![collision_triangle](/images/collision_triangle.gif "collision triangle")
 
+demo: collision_triangle 725 360
+Click and drag triangle points. Press SPACE to toggle mask resolution.
+
 The partner function `collision_triangle_init()` is required to initialize
 the main function `collision_triangle()` and must be called once before the
 main function can be used. The initialization function creates a collision
