@@ -1,8 +1,8 @@
 #define b64_to_bytes
 /// b64_to_bytes(b64)
 //
-//  Returns a string of raw bytes, 8 bits each. b64 strings with 
-//  characters outside of the RFC 3548 standard or with excess
+//  Returns a string of raw bytes, 8 bits each. Base64 strings 
+//  with characters outside of the RFC 3548 standard or excess
 //  padding characters at the end will not decode correctly.
 //
 //      b64         base64 digits (RFC 3548), 6 bits each, string
