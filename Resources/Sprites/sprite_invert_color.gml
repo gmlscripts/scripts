@@ -1,12 +1,12 @@
 #define sprite_invert_color
 /// sprite_invert_color(sprite)
 //
-//  Inverts the colors of a given sprite. No new sprites are 
+//  Inverts the colors of a given sprite. No new sprites are
 //  created, the given sprite is change. Returns (-1) on error.
 //
 //      sprite      sprite to change
 //
-/// GMLscripts.com
+/// GMLscripts.com/license
 {
     var sprite,w,h,n,xo,yo,surf,a,i,newsprite,alphasprite;
     sprite = argument0;
@@ -16,7 +16,7 @@
     n  = sprite_get_number(sprite);
     xo = sprite_get_xoffset(sprite);
     yo = sprite_get_yoffset(sprite);
-    
+
     surf = surface_create(w,h);
     if (surf < 0) return -1;
     surface_set_target(surf);

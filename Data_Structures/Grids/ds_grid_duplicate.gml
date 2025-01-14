@@ -6,7 +6,7 @@
 ///
 /// @return {grid}      duplicated grid
 ///
-/// GMLscripts.com
+/// GMLscripts.com/license
 
 function ds_grid_duplicate(grid)
 {

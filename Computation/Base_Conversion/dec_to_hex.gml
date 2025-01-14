@@ -12,7 +12,7 @@
 ///
 /// GMLscripts.com/license
 
-function dec_to_hex(dec, len = 1) 
+function dec_to_hex(dec, len = 1)
 {
     var hex = "";
 

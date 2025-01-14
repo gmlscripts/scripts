@@ -8,4 +8,4 @@ script: draw_sprite_hud.gml
 
 contributors: EyeGuy
 
-[Draw GUI event]: https://manual-en.yoyogames.com/#t=The_Asset_Editors%2FObject_Properties%2FDraw_Events.htm
+[Draw GUI event]: https://manual.gamemaker.io/monthly/en/#t=The_Asset_Editors/Object_Properties/Draw_Events.htm
