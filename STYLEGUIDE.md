@@ -65,7 +65,7 @@ function my_function(alfa, bravo, charlie)
         delta /= 2;
     } until (delta > 0);
 
-    // Scripts should always return some value.
+    // Functions should always return some value.
     return delta;
 }
 ````````````````````````````````````````````````````````````````````````
