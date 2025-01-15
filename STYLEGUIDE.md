@@ -51,7 +51,7 @@ function my_function(alfa, bravo, charlie)
     var delta = 0;
 
     // Useful comments are encouraged.
-    for (i=alfa; i<bravo; i+=charlie) {
+    for (var i=alfa; i<bravo; i+=charlie) {
         if (delta mod 3) {
             delta += i;
         } else {
