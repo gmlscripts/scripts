@@ -8,7 +8,7 @@ accuracy (unlike other simpler methods). Because any triangle can be split
 into two right-angled triangles, the function can manipulate this single
 collision mask to fit any type of triangle using only scaling and rotation.
 
-![collision_triangle](/images/collision_triangle.gif "collision triangle")
+![collision_triangle](/images/collision_triangle.png "collision triangle")
 
 demo: collision_triangle 725 360
 Click and drag triangle points. Press SPACE to toggle mask resolution.

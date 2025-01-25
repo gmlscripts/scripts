@@ -1,7 +1,7 @@
 erf
 ===
 
-![right](/images/erf1.gif "erf")
+![right](/images/erf1.png "erf")
 The "error function" or cumulative distribution function is encountered
 in probability and can be used to compute the probability that a
 Gaussian random number falls within a given range. This algorithm was
