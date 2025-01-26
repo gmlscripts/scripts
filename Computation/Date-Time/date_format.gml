@@ -1,7 +1,7 @@
 /// @func   date_format(format, datetime)
 ///
 /// @desc   Returns a formatted string generated from a date-time.
-///         If no date-time value is given, the current time is used. 
+///         If no date-time value is given, the current time is used.
 ///         Find additional notes and format examples below.
 ///
 /// @param  {string}    format      string controlling date formatting
@@ -55,7 +55,7 @@
 /// Note: \ (backslash) is an "escape" character in standard strings and must itself
 ///     be escaped. For instance, \t is interpreted as the TAB character in a standard
 ///     string; when written as \\t, a literal "t" is produced by this function instead.
-///     However, GameMaker Studio 2 also has "verbatim" strings which do not use escape
+///     However, GameMaker also has "verbatim" strings which do not use escape
 ///     sequences. These are literal strings prefixed by an @ symbol. Backslashes in
 ///     these do not require escaping and \t would produce a literal "t" not a TAB.
 ///

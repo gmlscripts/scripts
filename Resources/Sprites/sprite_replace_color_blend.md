@@ -1,11 +1,12 @@
 sprite_replace_color_blend
 ==========================
 
-Warning: This script is already slow but a [bug] in GameMaker:Studio
-makes it pretty much unusable. The sprite below took 46 minutes to
-process. It should have taken about 30 seconds.
+Warning: This script is already slow but a possible [bug] in GameMaker may
+make it unusable. When last tested, the sprite below took 46 minutes to
+process compared to an expected 30 seconds. The alteration suggested in the
+linked bug report should resolve the problem but it is not yet implemented.
 
-[bug]: http://bugs.yoyogames.com/view.php?id=15778
+[bug]: https://web.archive.org/web/20210923093700/https://bugs.yoyogames.com/view.php?id=15778
 
 ![right](/images/sprite_replace_color_blend.gif "sprite_replace_color_blend()")
 

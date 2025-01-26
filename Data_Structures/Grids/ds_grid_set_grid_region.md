@@ -1,7 +1,7 @@
 ds_grid_set_grid_region
 =======================
 
-Note: The GameMaker:Studio function of the same name produces 
+Note: The GameMaker function of the same name produces
 the same results and obsoletes this script.
 
 $$\text{Original}=\begin{bmatrix}
@@ -10,7 +10,7 @@ $$\text{Original}=\begin{bmatrix}
 0&0&0&0\\
 0&0&0&0
 \end{bmatrix}
-\qquad 
+\qquad
 f(id,id,0,0,1,1,2,2)=\begin{bmatrix}
 \color{red}A&\color{red}B&0&0\\
 \color{red}C&\color{red}D&0&0\\

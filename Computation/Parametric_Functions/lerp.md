@@ -1,7 +1,7 @@
 lerp
 ====
 
-Note: The GameMaker:Studio function of the same name produces the same
+Note: The GameMaker function of the same name produces the same
 results and obsoletes this script.
 
 Computes the linear interpolation between two given values.

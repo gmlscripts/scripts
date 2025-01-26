@@ -16,10 +16,11 @@ demo: date_format 512 64
     today = date_format(@"\i\t \i\s \t\h\e jS \d\a\y.");  // it is the 10th day.
     today = date_format("D M j G:i:s Y");                 // Sat Mar 10 17:16:18 2001
     today = date_format(@"H:m:s \m \i\s\ \m\o\n\t\h");    // 17:03:18 m is month
-    today = date_format("H:i:s");                         // 17:16:18 
+    today = date_format("H:i:s");                         // 17:16:18
 
-Warning: ISO 8601 week number is currently broken in GameMaker Studio.
-This also means ISO 8601 year is not calculated correctly.
+Warning: ISO 8601 week number may be inaccurate for some edge cases in
+GameMaker. This also means ISO 8601 year may not be calculated correctly.
+This is being investigated.
 
 script: date_format.gml
 

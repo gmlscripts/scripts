@@ -1,7 +1,7 @@
 clamp
 =====
 
-Note: The GameMaker:Studio function of the same name produces
+Note: The GameMaker function of the same name produces
 the same results and obsoletes this script.
 
 This function clamps an input two an upper or lower bound, or min/max values.

@@ -1,7 +1,7 @@
 ds_grid_shuffle
 ===============
 
-Note: The GameMaker:Studio function of the same name produces
+Note: The GameMaker function of the same name produces
 the same results and obsoletes this script.
 
 $$\text{Original}=\begin{bmatrix}A&B&C\\D&E&F\end{bmatrix}
