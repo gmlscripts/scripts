@@ -21,3 +21,4 @@ Contributing Guidelines
 
 [style guide]: STYLEGUIDE.md
 [collective license]: LICENSE.txt
+[GMLscripts.com]: https://gmlscripts.com/
