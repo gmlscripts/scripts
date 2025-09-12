@@ -1,11 +1,7 @@
-/// @func   draw_sprite_shear(sprite, subimg, x, y, xshear, yshear)
+/// @func   draw_self_shear(xshear, yshear)
 ///
-/// @desc   Draws a given sprite sheared by a given amount.
+/// @desc   Draws an instance sprite with shearing applied.
 ///
-/// @param  {sprite}    sprite      sprite index
-/// @param  {real}      subimg      image index
-/// @param  {real}      x           x screen position
-/// @param  {real}      y           y screen position
 /// @param  {real}      xshear      shear rate of x axis
 /// @param  {real}      yshear      shear rate of y axis
 ///
@@ -13,7 +9,7 @@
 ///
 /// GMLscripts.com/license
 
-function draw_sprite_shear(sprite, subimg, x, y, xshear, yshear)
+function draw_self_shear(xshear, yshear)
 {
     var mShear = matrix_build_identity();
     mShear[4] = xshear;
@@ -23,7 +19,7 @@ function draw_sprite_shear(sprite, subimg, x, y, xshear, yshear)
 
     matrix_stack_push(mShear);
     matrix_set(matrix_world, matrix_stack_top());
-    draw_sprite(sprite, subimg, 0, 0);
+    draw_sprite_ext(sprite_index, image_index, 0, 0, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
     matrix_stack_pop();
     matrix_set(matrix_world, matrix_stack_top());
 
