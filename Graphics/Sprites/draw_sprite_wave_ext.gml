@@ -1,56 +1,47 @@
-#define draw_sprite_wave_ext
-/// draw_sprite_wave_ext(sprite,subimg,x,y,axis,wavelength,amplitude,phase,xscale,yscale,color,alpha)
-//
-//  Draws a sprite with wave-like distortion. If scaling is used, 
-//  wavelength is also scaled. The fractional part of the phase argument
-//  controls the wave cycle. A full cycle covers the [0..1] interval.
-//
-//      sprite      sprite index, real
-//      subimg      sprite subimage, real
-//      x,y         position, real
-//      axis        0 = horizontal wave, 1 = vertical wave, real
-//      wavelength  length of wave in pixels, real
-//      amplitude   height of wave in pixels, real
-//      phase       wave position offset, real
-//      xscale      horizontal scaling, real
-//      yscale      vertical scaling, real
-//      color       color blending, real
-//      alpha       alpha blending, real
-//
+/// @func   draw_sprite_wave_ext(sprite, subimg, x, y, axis, wavelength, amplitude, phas, xscale, yscale, color, alpha)
+///
+/// @desc   Draws a sprite with wave-like distortion. The fractional part of the phase
+///         argument controls the wave cycle. A full cycle covers the [0..1] interval.
+///
+/// @param  {srpite}    sprite      sprite index
+/// @param  {real}      subimg      sprite subimage
+/// @param  {real}      x           x position to draw sprite
+/// @param  {real}      y           y position to draw sprite
+/// @param  {real}      axis        0 = horizontal wave, 1 = vertical wave
+/// @param  {real}      wavelength  length of the wave in pixels
+/// @param  {real}      amplitude   height of wave in pixels
+/// @param  {real}      phase       wave position offset
+/// @param  {real}      xscale      horizontal scaling
+/// @param  {real}      yscale      vertical scaling
+/// @param  {color}     color       color blending
+/// @param  {real}      alpha       alpha blending
+///
+/// @return {real}      0 (unused)
+///
 /// GMLscripts.com/license
+
+function draw_sprite_wave_ext(sprite, subimg, x, y, axis, wavelength, amplitude, phase, xscale, yscale, color, alpha)
 {
-    var sprite,image,posx,posy,axis,wavelength,amplitude,phase,xscale,yscale,blend,alpha;
-    sprite = argument0;
-    image = argument1;
-    posx = argument2;
-    posy = argument3;
-    axis = argument4;
-    wavelength = argument5;
-    amplitude = argument6;
-    phase = argument7;
-    xscale = argument8;
-    yscale = argument9;
-    blend = argument10;
-    alpha = argument11;
+    var width  = sprite_get_width(sprite);
+    var height = sprite_get_height(sprite);
+    var xoff   = sprite_get_xoffset(sprite);
+    var yoff   = sprite_get_yoffset(sprite);
 
-    var width,height,xoff,yoff,size,i,shift,sx,sy;
-    width = sprite_get_width(sprite);
-    height = sprite_get_height(sprite);
-    xoff = sprite_get_xoffset(sprite);
-    yoff = sprite_get_yoffset(sprite);
-    if (axis) size = height else size = width;
-
-    for (i=0; i<size; i+=1) {
-        shift = amplitude*sin(2*pi*((i/wavelength)+phase));
-        if (axis) {
-            sx = xscale*(shift-xoff)+posx;
-            sy = yscale*(i-yoff)+posy;
-            draw_sprite_part_ext(sprite,image,0,i,width,1,sx,sy,xscale,yscale,blend,alpha);
-        }else{
-            sx = xscale*(i-xoff)+posx;
-            sy = yscale*(shift-yoff)+posy;
-            draw_sprite_part_ext(sprite,image,i,0,1,height,sx,sy,xscale,yscale,blend,alpha);
+    if (axis) {
+        for (var i=0; i<height; i+=1) {
+            var shift = amplitude * sin(2 * pi * ((i / wavelength) + phase));
+            var sx = shift - xoff + x;
+            var sy = i - yoff + y;
+            draw_sprite_part_ext(sprite, subimg, 0, i, width, 1, sx, sy, xscale, yscale, color, alpha);
+        }
+    } else {
+        for (var i=0; i<width; i+=1) {
+            var shift = amplitude * sin(2 * pi * ((i / wavelength) + phase));
+            var sx = i - xoff + x;
+            var sy = shift-yoff + y;
+            draw_sprite_part_ext(sprite, subimg, i, 0, 1, height, sx, sy, xscale, yscale, color, alpha);
         }
     }
-    return 0;
+
+	return 0;
 }
