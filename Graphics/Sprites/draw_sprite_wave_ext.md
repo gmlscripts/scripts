@@ -10,7 +10,7 @@ NOTE: This is a relatively expensive function compared to drawing a sprite
 normally. If it is needed for a large number of sprites, a shader-based
 alternative may be preferred.
 
-demo: draw_sprite_wave 320 320
+demo: draw_sprite_wave_ext 320 320
 Use sliders and button to adjust effect.
 
 script: draw_sprite_wave_ext.gml
