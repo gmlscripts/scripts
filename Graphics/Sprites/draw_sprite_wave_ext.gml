@@ -1,4 +1,4 @@
-/// @func   draw_sprite_wave_ext(sprite, subimg, x, y, axis, wavelength, amplitude, phas, xscale, yscale, color, alpha)
+/// @func   draw_sprite_wave_ext(sprite, subimg, x, y, axis, wavelength, amplitude, phase, xscale, yscale, color, alpha)
 ///
 /// @desc   Draws a sprite with wave-like distortion. The fractional part of the phase
 ///         argument controls the wave cycle. A full cycle covers the [0..1] interval.
