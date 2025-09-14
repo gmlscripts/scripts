@@ -1,6 +1,8 @@
 /// @func   draw_self_shear(xshear, yshear)
 ///
 /// @desc   Draws an instance sprite with shearing applied.
+///         The drawn sprite will respect the transformation
+///         and blending settings of the instance.
 ///
 /// @param  {real}      xshear      shear rate of x axis
 /// @param  {real}      yshear      shear rate of y axis
