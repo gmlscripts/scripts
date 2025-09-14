@@ -3,8 +3,6 @@
 /// @desc   Draws a sprite with inverted colors and standard transformations
 ///         and blending. This accepts the same arguments as draw_sprite_ext().
 ///
-///         Note: Resets blending mode to normal.
-///
 /// @param  {sprite}    sprite      sprite index
 /// @param  {real}      subimg      image index
 /// @param  {real}      x           x screen position
@@ -21,6 +19,7 @@ function draw_sprite_inverted_ext(sprite, subimg, x, y, xscale, yscale, rot, col
     var xo = sprite_get_xoffset(sprite);
     var yo = sprite_get_yoffset(sprite);
     var a = draw_get_alpha();
+    var b = gpu_get_blendmode_ext();
 
     matrix_stack_push(matrix_build(x, y, 0, 0, 0, rot, 1, 1, 1));
     matrix_stack_push(matrix_build(0, 0, 0, 0, 0, 0, xscale, yscale, 1));
@@ -34,7 +33,7 @@ function draw_sprite_inverted_ext(sprite, subimg, x, y, xscale, yscale, rot, col
     draw_sprite_ext(sprite, subimg, xo, yo, 1, 1, 0, color, alpha);
     gpu_set_blendmode_ext(bm_inv_dest_color, bm_inv_src_color);
     draw_rectangle_color(0, 0, w, h, c_white, c_white, c_white, c_white, false);
-    gpu_set_blendmode(bm_normal);
+    gpu_set_blendmode_ext(b);
     draw_set_alpha(a);
 
     matrix_stack_pop();

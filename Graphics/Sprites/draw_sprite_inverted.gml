@@ -3,8 +3,6 @@
 /// @desc   Draws a sprite with inverted colors. This accepts
 ///         the same arguments as draw_sprite().
 ///
-///         Note: Resets blending mode to normal.
-///
 /// @param  {sprite}    sprite      sprite index
 /// @param  {real}      subimg      image index
 /// @param  {real}      x           x screen position
@@ -21,6 +19,7 @@ function draw_sprite_inverted(sprite, subimg, x, y)
     var xo = sprite_get_xoffset(sprite);
     var yo = sprite_get_yoffset(sprite);
     var a = draw_get_alpha();
+    var b = gpu_get_blendmode_ext();
 
     matrix_stack_push(matrix_build(x - xo, y - yo, 0, 0, 0, 0, 1, 1, 1));
     matrix_set(matrix_world, matrix_stack_top());
@@ -32,7 +31,7 @@ function draw_sprite_inverted(sprite, subimg, x, y)
     draw_sprite_ext(sprite, subimg, xo, yo, 1, 1, 0, c_white, 1);
     gpu_set_blendmode_ext(bm_inv_dest_color, bm_inv_src_color);
     draw_rectangle_color(0, 0, w, h, c_white, c_white, c_white, c_white, false);
-    gpu_set_blendmode(bm_normal);
+    gpu_set_blendmode_ext(b);
     draw_set_alpha(a);
 
     matrix_stack_pop();
