@@ -1,22 +1,27 @@
-#define draw_sprite_stretched_direction
-/// draw_sprite_stretched_direction(sprite,subimg,x,y,scale,dir)
-//
-//  Draws a sprite scaled along an arbitrary axis.
-//
-//      sprite      sprite, real
-//      subimg      subimage, real
-//      x,y         position, real
-//      scale       scaling factor, real
-//      dir         direction to stretch, real
-//
+/// @func   draw_sprite_stretched_direction(sprite, subimg, x, y, scale, dir)
+///
+/// @desc   Draws a sprite scaled along an arbitrary axis.
+///         The sprite can be stretched or compressed.
+///
+/// @param  {sprite}    sprite      sprite index
+/// @param  {real}      subimg      image index
+/// @param  {real}      x           x position
+/// @param  {real}      y           y position
+/// @param  {real}      scale       scale of stretch
+/// @param  {real}      dir         direction of stretch in degrees
+///
+/// @return {reael}    0 (unused)
+///
 /// GMLscripts.com/license
+
+function draw_sprite_stretched_direction(sprite, subimg, x, y, scale, dir)
 {
-    d3d_transform_stack_push();
-    d3d_transform_add_rotation_z(-argument5);
-    d3d_transform_add_scaling(argument4,1,1);
-    d3d_transform_add_rotation_z(argument5);
-    d3d_transform_add_translation(argument2,argument3,0);
-    draw_sprite(argument0,argument1,0,0);
-    d3d_transform_stack_pop();
+    matrix_stack_push(matrix_build(x, y, 0, 0, 0, dir, 1, 1, 1));
+    matrix_stack_push(matrix_build(0, 0, 0, 0, 0, -dir, scale, 1, 1));
+    matrix_set(matrix_world, matrix_stack_top());
+    draw_sprite(sprite, subimg, 0, 0);
+    matrix_stack_pop();
+    matrix_stack_pop();
+    matrix_set(matrix_world, matrix_stack_top());
     return 0;
 }
