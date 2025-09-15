@@ -10,7 +10,7 @@
 /// @param  {real}      scale       scale of stretch
 /// @param  {real}      dir         direction of stretch in degrees
 ///
-/// @return {reael}    0 (unused)
+/// @return {real}      0 (unused)
 ///
 /// GMLscripts.com/license
 
