@@ -1,0 +1,46 @@
+  <svg class="fright" width="350" height="200" style="overflow:visible" xmlns="http://www.w3.org/2000/svg">
+    <g id="collision" transform="translate(150,40)">
+      <polyline points="0,0 155,0 180,120, 0,0" style="fill:#000f" />
+    </g>
+    <g transform="translate(20, 170)">
+      <g id="trianglemask">
+        <polygon points="0,-150 150,0 0,0" style="fill:#ffff" />
+        <text x="40" y="-45" font-size="15" text-anchor="middle" fill="#000f">MASK</text>
+      </g>
+      <g id="collisionmask1">
+        <polygon points="0,-150 150,0 0,0" style="fill:#11337F" />
+        <text x="40" y="-45" font-size="15" text-anchor="middle" fill="#ffff">MASK</text>
+      </g>
+      <g id="collisionmask2">
+        <polygon points="0,-150 150,0 0,0" style="fill:#7F1133" />
+        <text x="40" y="-45" font-size="15" text-anchor="middle" fill="#ffff">MASK</text>
+      </g>
+    </g>
+    <g id="collision" transform="translate(150,40)">
+      <polyline points="155,0 107,72 107,72 112,65 119,70 114,77" style="fill:none;stroke:#f00f;stroke-width:2" />
+      <polyline points="0,0 155,0 180,120, 0,0" style="fill:none;stroke:#ffff;stroke-width:2" />
+      <circle r="4" cx="0" cy="0" style="fill:#ffff"/>
+      <circle r="4" cx="155" cy="0" style="fill:#ffff"/>
+      <circle r="4" cx="180" cy="120" style="fill:#ffff"/>
+      <circle r="4" cx="107" cy="72" style="fill:#f00f"/>
+      <text x="78" y="-15" font-size="15" text-anchor="middle" fill="#ffff">collision_triangle()</text>
+    </g>
+    <style>
+    #collisionmask1 {
+    animation: move1 5s ease-in-out infinite;
+    }
+    #collisionmask2 {
+    animation: move2 5s ease-in-out infinite;
+    }
+    @keyframes move1 {
+    0%,15% { opacity: 0%; }
+    15% { transform: none; opacity: 90% }
+    45%,60%,100% { transform: translate(237px,-58px) rotate(34deg) scale(0.582,0.573); }
+    }
+    @keyframes move2 {
+    0%,25% { opacity: 0%; }
+    35% { transform: none; opacity: 90%; }
+    65%,100% { transform: translate(237px,-58px) rotate(34deg) scale(-0.86,0.573); }
+    }
+    </style>
+</svg>
