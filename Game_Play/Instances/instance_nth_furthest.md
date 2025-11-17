@@ -1,7 +1,7 @@
 instance_nth_furthest
 =====================
 
-GameMaker can already tell you the [instance furthest] to a point, but what
+GameMaker can already tell you the [instance furthest] from a point, but what
 about the 2nd furthest? Or the 3rd furthest? Or the nth furthest? This script
 answers that question.
 
