@@ -17,7 +17,7 @@ Computes the linear interpolation between two given values.
 > operation. e.g. "[Bresenham's algorithm] lerps incrementally between the
 > two endpoints of the line."
 
-![lerp](/images/lerp1.png "lerp")
+![lerp](/images/lerp.png "lerp")
 
 script: lerp.gml
 

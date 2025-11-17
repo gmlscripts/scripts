@@ -7,7 +7,7 @@ that interval. The zero and one endpoints are mapped onto themselves.
 Other values are shifted upward toward one if gamma is greater than one,
 and shifted downward toward zero if gamma is between zero and one.
 
-![gamma correct](/images/gammacorrect1.png "gamma correct")
+![gamma correct](/images/gammacorrect.png "gamma correct")
 
 script: gammacorrect.gml
 

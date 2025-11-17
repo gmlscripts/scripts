@@ -5,7 +5,7 @@ The boxstep function is somewhere between [step] and [smoothstep].
 It is the result of the convolution of a box filter with a step edge.
 The width of the box filter is (b - a) and the slope of the ramp is 1/width.
 
-![boxstep](/images/boxstep1.png "boxstep")
+![boxstep](/images/boxstep.png "boxstep")
 
 script: boxstep.gml
 

@@ -15,7 +15,7 @@ for four knots.
 > and also guaranteeing that the tangents of the generated curve are
 > continuous over multiple segments.
 
-![spline](/images/spline1.png "spline")
+![spline](/images/spline.png "spline")
 
 script: spline.gml
 

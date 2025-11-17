@@ -1,7 +1,7 @@
 collision_triangle
 ==================
 
-include: collision_triangle.svg
+include: /images/collision_triangle.svg
 
 This script function works like the built-in `collision_*()` functions and
 is used to detect collisions with a triangular region. It uses a collision

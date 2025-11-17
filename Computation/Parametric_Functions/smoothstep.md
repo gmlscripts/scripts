@@ -9,7 +9,7 @@ function that has these properties for a = 0 and b = 1, namely
 the function \(3x^2 - 2x^3\). This function can be used to provide
 smooth transitions between values or to "ease" animation in and out.
 
-![smoothstep](/images/smoothstep1.png "smoothstep")
+![smoothstep](/images/smoothstep.png "smoothstep")
 
 script: smoothstep.gml
 
