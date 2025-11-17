@@ -21,5 +21,5 @@
     with (object) ds_priority_add(list,id,distance_to_point(pointx,pointy));
     repeat (n) farthest = ds_priority_delete_max(list);
     ds_priority_destroy(list);
-    return farthest; 
+    return farthest;
 }
