@@ -20,7 +20,7 @@
       <circle r="4" cx="155" cy="0" style="fill:#ffff"/>
       <circle r="4" cx="180" cy="120" style="fill:#ffff"/>
       <circle r="4" cx="107" cy="72" style="fill:#f00f"/>
-      <text x="78" y="-15" font-size="15" text-anchor="middle" fill="#ffff">collision_triangle()</text>
+      <text x="78" y="-15" font-family="monospace" font-size="15" text-anchor="middle" fill="#ffff">collision_triangle()</text>
     </g>
     <style>
     #collisionmask1 {
