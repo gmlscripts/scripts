@@ -4,7 +4,7 @@ fibonacci
 Returns the nth number of the [Fibonacci sequence].
 
 _Wikipedia:_
-> In mathematics, the Fibonacci numbers, commonly denoted \(F_n\) ,
+> In mathematics, the Fibonacci numbers, commonly denoted \(F_n\),
 > form a sequence, the Fibonacci sequence, in which each number
 > is the sum of the two preceding ones. The sequence commonly
 > starts from 0 and 1, although some authors omit the initial
