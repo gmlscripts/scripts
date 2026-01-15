@@ -12,18 +12,21 @@ fit any type of triangle using only scaling, rotation, and translation.
 
 The partner function `collision_triangle_init()` is required to initialize
 the main function `collision_triangle()` and must be called once before the
-main function can be used. The initialization function creates a collision
-mask with the desired resolution and prepares the `__objCollisionTriangle`
-helper object for use by the main function. See function header notes for
-more information.
-
-demo: collision_triangle 725 360
-Click and drag triangle points. Press SPACE to toggle mask resolution.
+main function can be used for the first time. The initialization function
+creates a collision mask with the desired resolution and prepares helper
+object `__objCollisionTriangle` (see below) for use by the main function.
+The initialization function does not need to be called again, but it can be
+if a collision mask with a new resolution is required. Reinitialization has
+a minor performance cost and should be used sparingly. See function header
+notes for more information.
 
 Note: This script function requires some manual assistance before use.
 There needs to be a helper object named `__objCollisionTriangle` in your
 project before the function can be initialized. Once added, the object
 needs no further editing and does not need to be added to any rooms.
+
+demo: collision_triangle 725 360
+Click and drag triangle points. Press SPACE to toggle mask resolution.
 
 script: collision_triangle.gml
 
