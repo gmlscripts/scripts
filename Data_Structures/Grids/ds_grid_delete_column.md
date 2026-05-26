@@ -11,7 +11,7 @@ $$\mathbf{G} = \begin{array}{|c|c|c|c|}
 \\\hline 03&13&\color{red}{23}&33
 \\\hline \end{array}
 \qquad
-f(\mathbf{G},2) = \begin{array}{|c|c|c|c|}
+f(\mathbf{G},2) = \begin{array}{|c|c|c|}
 \hline 00&10&30
 \\\hline 01&11&31
 \\\hline 02&12&32
