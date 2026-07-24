@@ -1,4 +1,4 @@
-/// explode(del, str)
+/// @func   explode(del, str)
 ///
 /// @desc   Returns an array of strings parsed from a given
 ///         string of elements separated by a delimiter.

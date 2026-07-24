@@ -1,4 +1,4 @@
-/// @func   explode_real(delimiter,string)
+/// @func   explode_real(del, str)
 ///
 /// @desc   Returns an array of real values parsed from a given
 ///         string of elements separated by a delimiter.
