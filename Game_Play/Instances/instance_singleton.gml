@@ -1,10 +1,10 @@
-/// @func   instance_singleton(object)
+/// @func   instance_singleton(object, layer_id)
 ///
 /// @desc   Returns a single instance of the given object,
 ///         creating one if no instance exists.
 ///
 /// @param  {object}    object      object to look for
-/// @param  {layer}     layer id    layer to create in
+/// @param  {layer}     layer_id    layer to create in
 ///
 /// @return {instance}  object instance id
 ///
