@@ -7,4 +7,4 @@ although this script works differently.
 
 script: ds_map_save.gml
 
-contributors: Leif902
+contributors: Leif902, xot

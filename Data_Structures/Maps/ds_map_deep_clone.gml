@@ -1,17 +1,18 @@
-#define ds_map_deep_clone
-/// ds_map_deep_clone(map)
-//
-//  Clones a map deeply to a new copy, 
-//  cloning any nested maps and lists,
-//  and returning the created root map.
-//
-//      map         The map to clone
-//
+/// @func   ds_map_deep_clone(map)
+///
+/// @desc   Clones a map deeply to a new copy,
+///         cloning any nested maps and lists,
+///         and returning the created root map.
+///
+/// @param  {map}       map         map to clone
+///
+/// @return {map}       deep-cloned map
+///
 /// GMLscripts.com/license
+
+function ds_map_deep_clone(map)
 {
-    var map, json, clone;
-    map = argument0;
-    json = json_encode(map);
-    clone = json_decode(json);
+    var json = json_encode(map);
+    var clone = json_decode(json);
     return clone;
 }

@@ -1,73 +1,94 @@
-#define ds_map_load
-/// ds_map_load(file [,delim])
-//
-//  Loads the contents of a file into a new 
-//  map data structure, returning its id.
-//
-//      file        file name, string
-//      delim       delimiter used between elements, string
-//
+/// @func   ds_map_load(file, delim)
+///
+/// @desc   Loads the contents of a file into a new
+///         map data structure, returning its id.
+///         Pair delimiters match ds_map_save:
+///         0 = newline (default), 1 = comma, 2 = semicolon,
+///         other = custom string.
+///
+/// @param  {string}    file        file name
+/// @param  {any}       delim       delimiter between pairs, optional
+///
+/// @return {map}       loaded map, or -1 if the file cannot be opened
+///
 /// GMLscripts.com/license
+
+function ds_map_load(file, delim=0)
 {
-    var FileIn, MapItems, CurrLine, NumItems, i, TempKey, TempValue;
+    var fid = file_text_open_read(file);
+    if (fid < 0) return -1;
 
-    // Open the file that contains the map
-    FileIn = file_text_open_read(argument0);  // Open the Map File
-    MapItems = ds_map_create();               // Create the Map to be read into
-    CurrLine = '';                            // Default to an empty string
+    // Same codes as ds_map_save
+    var sep;
+    switch (delim) {
+        case 0:  sep = "";  break;  // newlines joined while reading
+        case 1:  sep = ","; break;
+        case 2:  sep = ";"; break;
+        default: sep = string(delim); break;
+    }
 
-    // Read the entire file into a variable
-    while (!file_text_eof(FileIn)) {
-        CurrLine += file_text_read_string(FileIn);
-        // Technically we should not have a return and a comma
-        // But just incase lets make sure that we do not add an extra one.
-        if (string_char_at(CurrLine,string_length(CurrLine)) != ',') {
-            if (argument1 != 0) {
-                if (string_char_at(CurrLine,string_length(CurrLine)) != string(argument1)) {
-                    CurrLine += ',';
-                }
-            }else{
-                CurrLine += ',';
+    var map = ds_map_create();
+    var data = "";
+
+    // Read the entire file, joining lines so pairs stay comma-separated
+    while (!file_text_eof(fid)) {
+        data += file_text_read_string(fid);
+        if (string_length(data) > 0) {
+            var last = string_char_at(data, string_length(data));
+            var ends_with_sep = false;
+            if (sep != "" && string_length(data) >= string_length(sep)) {
+                ends_with_sep = (string_copy(data, string_length(data) - string_length(sep) + 1, string_length(sep)) == sep);
+            }
+            // Append a join comma unless the buffer already ends with "," or the pair sep
+            if (last != "," && !ends_with_sep) {
+                data += ",";
             }
         }
-        file_text_readln(FileIn);
+        file_text_readln(fid);
+    }
+    file_text_close(fid);
+
+    if (string_length(data) == 0) return map;
+
+    // Drop trailing pair separator written after the last entry by ds_map_save
+    if (sep != "" && string_length(data) >= string_length(sep)
+            && string_copy(data, string_length(data) - string_length(sep) + 1, string_length(sep)) == sep) {
+        data = string_delete(data, string_length(data) - string_length(sep) + 1, string_length(sep));
+    } else if (string_char_at(data, string_length(data)) == ",") {
+        data = string_delete(data, string_length(data), 1);
     }
 
-    // Remove the final comma
-    CurrLine = string_delete(CurrLine,string_length(CurrLine),1);
-
-    // Add Support for other separators.
-    CurrLine = string_replace_all(CurrLine,';',',');
-    if ( argument1 != 0 ) {
-        CurrLine = string_replace_all(CurrLine,string(argument1),',');
+    // Normalize pair separators to commas, then key/value spacing
+    if (sep != "" && sep != ",") {
+        data = string_replace_all(data, sep, ",");
     }
-    CurrLine = string_replace_all(CurrLine,', ',",");
-    CurrLine = string_replace_all(CurrLine,' ,',",");
+    // Legacy: allow semicolons in files loaded with other delims
+    data = string_replace_all(data, ";", ",");
+    data = string_replace_all(data, ", ", ",");
+    data = string_replace_all(data, " ,", ",");
 
-    // Get the number of items to be placed into the map, if there is an
-    // odd number, round up and we will default to 0.
-    NumItems = ceil((string_count(',',CurrLine) + 1)/2);
+    // Odd number of tokens: last value defaults to 0
+    var n = ceil((string_count(",", data) + 1) / 2);
 
-    // Read The Values into the Map
-    for( i = 0; i < NumItems; i += 1 ) {
-        if ( string_count(',',CurrLine) > 1 ) {
-            TempKey = string_copy(CurrLine,1,string_pos(',',CurrLine)-1);
-            CurrLine = string_delete(CurrLine,1,string_pos(',',CurrLine));
-            TempValue = string_copy(CurrLine,1,string_pos(',',CurrLine)-1);
-            CurrLine = string_delete(CurrLine,1,string_pos(',',CurrLine));
-        }else{
-            if ( string_count(',',CurrLine) = 1 ) {
-                TempKey = string_copy(CurrLine,1,string_pos(',',CurrLine)-1);
-                CurrLine = string_delete(CurrLine,1,string_pos(',',CurrLine));
-                TempValue = CurrLine;
-                CurrLine = '';
-            }else{
-                TempKey = CurrLine;
-                CurrLine = '';
-                TempValue = 0;
-            }
+    for (var i = 0; i < n; i++) {
+        var key, val;
+        if (string_count(",", data) > 1) {
+            key = string_copy(data, 1, string_pos(",", data) - 1);
+            data = string_delete(data, 1, string_pos(",", data));
+            val = string_copy(data, 1, string_pos(",", data) - 1);
+            data = string_delete(data, 1, string_pos(",", data));
+        } else if (string_count(",", data) == 1) {
+            key = string_copy(data, 1, string_pos(",", data) - 1);
+            data = string_delete(data, 1, string_pos(",", data));
+            val = data;
+            data = "";
+        } else {
+            key = data;
+            data = "";
+            val = 0;
         }
-        ds_map_add(MapItems,TempKey,TempValue);
+        ds_map_add(map, key, val);
     }
-    return (MapItems);
+
+    return map;
 }

@@ -1,69 +1,45 @@
-#define ds_map_save
-/// ds_map_save(id, file [,delim])
-//
-//  Saves the contents of a given grid 
-//  data structure into a file.
-//
-//      id          map data structure, real
-//      file        file name, string
-//      delim       delimiter used between elements, optional
-//                  0 = Carriage Return (default)
-//                  1 = Comma (for CSV files)
-//                  2 = Semicolon
-//              other = a string of your choice
-//
+/// @func   ds_map_save(map, file, delim)
+///
+/// @desc   Saves the contents of a given map
+///         data structure into a file.
+///
+/// @param  {map}       map         map data structure
+/// @param  {string}    file        file name
+/// @param  {any}       delim       delimiter between pairs (optional):
+///                                 0 = newline (default)
+///                                 1 = comma (CSV)
+///                                 2 = semicolon
+///                                 other = custom string
+///
 /// GMLscripts.com/license
+
+function ds_map_save(map, file, delim=0)
 {
-    var FileOut, NextKey, i;
+    var fid = file_text_open_write(file);
+    var n = ds_map_size(map);
 
-    FileOut = file_text_open_write(argument1);
-
-    if ( ds_map_size(argument0) > 0 ) {
-        NextKey = ds_map_find_first(argument0);
-        file_text_write_string(FileOut,string(NextKey)+', ');
-        file_text_write_string(FileOut,string(ds_map_find_value(argument0,NextKey)));
-        NextKey = ds_map_find_next(argument0,NextKey);
-        // Define the format to use
-        switch (argument2) {
-            case 0:
-                file_text_writeln(FileOut);
-                break;
-            case 1:
-                file_text_write_string(FileOut,',');
-                break;
-            case 2:
-                file_text_write_string(FileOut,';');
-                break;
-            default:
-                file_text_write_string(FileOut,string(argument2));
-                break;
-        }
-
-        if ( ds_map_size(argument0) > 1 ) {
-            for ( i = 1; i < ds_map_size(argument0); i += 1 ) {
-                file_text_write_string(FileOut,string(NextKey)+', ');
-                file_text_write_string(FileOut,string(ds_map_find_value(argument0,NextKey)));
-                NextKey = ds_map_find_next(argument0,NextKey);
-                // Define the format to use
-                switch (argument2) {
-                    case 0:
-                        file_text_writeln(FileOut);
-                        break;
-                    case 1:
-                        file_text_write_string(FileOut,',');
-                        break;
-                    case 2:
-                         file_text_write_string(FileOut,';');
-                         break;
-                    default:
-                         file_text_write_string(FileOut,string(argument2));
-                         break;
-                }
-            } 
+    if (n > 0) {
+        var key = ds_map_find_first(map);
+        for (var i = 0; i < n; i++) {
+            file_text_write_string(fid, string(key) + ", ");
+            file_text_write_string(fid, string(ds_map_find_value(map, key)));
+            key = ds_map_find_next(map, key);
+            switch (delim) {
+                case 0:
+                    file_text_writeln(fid);
+                    break;
+                case 1:
+                    file_text_write_string(fid, ",");
+                    break;
+                case 2:
+                    file_text_write_string(fid, ";");
+                    break;
+                default:
+                    file_text_write_string(fid, delim);
+                    break;
+            }
         }
     }
-    
-    file_text_close(FileOut);
-    
-    return 0;
+
+    file_text_close(fid);
 }
